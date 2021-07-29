@@ -1,0 +1,450 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<TMPL_IF NAME='ItemID'>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_EditItem'></h2>
+			<TMPL_ELSE>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_AddItem'></h2>
+			</TMPL_IF>
+		</header>
+		<div class="content-body">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tab-1" data-toggle='tab'><TMPL_VAR NAME='LNG_TabMain'></a></li>
+				<li><a href="#tab-2" data-toggle='tab'><TMPL_VAR NAME='LNG_TabAdditional'></a></li>
+				<li><a href="#tab-3" data-toggle='tab'><TMPL_VAR NAME='LNG_TabGallery'></a></li>
+			</ul>
+
+			<form action="<TMPL_VAR NAME='MODULE_URL'>" method="post" name="item-form" enctype="multipart/form-data">
+				<div class="tab-content">
+					<TMPL_IF NAME='ErrorList'>
+						<div class="col-md-12">
+							<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+						</div>
+					</TMPL_IF>
+					<div id="tab-1" class="tab-pane active">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="Title" class="required"><TMPL_VAR NAME='LNG_Title'></label><br />
+								<input class="form-control" type="text" name="Title" id="Title" value="<TMPL_VAR NAME='Title'>" />
+							</div>
+							<div class="form-group">
+								<label for="SKU"><TMPL_VAR NAME='LNG_SKU'></label><br />
+								<input class="form-control" type="text" name="SKU" id="SKU" value="<TMPL_VAR NAME='SKU'>" />
+							</div>
+							<div class="form-group">
+								<label for="Price"><TMPL_VAR NAME='LNG_Price'></label><br />
+								<input class="form-control" type="text" name="Price" id="Price" value="<TMPL_VAR NAME='Price'>" />
+							</div>
+							<div class="form-group">
+								<label for="ItemDate"><TMPL_VAR NAME='LNG_ItemDate'></label><br />
+								<TMPL_VAR NAME='CalendarField' ESCAPE='none'>
+							</div>
+							
+							<TMPL_LOOP NAME='DescriptionList'>
+								<div class="form-group">
+									<label for="<TMPL_VAR NAME='DescriptionList.Name'>"><TMPL_VAR NAME='DescriptionList.Title'></label><br />
+									<textarea class="form-control" name="<TMPL_VAR NAME='DescriptionList.Name'>" id="<TMPL_VAR NAME='DescriptionList.Name'>" rows="8" cols="80"><TMPL_VAR NAME='DescriptionList.Value'></textarea>
+								</div>
+							</TMPL_LOOP>
+						</div>
+						<div class="col-md-6">
+							<div class="pull-left right15 form-group form-inline">
+								<label for="Active"><TMPL_VAR NAME='LNG_Active'></label><br />
+								<input type="checkbox" name="Active" id="Active" value="Y" class="iswitch iswitch-md iswitch-primary" <TMPL_IF NAME='Active' VALUE='Y'>checked<TMPL_ELSEIF NAME='ItemID' VALUE='0'>checked</TMPL_IF> />
+							</div>
+							<div class="pull-left form-group form-inline">
+								<label for="Featured"><TMPL_VAR NAME='LNG_Featured'></label><br />
+								<input type="checkbox" name="Featured" id="Featured" value="Y" class="iswitch iswitch-md iswitch-primary" <TMPL_IF NAME='Featured' VALUE='Y'>checked</TMPL_IF> />
+							</div>
+							<div class="clearfix"></div>
+							<div class="col-md-12 form-group">
+								<label class="required"><TMPL_VAR NAME='LNG_Category'></label>
+								<TMPL_LOOP NAME='CategoryList'>
+									<table cellpadding="1" cellspacing="0"><tr><td><TMPL_VAR NAME='TitlePrefix' ESCAPE='none'><TMPL_UNLESS NAME='CategoryList.HasChildren'><input type="checkbox" class="icheck-minimal-green" name="CategoryIDs[]" id="c<TMPL_VAR NAME='CategoryID'>" value="<TMPL_VAR NAME='CategoryID'>"<TMPL_IF NAME='Selected'> checked="checked"</TMPL_IF> /></TMPL_UNLESS></td><td><label for="c<TMPL_VAR NAME='CategoryID'>"><TMPL_VAR NAME='Title' ESCAPE='none'></label></td></tr></table>
+								</TMPL_LOOP>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-md-12">
+							<div class="form-group form-inline">
+								<label for="StaticPath" class="required"><TMPL_VAR NAME='LNG_StaticPath'></label><br />
+								<TMPL_VAR NAME='URLPrefix'><input type="text" name="StaticPath" id="StaticPath" class="form-control" value="<TMPL_VAR NAME='StaticPath'>" /><TMPL_VAR NAME='HTML_EXTENSION'>
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" rows="20" cols="80" name="Content" id="Content"><TMPL_VAR NAME='Content'></textarea>
+							</div>
+						</div>
+					</div>
+					<div id="tab-2" class="tab-pane">
+						<div class="col-md-6">
+							<h3><TMPL_VAR NAME='LNG_SEO'></h3>
+							<div class="form-group">
+								<label for="TitleH1"><TMPL_VAR NAME='L_TitleH1'></label><br />
+								<input class="form-control" type="text" name="TitleH1" id="TitleH1" value="<TMPL_VAR NAME='TitleH1'>" />
+							</div>
+							<div class="form-group">
+								<label for="MetaTitle"><TMPL_VAR NAME='L_MetaTitle'></label><br />
+								<input class="form-control" type="text" name="MetaTitle" id="MetaTitle" value="<TMPL_VAR NAME='MetaTitle'>" />
+							</div>
+							<div class="form-group">
+								<label for="MetaKeywords"><TMPL_VAR NAME='L_MetaKeywords'></label><br />
+								<textarea class="form-control" name="MetaKeywords" id="MetaKeywords" rows="8" cols="80"><TMPL_VAR NAME='MetaKeywords'></textarea>
+							</div>
+							<div class="form-group">
+								<label for="MetaDescription"><TMPL_VAR NAME='L_MetaDescription'></label><br />
+								<textarea class="form-control" name="MetaDescription" id="MetaDescription" rows="8" cols="80"><TMPL_VAR NAME='MetaDescription'></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<h3><TMPL_VAR NAME='LNG_Images'> (<TMPL_VAR NAME='UploadMaxFileSize'>)</h3>
+							<div id="ItemImage-box">
+								<label for="ItemImage"><TMPL_VAR NAME='LNG_ItemImage'></label><br />
+							</div>
+							<div id="FeaturedImage-box">
+								<label for="FeaturedImage"><TMPL_VAR NAME='LNG_FeaturedImage'></label><br />
+							</div>
+							<script type="text/javascript">
+								$(document).ready(function(){
+									params = new Array();
+									<TMPL_LOOP NAME='ItemImageParamList'>
+										params.push({
+											"Name" : "<TMPL_VAR NAME='SourceName'>",
+											"Width" : "<TMPL_VAR NAME='Width'>",
+											"Height" : "<TMPL_VAR NAME='Height'>",
+											"Resize" : "<TMPL_VAR NAME='Resize'>",
+											"X1" : "<TMPL_VAR NAME='X1'>",
+											"X2" : "<TMPL_VAR NAME='X2'>",
+											"Y1" : "<TMPL_VAR NAME='Y1'>",
+											"Y2" : "<TMPL_VAR NAME='Y2'>"
+										});
+									</TMPL_LOOP>
+									CreateImageInput('ItemImage', '<TMPL_VAR NAME='ItemImageAdminPath'>', '<TMPL_VAR NAME='ItemImageFullPath'>', '<TMPL_VAR NAME='ItemImage'>', '<TMPL_VAR NAME='ItemID'>', 'RemoveItemImage', '<TMPL_VAR NAME='MODULE_PATH'>ajax.php', <TMPL_VAR NAME='PageID'>, params);
+									
+									params = new Array();
+									<TMPL_LOOP NAME='FeaturedImageParamList'>
+										params.push({
+											"Name" : "<TMPL_VAR NAME='SourceName'>",
+											"Width" : "<TMPL_VAR NAME='Width'>",
+											"Height" : "<TMPL_VAR NAME='Height'>",
+											"Resize" : "<TMPL_VAR NAME='Resize'>",
+											"X1" : "<TMPL_VAR NAME='X1'>",
+											"X2" : "<TMPL_VAR NAME='X2'>",
+											"Y1" : "<TMPL_VAR NAME='Y1'>",
+											"Y2" : "<TMPL_VAR NAME='Y2'>"
+										});
+									</TMPL_LOOP>
+									CreateImageInput('FeaturedImage', '<TMPL_VAR NAME='FeaturedImageAdminPath'>', '<TMPL_VAR NAME='FeaturedImageFullPath'>', '<TMPL_VAR NAME='FeaturedImage'>', '<TMPL_VAR NAME='ItemID'>', 'RemoveItemImage', '<TMPL_VAR NAME='MODULE_PATH'>ajax.php', <TMPL_VAR NAME='PageID'>, params);
+								});
+							</script>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div id="tab-3" class="tab-pane">
+						<div class="col-md-12">
+							<div id="upload-box">
+								<table class="table" id="upload-table">
+									<tr>
+										<td width="30%"><TMPL_VAR NAME='LNG_File'></td>
+										<td width="20%"><TMPL_VAR NAME='MTitle'></td>
+										<td width="25%"><TMPL_VAR NAME='MDescription'></td>
+										<td width="20%"><TMPL_VAR NAME='MSortOrder'></td>
+										<td width="5%">&nbsp;</td>
+									</tr>
+									<tr>
+										<td class="form-inline"><input type="file" name="MediaFile[]" class="form-control input-sm" /></td>
+										<td><input type="text" name="MediaTitle[]" class="form-control input-sm" /></td>
+										<td><input type="text" name="MediaDescription[]" class="form-control input-sm" /></td>
+										<td><input type="text" name="MediaSortOrder[]" class="form-control input-sm" /></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td colspan="4"><a href="#" class="btn btn-icon btn-xs" onclick="AddRow(); return false;"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_AddRow'></a></td>
+									</tr>
+								</table>
+							</div>
+						
+							<div id='portfolio' class="">
+				
+								<div class="portfolio-items">
+									<TMPL_LOOP NAME='MediaList'>
+										<TMPL_IF NAME='Type' OP='==' VALUE='image'>
+											<div class="portfolio-item col-md-3 col-sm-4 col-xs-6" MediaID="<TMPL_VAR NAME='MediaID'>">
+												<div class="portfolio-item-inner">
+													<img class="img-responsive" src="<TMPL_VAR NAME='MediaFileAdminPath'>" alt="">
+													<div class="portfolio-info animated fadeInUp animated-duration-600ms">
+														<h3><TMPL_VAR NAME='Title'></h3>
+														<span class='desc'><TMPL_VAR NAME='Description'></span>
+														<a class="preview" href="<TMPL_VAR NAME='MediaFileAdminBigPath'>" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+														<a class="media-delete" MediaID="<TMPL_VAR NAME='MediaID'>" href="#"><i class="fa fa-close"></i></a>
+														<a class="media-edit" MediaID="<TMPL_VAR NAME='MediaID'>" href="#"><i class="fa fa-edit"></i></a>
+													</div>
+												</div>
+											</div>
+										<TMPL_ELSEIF NAME='Type' OP='==' VALUE='flash'>
+											<div class="portfolio-item col-md-3 col-sm-4 col-xs-6" MediaID="<TMPL_VAR NAME='MediaID'>">
+												<div class="portfolio-item-inner">
+													<img class="img-responsive" src="<TMPL_VAR NAME='MediaFileAdminPath'>" alt="">
+													<div class="portfolio-info animated fadeInUp animated-duration-600ms">
+														<h3><TMPL_VAR NAME='Title'></h3>
+														<span class='desc'><TMPL_VAR NAME='Description'></span>
+														<a class="preview" href="<TMPL_VAR NAME='MediaFilePath'>" target="_blank"><i class="fa fa-eye"></i></a>
+														<a class="media-delete" MediaID="<TMPL_VAR NAME='MediaID'>" href="#"><i class="fa fa-close"></i></a>
+														<a class="media-edit" MediaID="<TMPL_VAR NAME='MediaID'>" href="#"><i class="fa fa-edit"></i></a>
+													</div>
+												</div>
+											</div>
+										<TMPL_ELSEIF NAME='Type' OP='==' VALUE='video'>
+											<div class="portfolio-item col-md-3 col-sm-4 col-xs-6" MediaID="<TMPL_VAR NAME='MediaID'>">
+												<div class="portfolio-item-inner">
+													<img class="img-responsive" src="<TMPL_VAR NAME='MediaFileAdminPath'>" alt="">
+													<div class="portfolio-info animated fadeInUp animated-duration-600ms">
+														<h3><TMPL_VAR NAME='Title'></h3>
+														<span class='desc'><TMPL_VAR NAME='Description'></span>
+														<a class="preview" href="<TMPL_VAR NAME='MediaFilePath'>" target="_blank"><i class="fa fa-eye"></i></a>
+														<a class="media-delete" MediaID="<TMPL_VAR NAME='MediaID'>" href="#"><i class="fa fa-close"></i></a>
+														<a class="media-edit" MediaID="<TMPL_VAR NAME='MediaID'>" href="#"><i class="fa fa-edit"></i></a>
+													</div>
+												</div>
+											</div>
+										</TMPL_IF>
+									</TMPL_LOOP>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>						
+				<div class="top15">
+					<button type="submit" class="btn btn-success btn-icon right15"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+					<a class="btn btn-icon" href="<TMPL_VAR NAME='MODULE_URL'>&PageID=<TMPL_VAR NAME='PageID'>&Page=<TMPL_VAR NAME='Page'>&ViewCategoryID=<TMPL_VAR NAME='ViewCategoryID'>"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></a>
+				</div>
+				<input type="hidden" name="Save" value="1" />
+				<input type="hidden" name="ItemID" value="<TMPL_VAR NAME='ItemID'>" />
+				<input type="hidden" name="Page" value="<TMPL_VAR NAME='Page'>" />
+				<input type="hidden" name="PageID" value="<TMPL_VAR NAME='PageID'>" />
+				<input type="hidden" name="ViewCategoryID" value="<TMPL_VAR NAME='ViewCategoryID'>" />	
+			</form>
+			<div id="media-edit" class="modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<form id="media-edit-form" onsubmit="SaveMedia();return false;">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title"><TMPL_VAR NAME='LNG_EditMedia'></h4>
+						</div>
+						<div class="alert alert-error" style="display:none;"></div>
+						<div class="modal-body"></div>
+			
+						<div class="modal-footer">
+							<button type="button" class="btn btn-icon" data-dismiss="modal"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></button>
+								<button type="submit" class="btn btn-success btn-icon"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		createCKEditor('Content');
+		
+		$('#toggle-upload').click(function(e){
+			$('#upload-form').slideToggle();
+			e.preventDefault();
+		});
+		
+		$('#cancel-upload').click(function(e){
+			$('#upload-form').slideUp();
+			e.preventDefault();
+		});
+		
+		$('.media-delete').click(function(e){
+			DeleteMedia($(this).attr('MediaID'));
+			e.preventDefault();
+		});
+		
+		$('.media-edit').click(function(e){
+			EditMedia($(this).attr('MediaID'));
+			e.preventDefault();
+		});
+		
+		$('.content-body').liTranslit({
+			elName: '#Title',
+			elAlias: '#StaticPath',
+			table: 'catalog_item'
+		});		
+		
+		$('.portfolio-items').sortable({
+			start: function(e, ui) {
+				$(this).attr('data-previndex', ui.item.index());
+			},
+			update: function(event, ui) {
+				var newIndex = ui.item.index();
+				var oldIndex = $(this).attr('data-previndex');
+				var diff = newIndex - oldIndex; 
+				$(this).removeAttr('data-previndex');
+				message = CreateMessage(GetTranslation('saving-sort'), 'info');
+				$.ajax({
+					url:"<TMPL_VAR NAME='MODULE_PATH'>ajax.php",
+					dataType:"JSON",
+					data:{
+						'Action': 'SetMediaSortOrder',
+						'ItemID': '<TMPL_VAR NAME='ItemID'>',
+						'MediaID': ui.item.attr('MediaID'),
+						'PageID': '<TMPL_VAR NAME='PageID'>',
+						'Diff': diff
+					},
+					success: function(data){
+						if(typeof data.SessionExpired != 'undefined')
+				  		{
+				  			window.location.href = ADMIN_PATH+"index.php";
+				  			return;
+				  		}
+						if(data)
+						{
+							UpdateMessage(message, GetTranslation('sort-saved'), 'success');
+						}
+						else
+						{
+							UpdateMessage(message, GetTranslation('error-saving-sort'), 'error');
+						}
+					},
+					error:function(){
+						UpdateMessage(message, GetTranslation('error-saving-sort'), 'error');
+					}
+				});
+			}
+		});
+	});
+	
+	function AddRow()
+	{	
+		var html = "<tr>";
+		html += "<td class=\"form-inline\"><input type=\"file\" name=\"MediaFile[]\" class=\"form-control input-sm\" /></td>";
+		html += "<td><input type=\"text\" name=\"MediaTitle[]\" class=\"form-control input-sm\" /></td>";
+		html += "<td><input type=\"text\" name=\"MediaDescription[]\" class=\"form-control input-sm\" /></td>";
+		html += "<td><input type=\"text\" name=\"MediaSortOrder[]\" class=\"form-control input-sm\" /></td>";
+		html += "<td><a href=\"#\" onclick=\"$(this).closest('tr').remove();return false;\"><i class=\"fa fa-close delete high\"></i></a></td>";
+		html += "</tr>";
+		$('#upload-table tr:last').before(html);	
+	}
+	
+	function EditMedia(id)
+	{
+		$('#media-edit .alert-error').html("").hide();
+		$.ajax({
+			url:"<TMPL_VAR NAME='MODULE_PATH'>ajax.php",
+			dataType:"JSON",
+			method: 'POST',
+			data:{
+				'Action': 'LoadMedia',
+				'PageID': '<TMPL_VAR NAME='PageID' ESCAPE='js'>',
+				'MediaID': id
+			},
+			success: function(data){
+				if(typeof data.SessionExpired != 'undefined')
+		  		{
+		  			window.location.href = ADMIN_PATH+"index.php";
+		  			return;
+		  		}
+				if(!data)
+				{
+					CreateMessage(GetTranslation('error-loading-media'), 'error');
+				}
+				else
+				{
+					var html = '<div class="form-group">';
+					html += '	<label for="MTitle">'+GetTranslation('media-title')+'</label><br /><input name="MTitle" id="MTitle" class="form-control" type="text" value="'+data.Title.replace(/\"/g,"&#34;")+'" />';
+					html += '</div>';
+					html += '<div class="form-group">';
+					html += '	<label for="MDescription">'+GetTranslation('media-description')+'</label><br /><textarea name="MDescription" id="MDescription" class="form-control">'+data.Description.replace(/\"/g,"&#34;")+'</textarea>';
+					html += '</div>';
+					html += '<input type="hidden" name="PageID" id="PageID" value="<TMPL_VAR NAME='PageID'>" />';
+					html += '<input type="hidden" name="MediaID" id="MediaID" value="'+id+'" />';
+					html += '<input type="hidden" name="Action" id="Action" value="SaveMedia" />';
+
+					$('#media-edit .modal-body').html(html);
+					if(data.Type == "image")
+					{
+						CreateImageCropper($('#media-edit .modal-body'), "MediaFile", data.MediaFileFullPath, data.MediaFileParamList, data.MediaFileWidth, data.MediaFileHeight);
+					}
+					$('#media-edit').modal('show');			
+				}
+			},
+			error:function(){
+				CreateMessage(GetTranslation('error-loading-media'), 'error');
+			}
+		});	
+	}
+	
+	function SaveMedia()
+	{
+		message = CreateMessage(GetTranslation('saving-media'), 'info');
+		$.ajax({
+			url: "<TMPL_VAR NAME='MODULE_PATH'>ajax.php",
+			method: 'POST',
+			dataType: 'JSON',
+			data:$('#media-edit-form').serialize(),
+			success:function(data){
+				if(typeof data.SessionExpired != 'undefined')
+		  		{
+		  			window.location.href = ADMIN_PATH+"index.php";
+		  			return;
+		  		}
+				if(typeof data.Error == 'undefined')
+				{
+					$('.portfolio-item[MediaID='+$('#media-edit #MediaID').val()+'] h3').html($('#media-edit #MTitle').val())
+					$('.portfolio-item[MediaID='+$('#media-edit #MediaID').val()+'] .desc').html($('#media-edit #MDescription').val())
+					$('#media-edit').modal('hide');
+					UpdateMessage(message, GetTranslation('media-saved'), 'success');
+				}
+				else
+				{
+					$('#media-edit .alert-error').html(data.Error).show();
+					HideMessage(message);
+				}
+			},
+			error:function(){
+				UpdateMessage(message, GetTranslation('error-saving-media'), 'error')
+			}
+		});
+	}
+	
+	function DeleteMedia(id)
+	{
+		msg = '<TMPL_VAR NAME='LNG_ConfirmRemove' ESCAPE='js'>';
+		msg = msg.replace(/%Title%/g, $('.portfolio-item[MediaID='+id+'] h3').html());
+		ModalConfirm(msg, function(){
+			message = CreateMessage(GetTranslation('removing-media'), 'info');
+			$.ajax({
+				url:"<TMPL_VAR NAME='MODULE_PATH'>ajax.php",
+				dataType:"JSON",
+				method: 'POST',
+				data:{
+					'Action': 'RemoveMedia',
+					'PageID': '<TMPL_VAR NAME='PageID' ESCAPE='js'>',
+					'MediaID': id
+				},
+				success: function(data){
+					if(typeof data.SessionExpired != 'undefined')
+			  		{
+			  			window.location.href = ADMIN_PATH+"index.php";
+			  			return;
+			  		}
+					$('.portfolio-item[MediaID='+id+']').remove();
+					UpdateMessage(message, GetTranslation('media-removed'), 'success');
+				},
+				error:function(){
+					UpdateMessage(message, GetTranslation('error-removing-media'), 'error');
+				}
+			});	
+		});
+	}
+</script>

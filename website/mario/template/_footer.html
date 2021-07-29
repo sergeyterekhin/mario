@@ -1,0 +1,20 @@
+<footer class="footer">
+    <div class="footerLeft"></div>
+    <div class="footerIn">
+        <div class="copy"> 
+            <TMPL_VAR NAME="LNG_leftdescription">
+        </div>
+        <div class="fContacts">
+            <TMPL_VAR NAME="LNG_rightdescription">
+        </div>
+        <div class="projects">
+            <div class="caption"><TMPL_VAR NAME="LNG_midldescription"></div>
+            <TMPL_LOOP NAME="MENU_project">
+                <a href="<TMPL_VAR NAME='PageURL'>"><img src="<TMPL_VAR NAME='MenuImage2Path'>" alt=""></a>
+                </TMPL_LOOP>
+        </div>
+    </div>
+</footer>
+<a href="#" class="reviewsLink"></a>
+</body>
+</html>

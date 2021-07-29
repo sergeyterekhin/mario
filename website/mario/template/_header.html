@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="ru" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="ru" class="no-js"><!--<![endif]-->
+	<head>
+		<title><TMPL_VAR NAME="LNG_namepizza"></title>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>css/fonts.css" rel="stylesheet">
+			<link href="<TMPL_VAR NAME='PATH2MAIN'>css/main.css" rel="stylesheet">
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>/js/jquery-1.8.3.min.js"></script>
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>/js/modernizr-2.6.2.min.js"></script>
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>/js/main.js"></script>
+		<!--[if lt IE 9]><script scr="js/html5.js"></script><![endif]-->
+
+		
+	</head>
+	<body>
+		<div class="leftBg"></div>
+		<div class="wrapper">
+			<header class="header">
+				<div class="logo"><TMPL_VAR NAME="LNG_namepizza"></div>
+				<div class="contacts">
+					<div class="caption"><TMPL_VAR NAME="LNG_headerh1"></div>
+					<div class="workhours"><TMPL_VAR NAME="LNG_worktime"></div>
+					<div class="tel"><TMPL_VAR NAME="LNG_phonenumber"></div>
+					<div class="url"><TMPL_VAR NAME="LNG_sitehead"></div>
+				</div>
+				<TMPL_LOOP NAME="MENU_other">
+				<a href="<TMPL_VAR NAME='PageURL'>" class="whereIs">
+					<div class="caption"><TMPL_VAR NAME="LNG_maphead"></div>
+					</TMPL_LOOP>
+						<TMPL_VAR NAME="LNG_descriptionmap">
+				</a>
+				<div class="social">
+					<div class="caption"><TMPL_VAR NAME="LNG_social"></div>
+					<TMPL_LOOP NAME="MENU_social"><a href="<TMPL_VAR NAME='PageURL'>"><img src="<TMPL_VAR NAME='MenuImage1Path'>" alt="" width="25" height="25"></a></TMPL_LOOP>
+				</div>
+				<ul class="topNav">
+<TMPL_LOOP NAME="MENU_top">
+<li><a href="<TMPL_VAR NAME='PageURL'>"> <TMPL_VAR NAME="Title"></a></li>
+</TMPL_LOOP>
+				</ul>
+				<div class="cart">
+					<div class="caption"><TMPL_VAR NAME="LNG_basket"></div>
+					<p>99 блюд <span class="separator">|</span> 999 руб.</p>
+					<p><a href="#" class="btn"><TMPL_VAR NAME="LNG_acceptbasket"></a></p>
+				</div>
+			</header>

@@ -1,0 +1,148 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<TMPL_IF NAME='CategoryID'>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_EditCategory'></h2>
+			<TMPL_ELSE>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_AddCategory'></h2>
+			</TMPL_IF>
+		</header>
+		<div class="content-body">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tab-1" data-toggle='tab'><TMPL_VAR NAME='LNG_TabMain'></a></li>
+				<li><a href="#tab-2" data-toggle='tab'><TMPL_VAR NAME='LNG_TabSEO'></a></li>
+			</ul>
+
+			<form action="<TMPL_VAR NAME='MODULE_URL'>" method="post" enctype="multipart/form-data">
+				<div class="tab-content">
+					<TMPL_IF NAME='ErrorList'>
+						<div class="col-md-12">
+							<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+						</div>
+					</TMPL_IF>
+					<div id="tab-1" class="tab-pane active">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="Title" class="required"><TMPL_VAR NAME='LNG_Title'></label><br />
+								<input class="form-control" type="text" name="Title" id="Title" value="<TMPL_VAR NAME='Title'>" />
+							</div>
+							<div class="form-group">
+								<label for="Description"><TMPL_VAR NAME='LNG_Description'></label><br />
+								<textarea class="form-control" name="Description" id="Description" rows="8" cols="80"><TMPL_VAR NAME='Description'></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group form-inline">
+								<label for="Active"><TMPL_VAR NAME='LNG_Active'></label><br />
+								<input type="checkbox" name="Active" id="Active" value="Y" class="iswitch iswitch-md iswitch-primary" <TMPL_IF NAME='Active' VALUE='Y'>checked<TMPL_ELSEIF NAME='CategoryID' VALUE='0'>checked</TMPL_IF> />
+							</div>
+							<div class="form-group" id="CategoryImage-box">
+								<label for="CategoryImage"><TMPL_VAR NAME='LNG_CategoryImage'></label><br />
+							</div>
+							<script type="text/javascript">
+								$(document).ready(function(){
+									params = new Array();
+									<TMPL_LOOP NAME='CategoryImageParamList'>
+										params.push({
+											"Name" : "<TMPL_VAR NAME='SourceName'>",
+											"Width" : "<TMPL_VAR NAME='Width'>",
+											"Height" : "<TMPL_VAR NAME='Height'>",
+											"Resize" : "<TMPL_VAR NAME='Resize'>",
+											"X1" : "<TMPL_VAR NAME='X1'>",
+											"X2" : "<TMPL_VAR NAME='X2'>",
+											"Y1" : "<TMPL_VAR NAME='Y1'>",
+											"Y2" : "<TMPL_VAR NAME='Y2'>"
+										});
+									</TMPL_LOOP>
+									CreateImageInput('CategoryImage', '<TMPL_VAR NAME='CategoryImageAdminPath'>', '<TMPL_VAR NAME='CategoryImageFullPath'>', '<TMPL_VAR NAME='CategoryImage'>', '<TMPL_VAR NAME='CategoryID'>', 'RemoveCategoryImage', '<TMPL_VAR NAME='MODULE_PATH'>ajax.php', <TMPL_VAR NAME='PageID'>, params);
+								});
+							</script>
+							<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-md-12">
+							<div class="form-group form-inline">
+								<label for="ParentID"><TMPL_VAR NAME='LNG_Parent'></label><br />
+								<select name="ParentID" id="ParentID" class="form-control">
+									<option value="0"></option>
+									<TMPL_LOOP NAME='CategoryList'>
+										<option value="<TMPL_VAR NAME='CategoryID'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF> Level="<TMPL_VAR NAME='Level'>" StaticPath="<TMPL_VAR NAME='StaticPath'>"><TMPL_VAR NAME='TitleForSelectBox' ESCAPE='none'></option>
+									</TMPL_LOOP>
+								</select>
+							</div>
+							<div class="form-group form-inline">
+								<label for="StaticPath" class="required"><TMPL_VAR NAME='LNG_StaticPath'></label><br />
+								<TMPL_VAR NAME='URLPrefix'><span id="ParentURL"><TMPL_VAR NAME='ParentURL'></span><input type="text" name="StaticPath" id="StaticPath" value="<TMPL_VAR NAME='StaticPath'>" class="form-control" /><TMPL_VAR NAME='URLSuffix'>
+							</div>
+							<div class="form-group">
+								<textarea class="" rows="20" name="Content" id="Content"><TMPL_VAR NAME='Content'></textarea>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div id="tab-2" class="tab-pane">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="TitleH1"><TMPL_VAR NAME='L_TitleH1'></label><br />
+								<input class="form-control" type="text" name="TitleH1" id="TitleH1" value="<TMPL_VAR NAME='TitleH1'>" />
+							</div>
+							<div class="form-group">
+								<label for="MetaTitle"><TMPL_VAR NAME='L_MetaTitle'></label><br />
+								<input class="form-control" type="text" name="MetaTitle" id="MetaTitle" value="<TMPL_VAR NAME='MetaTitle'>" />
+							</div>
+							<div class="form-group">
+								<label for="MetaKeywords"><TMPL_VAR NAME='L_MetaKeywords'></label><br />
+								<textarea class="form-control" name="MetaKeywords" id="MetaKeywords" rows="5" cols="80"><TMPL_VAR NAME='MetaKeywords'></textarea>
+							</div>
+							<div class="form-group">
+								<label for="MetaDescription"><TMPL_VAR NAME='L_MetaDescription'></label><br />
+								<textarea class="form-control" name="MetaDescription" id="MetaDescription" rows="5" cols="80"><TMPL_VAR NAME='MetaDescription'></textarea>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="top15">
+					<button type="submit" class="btn btn-success btn-icon right15"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+					<a class="btn btn-icon right15" href="<TMPL_VAR NAME='MODULE_URL'>&PageID=<TMPL_VAR NAME='PageID'>"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></a>
+				</div>
+				<input type="hidden" name="Save" value="1" />
+				<input type="hidden" name="CategoryID" value="<TMPL_VAR NAME='CategoryID'>" />
+				<input type="hidden" name="PageID" value="<TMPL_VAR NAME='PageID'>" />
+			</form>
+		</div>
+	</section>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#ParentID').change(function(){
+		$('#ParentURL').html("");
+		if($('#ParentID option:selected').val() != 0)
+		{
+			selectedLevel = parseInt($('#ParentID option:selected').attr('Level'));
+
+			staticPath = $('#ParentID option:selected').attr('StaticPath');
+			$('#ParentURL').prepend(staticPath + "/");
+			
+			for(i = selectedLevel - 1; i >= 0; i--)
+			{
+				staticPath = $('#ParentID option:selected').prevUntil('[value=""]','[Level='+i+']').filter(':first').attr('StaticPath');
+				$('#ParentURL').prepend(staticPath + "/");
+			}
+		}
+	});
+	
+	createCKEditor('Content');
+	$('#Title').focus();
+	
+	<TMPL_UNLESS NAME='CategoryID'>
+		$('.content-body').liTranslit({
+	        elName: '#Title',
+	        elAlias: '#StaticPath',
+	        table: 'catalog_category'
+	    });
+	</TMPL_UNLESS>
+});
+</script>

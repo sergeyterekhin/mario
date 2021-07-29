@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<module-title>Галерея</module-title>
+	<module-admin-title>Галереи</module-admin-title>
+	<config-CategoryImage>Конфигурация картинки категории</config-CategoryImage>
+	<config-CategoryImageKeepFileName>Сохранять имя файла картинки категории</config-CategoryImageKeepFileName>
+	<config-MediaFile>Конфигурация картинки/flash</config-MediaFile>
+	<config-MediaVideo>Размер сохраняемого видео</config-MediaVideo>
+	<config-MediaKeepFileName>Сохранять имя файла галереи (картинки/видео/flash)</config-MediaKeepFileName>
+	<config-MediaPerPage>Количество объектов галереи на странице</config-MediaPerPage>
+	<config-AnnouncementOrderBy>По какому полю сортировать объекты в анонсе</config-AnnouncementOrderBy>
+	<config-AnnouncementCount>Количество объектов в анонсе</config-AnnouncementCount>
+	<config-ffmpeg>Полный путь на файловой системе до утилиты ffmpeg</config-ffmpeg>
+	<config-flvtool2>Полный путь на файловой системе до утилиты flvtool2</config-flvtool2>
+	<config-mencoder>Полный путь на файловой системе до утилиты mencoder</config-mencoder>
+	<config-details><![CDATA[
+		<h3>Описание параметров</h3>
+		<p>"Конфигурация картинки категории" - конфигурация картинки категории</p>
+		<p>"Сохранять имя файла картинки категории" - 1 - сохранять оригинальное имя, 0 - генерация уникального имени</p>
+		<p>"Конфигурация картинки/flash" - конфигурация объекта (картинка/flash) галереи</p>
+		<p>"Размер сохраняемого видео" - Ширина и высота сохраняемого видео файла</p>
+		<p>"Сохранять имя файла галереи (картинки/видео/flash)" - 1 - сохранять оригинальное имя, 0 - генерация уникального имени</p>
+		<p>Если указать 0 для "Количество объектов галереи на странице", то постраничного перехода не будет</p>
+		<p>
+			Следующие поля можно указывать для сортировки:
+			<ul>
+				<li>Position - По заданной позиции объектов в списке</li>
+				<li>Random - Случайным образом</li>
+			</ul>
+		</p>
+		<p>Если указать 0 для "Количество объектов в анонсе", то в анонс будут включены все объекты. Если поле оставить пустым, то в анонс объекты не попадут.</p>
+		<p>Утилиты ffmpeg, flvtool2 и mencoder обязательны если есть необходимость загружать видеофайлы галерею</p>
+		<h3>Как использовать в _header.html/_footer.html</h3>
+		<p>GALLERY_&lt;StaticPath&gt;_URL - URL на страницу галереи</p>
+	]]></config-details>
+	<category-activate>Отобразить категорию</category-activate>
+	<category-deactivate>Спрятать категорию</category-deactivate>
+	<activating-category>Отображаем категорию...</activating-category>
+	<deactivating-category>Скрываем категорию...</deactivating-category>
+	<category-activated>Категория успешно отображена</category-activated>
+	<category-deactivated>Категория успешно спрятана</category-deactivated>
+	<error-activating-category>При отображении категории произошла ошибка</error-activating-category>
+	<error-deactivating-category>При сокрытии категории произошла ошибка</error-deactivating-category>
+	<saving-sort-category>Сохраняем порядок отображения категорий...</saving-sort-category>
+	<error-saving-sort-category>При сохранении порядка отображения категорий произошла ошибка</error-saving-sort-category>
+	<sort-category-saved>Порядок отображения категорий успешно сохранен</sort-category-saved>
+	<category-is-removed>Категория %CategoryList% удалена</category-is-removed>
+	<categories-are-removed>Категории %CategoryList% удалены</categories-are-removed>
+	<title-category-add>Добавить категорию</title-category-add>
+	<title-category-edit>Редактировать категорию</title-category-edit>
+	<category-title-empty>Пожалуйста, заполните заголовок</category-title-empty>
+	<category-static-path-empty>Пожалуйста, введите URL категории</category-static-path-empty>
+	<loading-media>загружаем информацию о файле...</loading-media>
+	<error-loading-media>Сбой загрузки информации о файле</error-loading-media>
+	<media-title>Название</media-title>
+	<media-description>Описание</media-description>
+	<media-category>Категория</media-category>
+	<media-sort-order>Позиция</media-sort-order>
+	<saving-sort>Сохраняем порядок отображения объектов...</saving-sort>
+	<sort-saved>Порядок отображения объектов успешно сохранен</sort-saved>
+	<error-saving-sort>При сохранении порядка отображения объектов произошла ошибка</error-saving-sort>
+	<saving-media>Сохраняем информацию о файле...</saving-media>
+	<error-saving-media>При сохранении информации о файле произошла ошибка</error-saving-media>
+	<media-saved>Информация о файле успешно сохранена</media-saved>
+	<delete-media-confirm>Вы действительно хотите удалить файл '%Title%'?</delete-media-confirm>
+	<removing-media>Удаляем файл...</removing-media>
+	<media-removed>Файл успешно удален</media-removed>
+	<error-removing-media>При удалении файла произошла ошибка</error-removing-media>
+	<unknown-media-id>Файла с идентификатором %MediaID% не существует</unknown-media-id>
+	<media-title-empty>Пожалуйста, введите заголовок</media-title-empty>
+	<video-convert-error>Не удалось сконвертировать видео файл "%FileName%" с помощью ffmpeg+mencoder в формат FLV (flash video)</video-convert-error>
+	<unknown-media-format>Не удалось определить формат для файла с типом "%MimeType%"</unknown-media-format>
+	<media-save-failed>Не удалось загрузить ни один файл</media-save-failed>
+	<media-save-partial>Файлов сохранено: %Saved%. Не удалось сохранить %Failed% файл(-ов)</media-save-partial>
+	<media-save-complete>Файлов сохранено: %Saved%</media-save-complete>
+	<file-is-removed>Файл %FileList% был удален</file-is-removed>
+	<files-are-removed>%FileCount% файла(-ов) было удалено</files-are-removed>
+</Root>

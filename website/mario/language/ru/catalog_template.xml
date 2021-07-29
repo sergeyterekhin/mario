@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<public>
+	<catalog_main.html>
+	<buy>В корзину</buy>
+	<back>← назад</back>
+	<next>вперед →</next>
+	</catalog_main.html>
+		<catalog_item_list.html>
+	<buy>В корзину</buy>
+	<back>← назад</back>
+	<next>вперед →</next>
+	</catalog_item_list.html>
+			<catalog_item_page.html>
+	<buy>В корзину</buy>
+	</catalog_item_page.html>
+	</public>
+</Root>

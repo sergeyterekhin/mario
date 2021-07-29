@@ -1,0 +1,70 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<h2 class="title pull-left"><TMPL_VAR NAME='LNG_Title'></h2>
+		</header>
+		<div class="content-body">
+			<form action="variable.php" method="get" class="form-inline">
+				<select name="section" onchange="this.form.submit();" class="form-control">
+					<TMPL_LOOP NAME='SectionList'>
+						<optgroup label="<TMPL_VAR NAME='Name'>">
+							<TMPL_LOOP NAME='Sections'>
+								<option value="<TMPL_VAR NAME='Value'>"<TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='Name'></option>
+							</TMPL_LOOP>
+						</optgroup>
+					</TMPL_LOOP>
+				</select>
+			</form>
+			
+			<hr />
+			
+			<TMPL_IF NAME='VariableList'>
+				<table class="table table-hover" id="listing">
+					<thead>
+						<tr>
+							<th width="20%"><TMPL_VAR NAME='TagName'></th>
+							<th width="80%"><TMPL_VAR NAME='VariableValue'></th>
+						</tr>
+					</thead>
+					<TMPL_LOOP NAME='VariableList'>
+						<tr class="variable-edit clickable" Tag="<TMPL_VAR NAME='TagName'>" title="<TMPL_VAR NAME='LNG_Edit'>"
+							<TMPL_LOOP NAME='AttributeList'><TMPL_VAR NAME='AttributeList.Title'>="<TMPL_VAR NAME='AttributeList.Value'>"</TMPL_LOOP>
+						>
+							<td><TMPL_VAR NAME='TagName'></td>
+							<td><div class="variable-value" Tag="<TMPL_VAR NAME='TagName'>"><TMPL_VAR NAME='Value' ESCAPE='none'></div></td>
+						</tr>
+					</TMPL_LOOP>
+				</table>
+			<TMPL_ELSE>
+				<div class="alert alert-success"><TMPL_VAR NAME='LNG_Empty'></div>
+			</TMPL_IF>
+		</div>
+	</section>
+</div>
+
+<div id="variable-edit" class="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="variable-edit-form" onsubmit="SaveVariable();return false;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title"><TMPL_VAR NAME='LNG_EditVariable'></h4>
+			</div>
+			<div class="modal-body"></div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-icon variable-cancel"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></button>
+				<button type="submit" class="btn btn-success btn-icon"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		InitVariableEdit('<TMPL_VAR NAME='SelectedSection' ESCAPE='js'>');
+	});
+	
+</script>

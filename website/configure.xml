@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<Website WebsiteID="1" Folder="mario" Name="mario" WebDir="/mario/" ModuleList="form,infoblock,gallery,catalog" Logo="img/admin_logo.png">
+		<Language Folder="ru" Name="Russian" NativeName="Русский" Encoding="utf-8" DateFormat="j F Y" TimeFormat="H:i" Default="1">
+			<Domain HostName="localhost" LangDir="" />
+		</Language>
+	</Website>
+</Root>

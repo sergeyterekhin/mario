@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<public>
+		<_header.html>
+			<namepizza>Марио</namepizza>
+			<headerh1>Доставка вкусной еды</headerh1>
+			<worktime>Режим работы с 9:00 до 23:00</worktime>
+			<phonenumber>4232081111</phonenumber>
+			<sitehead>www.20811111.ru</sitehead>
+			<maphead>где мой заказ?</maphead>
+			<descriptionmap>Узнайте, где находится курьер с вашим заказом.</descriptionmap>
+			<social>МЫ в соцсетях:</social>
+			<basket>Корзина</basket>
+			<acceptbasket>Оформить заказ</acceptbasket>
+		</_header.html>
+		<page.html>
+<headernews>Новости</headernews>
+</page.html>
+<page-where.html>
+<header2>Где мой заказ</header2>
+<desc>Введите номер вашего заказа, чтобы узнайте, где находится курьер.</desc>
+<idzakaz>Номер заказа:</idzakaz>
+<search>Поиск</search>
+</page-where.html>
+		<_footer.html>
+			<leftdescription><![CDATA[© 2013 Доставка готовой еды «Марио»
+Замечания и предложения по сайту: info@mario.ru]]></leftdescription>
+			<rightdescription><![CDATA[125009 Россия, г. Владивосток, ул.Посьетская, 20
+Телефон:(423) 208-11-11]]></rightdescription>
+<midldescription>Наши проекты</midldescription>
+		</_footer.html>
+		<_404.html></_404.html>
+	</public>
+</Root>

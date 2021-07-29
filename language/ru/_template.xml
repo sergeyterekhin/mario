@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<common>
+		<Yes>Да</Yes>
+		<No>Нет</No>
+		<Create>Добавить</Create>
+		<Save>Сохранить</Save>
+		<Cancel>Отмена</Cancel>
+		<Help>Помощь</Help>
+		<Search>Поиск</Search>
+		<Copyright><![CDATA[&copy; 2010-2014 <a href="http://www.fokgroup.com/">FokGroup</a>.<br/> Все права защищены.]]></Copyright>
+		<Edit>Редактировать</Edit>
+		<Remove>Удалить</Remove>
+		<TabMain>Содержание</TabMain>
+		<TabSEO>SEO</TabSEO>
+		<TabAdditional>Дополнительно</TabAdditional>
+	</common>
+	<admin>
+		<_footer.html>
+			<YouAreLoggedInAs>Вы авторизованы как</YouAreLoggedInAs>
+			<Logout>Выйти</Logout>
+		</_footer.html>
+		<_header.html>
+			<MyProfile>Мой профиль</MyProfile>
+			<Logout>Выйти</Logout>
+		</_header.html>
+		<forgot_password.html>
+			<ForgotPassword>Восстановить пароль</ForgotPassword>
+			<EmailRequired>Введите адрес эл. почты</EmailRequired>
+			<Email>Эл. почта</Email>
+			<Close>Закрыть</Close>
+			<GetPassword>Получить пароль</GetPassword>
+		</forgot_password.html>
+		<forgot_password_email.html>
+			<YourNewPassword>Ваш новый пароль:</YourNewPassword>
+		</forgot_password_email.html>
+		<link_edit.html>
+			<AddLink>Добавить ссылку</AddLink>
+			<EditLink>Редактировать ссылку</EditLink>
+			<Title>Заголовок</Title>
+			<Active>Активна</Active>
+			<Parent>Родитель</Parent>
+			<LinkType>Тип ссылки</LinkType>
+			<URL>URL</URL>
+			<Email>Эл. почта</Email>
+			<InternalPage>Страница вашего сайта</InternalPage>
+			<Protocol>Протокол</Protocol>
+			<Other><![CDATA[<другое>]]></Other>
+			<EmailAddress>Адрес эл. почты</EmailAddress>
+			<EmailSubject>Заголовок сообщения</EmailSubject>
+			<EmailBody>Тело сообщения</EmailBody>
+			<ChooseInternalPage>Выберите страницу вашего сайта</ChooseInternalPage>
+			<Target>Цель</Target>
+			<NotSet><![CDATA[<не определено>]]></NotSet>
+			<TargetFrame><![CDATA[<фрейм>]]></TargetFrame>
+			<TargetPopup><![CDATA[<всплывающее окно>]]></TargetPopup>
+			<TargetBlank>Новое окно (_blank)</TargetBlank>
+			<TargetTop>Самое верхнее окно (_top)</TargetTop>
+			<TargetSelf>То же окно (_self)</TargetSelf>
+			<TargetParent>Родительское окно (_parent)</TargetParent>
+			<TargetFrameName>Имя целевого фрейма</TargetFrameName>
+			<PopupWindowName>Имя всплывающего окна</PopupWindowName>
+			<PopupWindowFeatures>Свойства всплывающего окна</PopupWindowFeatures>
+			<PopResize>Изменяющееся в размерах</PopResize>
+			<PopLocation>Панель локации</PopLocation>
+			<PopMenu>Панель меню</PopMenu>
+			<PopScroll>Полосы прокрутки</PopScroll>
+			<PopStatus>Строка состояния</PopStatus>
+			<PopToolbar>Панель инструментов</PopToolbar>
+			<PopFullScrn>Полный экран (IE)</PopFullScrn>
+			<PopDependent>Зависимый (Netscape)</PopDependent>
+			<PopWidth>Ширина</PopWidth>
+			<PopHeight>Высота</PopHeight>
+			<PopLeft>Позиция слева</PopLeft>
+			<PopTop>Позиция сверху</PopTop>
+			<Descriptions>Описания</Descriptions>
+			<SEO>SEO</SEO>
+			<Images>Картинки</Images>
+			<NoMenuImages>Отсутствуют</NoMenuImages>
+		</link_edit.html>
+		<login.html>
+			<AdministrationPanel>Панель администратора</AdministrationPanel>
+			<CMSName>FokCMS</CMSName>
+			<Login>Логин</Login>
+			<Password>Пароль</Password>
+			<Interface>Язык интерфейса</Interface>
+			<RememberMe>Запомнить меня</RememberMe>
+			<ForgotPassword>Забыли пароль?</ForgotPassword>
+			<ButtonLogin>Войти</ButtonLogin>		
+		</login.html>
+		<module_edit.html>
+			<AddModulePage>Добавить страницу модуля</AddModulePage>
+			<EditModulePage>Редактировать страницу модуля</EditModulePage>
+			<Title>Заголовок</Title>
+			<Active>Активна</Active>
+			<Template>Набор шаблонов вывода контента</Template>
+			<Parent>Родитель</Parent>
+			<StaticPath>URL страницы</StaticPath>
+			<ConfigData>Конфигурация</ConfigData>
+			<ConfigDetails>Пояснение к конфигурации</ConfigDetails>
+			<Descriptions>Описания</Descriptions>
+			<Images>Картинки</Images>
+			<NoMenuImages>Отсутствуют</NoMenuImages>
+		</module_edit.html>
+		<page_edit.html>
+			<AddPage>Добавить страницу</AddPage>
+			<EditPage>Редактировать страницу</EditPage>
+			<Title>Заголовок</Title>
+			<Active>Активна</Active>
+			<Template>Шаблон страницы</Template>
+			<Parent>Родитель</Parent>
+			<StaticPath>URL страницы</StaticPath>
+			<Descriptions>Описания</Descriptions>
+			<Images>Картинки</Images>
+			<NoMenuImages>Отсутствуют</NoMenuImages>
+		</page_edit.html>
+		<page_tree.html>
+			<PageTree>Структура сайта</PageTree>
+			<AddMenu>Добавить меню</AddMenu>
+			<Page>Страница</Page>
+			<Link>Ссылка</Link>
+			<Menu>Меню</Menu>
+			<Save>Сохранить</Save>
+			<Cancel>Отмена</Cancel>
+			<Seo>SEO-параметры</Seo>
+		</page_tree.html>
+		<user_edit.html>
+			<AddUser>Добавить пользователя</AddUser>
+			<EditUser>Редактировать пользователя</EditUser>
+			<UserImage>Картинка пользователя</UserImage>
+			<AllWebsites>Все вебсайты</AllWebsites>
+			<ChooseWebsite>Выберите вебсайт</ChooseWebsite>
+			<FieldsetPersonal>Персональная информация</FieldsetPersonal>
+			<Name>Имя</Name>
+			<Phone>Телефон</Phone>
+			<FieldsetAuthorization>Авторизация</FieldsetAuthorization>
+			<Email>Эл. почта/Логин</Email>
+			<OldPassword>Старый пароль</OldPassword>
+			<ChangePasswordExplanation>Чтобы установить новый пароль, нужно знать старый</ChangePasswordExplanation>
+			<NewPassword>Новый пароль</NewPassword>
+			<RepeatPassword>Повторите пароль</RepeatPassword>
+			<Role>Роль</Role>
+			<ChooseRole>Выберите из списка</ChooseRole>
+			<AvailableWebsite>Доступный веб-сайт</AvailableWebsite>
+			<InterfaceLanguage>Язык интерфейса</InterfaceLanguage>
+			<FieldsetInfo>Информация</FieldsetInfo>
+			<Created>Зарегистрирован</Created>
+			<LastLogin>Дата последнего входа</LastLogin>
+			<LastIP>IP адрес последнего входа</LastIP>
+			<Unknown>Нет данных</Unknown>
+		</user_edit.html>
+		<user_list.html>
+			<UserList>Пользователи</UserList>
+			<NoSelection>Вы не выбрали пользователей</NoSelection>
+			<ConfirmRemoveMultiple>Вы действительно хотите удалить выбранных пользователей?</ConfirmRemoveMultiple>
+			<ConfirmRemove>Вы действительно хотите удалить пользователя '%Name%'?</ConfirmRemove>
+			<Search>Поиск...</Search>
+			<Add>Добавить</Add>
+			<Name>Имя</Name>
+			<Email>Email</Email>
+			<Role>Роль</Role>
+			<Created>Зарегистрирован</Created>
+			<Edit>Кликните для редактирования</Edit>
+			<Empty>По вашему запросу ничего не найдено</Empty>
+			<RemoveMultiple>Удалить выбранных</RemoveMultiple>
+		</user_list.html>
+		<variable.html>
+			<Title>Переменные для шаблонов</Title>
+			<Empty>Список переменных пуст</Empty>
+			<EditVariable>Редактировать переменную</EditVariable>
+		</variable.html>
+		<robots.html>
+			<EditRobots>Редактировать robots.txt</EditRobots>
+		</robots.html>
+		<sitemap.html>
+			<EditSitemap>Редактировать карту сайта</EditSitemap>
+			<SitemapComment>Данное поле позволяет вручную определять содержимое /sitemap.xml.</SitemapComment>
+		</sitemap.html>
+		<developer.html>
+			<DeveloperPanelTitle>Панель разработчика</DeveloperPanelTitle>
+			
+			<SectionFiles>Работа с файлами</SectionFiles>
+			<DownloadErrorLog>Скачать error.log</DownloadErrorLog>
+			<DownloadFileByPath>Скачать файл по адресу:</DownloadFileByPath>
+			<Path>Путь</Path>
+			<SetFilePermissions>Установить права для файла/папки:</SetFilePermissions>
+			<FilePermissions>0777</FilePermissions>
+			<CheckExistence>Проверить существование файла/папки:</CheckExistence>
+			<ClearCache>Очистить кеш</ClearCache>
+			<FolderXML>/var/xml/</FolderXML>
+			<FolderCache>/var/cache/</FolderCache>
+			<FolderImage>/var/image/</FolderImage>
+			
+			<SectionSQL>SQL</SectionSQL>
+			<ExecuteQuery>Выполнить SQL-запрос методом:</ExecuteQuery>
+			<MethodExecute>Execute</MethodExecute>
+			<MethodFetchField>FetchField</MethodFetchField>
+			<MethodFetchList>FetchList</MethodFetchList>
+			<MethodFetchRow>FetchRow</MethodFetchRow>
+			<Query>Запрос</Query>
+			<Execute>Выполнить</Execute>
+			<AffectedRows>AffectedRows</AffectedRows>
+			<LastInsertID>LastInsertID</LastInsertID>
+			<NumRows>NumRows</NumRows>
+			<SQLResult>Результат</SQLResult>
+		</developer.html>
+	</admin>
+</Root>

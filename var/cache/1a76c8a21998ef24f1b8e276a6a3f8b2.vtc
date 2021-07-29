@@ -1,0 +1,34 @@
+<ul class="special">
+    <li><a href="#"><img src="<?php if ($this->_vars['PATH2MAIN'] !== null) { print(htmlspecialchars($this->_vars['PATH2MAIN'], ENT_QUOTES)); } ?>/i/special-1.jpg" alt="" width="328" height="275"></a></li>
+    <li><a href="#"><img src="<?php if ($this->_vars['PATH2MAIN'] !== null) { print(htmlspecialchars($this->_vars['PATH2MAIN'], ENT_QUOTES)); } ?>/i/special-2.jpg" alt="" width="328" height="275"></a></li>
+    <li><a href="#"><img src="<?php if ($this->_vars['PATH2MAIN'] !== null) { print(htmlspecialchars($this->_vars['PATH2MAIN'], ENT_QUOTES)); } ?>/i/special-3.jpg" alt="" width="328" height="275"></a></li>
+    
+</ul>
+<ul class="categories">
+<?php $row_count_0=count($this->_arrVars['CATALOG_menu_CategoryList']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+    <li>
+        <div class="decor-1">&nbsp;</div>
+        <a href="<?php if ($this->_arrVars['CATALOG_menu_CategoryList'][$_0]['CategoryURL'] !== null) { print(htmlspecialchars($this->_arrVars['CATALOG_menu_CategoryList'][$_0]['CategoryURL'], ENT_QUOTES)); } elseif ($this->_vars['CategoryURL'] !== null) { print(htmlspecialchars($this->_vars['CategoryURL'], ENT_QUOTES)); } ?>">
+            <img src="<?php if ($this->_arrVars['CATALOG_menu_CategoryList'][$_0]['CategoryImageMainPath'] !== null) { print(htmlspecialchars($this->_arrVars['CATALOG_menu_CategoryList'][$_0]['CategoryImageMainPath'], ENT_QUOTES)); } elseif ($this->_vars['CategoryImageMainPath'] !== null) { print(htmlspecialchars($this->_vars['CategoryImageMainPath'], ENT_QUOTES)); } ?>" alt="<?php if ($this->_arrVars['CATALOG_menu_CategoryList'][$_0]['Title'] !== null) { print(htmlspecialchars($this->_arrVars['CATALOG_menu_CategoryList'][$_0]['Title'], ENT_QUOTES)); } elseif ($this->_vars['Title'] !== null) { print(htmlspecialchars($this->_vars['Title'], ENT_QUOTES)); } ?>" width="243" height="247">
+            <div class="caption"><?php if ($this->_arrVars['CATALOG_menu_CategoryList'][$_0]['Title'] !== null) { print(htmlspecialchars($this->_arrVars['CATALOG_menu_CategoryList'][$_0]['Title'], ENT_QUOTES)); } elseif ($this->_vars['Title'] !== null) { print(htmlspecialchars($this->_vars['Title'], ENT_QUOTES)); } ?></div>
+        </a>
+    </li>
+<?php } ?>
+</ul>
+<div class="news">
+    <table class="title">
+        <tr>
+            <td>&nbsp;</td>
+            <th><?php if ($this->_vars['LNG_headernews'] !== null) { print(htmlspecialchars($this->_vars['LNG_headernews'], ENT_QUOTES)); } ?></th>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <?php $row_count_0=count($this->_arrVars['INFOBLOCK_news_ItemList']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+    <article>
+        <a href="#"><img src="<?php if ($this->_arrVars['INFOBLOCK_news_ItemList'][$_0]['ItemImageThumbPath'] !== null) { print(htmlspecialchars($this->_arrVars['INFOBLOCK_news_ItemList'][$_0]['ItemImageThumbPath'], ENT_QUOTES)); } elseif ($this->_vars['ItemImageThumbPath'] !== null) { print(htmlspecialchars($this->_vars['ItemImageThumbPath'], ENT_QUOTES)); } ?>" alt="" width="100" height="100"></a>
+        <time datetime="2013-08-07"><?php if ($this->_arrVars['INFOBLOCK_news_ItemList'][$_0]['ItemDate'] !== null) { print(htmlspecialchars($this->_FormatDate($this->_arrVars['INFOBLOCK_news_ItemList'][$_0]['ItemDate']), ENT_QUOTES)); } elseif ($this->_vars['ItemDate'] !== null) { print(htmlspecialchars($this->_FormatDate($this->_vars['ItemDate']), ENT_QUOTES)); } ?></time>
+        <a href="#"><?php if ($this->_arrVars['INFOBLOCK_news_ItemList'][$_0]['Description'] !== null) { print(nl2br(htmlspecialchars($this->_arrVars['INFOBLOCK_news_ItemList'][$_0]['Description'], ENT_QUOTES))); } elseif ($this->_vars['Description'] !== null) { print(nl2br(htmlspecialchars($this->_vars['Description'], ENT_QUOTES))); } ?></a>
+    </article>
+<?php } ?>
+</div>
+</div>

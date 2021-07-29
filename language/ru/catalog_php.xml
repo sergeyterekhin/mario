@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<module-title>Каталог</module-title>
+	<module-admin-title>Каталоги</module-admin-title>
+	<config-details><![CDATA[
+		<h3>Описание параметров</h3>
+		<p>TODO: описать параметры конфигурации</p>
+		<h3>Как использовать в _header.html/_footer.html</h3>
+		<p>TODO: описать варианты использования</p>
+	]]></config-details>
+	<xml-catalog_main.html>Главная</xml-catalog_main.html>
+	<xml-catalog_item_list.html>Список товаров</xml-catalog_item_list.html>
+	<xml-catalog_item_page.html>Страница товара</xml-catalog_item_page.html>
+	<loading-media>загружаем информацию о файле...</loading-media>
+	<error-loading-media>Сбой загрузки информации о файле</error-loading-media>
+	<saving-media>сохраняем информацию о файле...</saving-media>
+	<error-saving-media>При сохранении информации о файле произошла ошибка</error-saving-media>
+	<media-saved>Информация о файле успешно сохранена</media-saved>
+	<media-title>Название</media-title>
+	<media-description>Описание</media-description>
+	<media-sort-order>Позиция</media-sort-order>
+	<delete-media-confirm>Вы действительно хотите удалить файл '%Title%'?</delete-media-confirm>
+	<media-title-empty>Введите заголовок файла</media-title-empty>
+	<unknown-media-id>Файл с идентификатором %MediaID% не найден</unknown-media-id>
+	<removing-media>Удаляем файл...</removing-media>
+	<media-removed>Файл успешно удален</media-removed>
+	<error-removing-media>При удалении файла произошла ошибка</error-removing-media>
+	<media-sort-order-error>Ошибка обновления позиции файла</media-sort-order-error>
+	<saving-sort-item>Сохраняем порядок отображения объектов...</saving-sort-item>
+	<error-saving-sort-item>При сохранении порядка отображения объектов произошла ошибка</error-saving-sort-item>
+	<sort-item-saved>Порядок отображения объектов успешно сохранен</sort-item-saved>
+	<no-title>Без названия</no-title>
+	<no-description>Нет описания</no-description>
+	<meta-info>META информация</meta-info>
+	<icon-edit>Редактировать категорию</icon-edit>
+	<category-delete>Удалить категорию '%Title%'</category-delete>
+	<category-edit>Редактировать категорию '%Title%'</category-edit>
+	<set-items-sort-order-error>Произошла ошибка при попытке обновления позиции товара</set-items-sort-order-error>
+	<saving-sort-category>Сохраняем порядок отображения категорий...</saving-sort-category>
+	<error-saving-sort-category>При сохранении порядка отображения категорий произошла ошибка. Обновите страницу и попробуйте еще раз</error-saving-sort-category>
+	<sort-category-saved>Порядок отображения категорий успешно сохранен</sort-category-saved>
+	<delete-category-confirm>Вы действительно хотите удалить категорию %CategoryTitle%?</delete-category-confirm>
+	<delete-restricted>Нельзя удалять категорию, если она содержит товары</delete-restricted>
+	<has-subcategories>У этой категории есть подкатегории!</has-subcategories>
+	<removing-category>Удаляем категорию...</removing-category>
+	<error-removing-category>Ошибка при попытке удаления категории. Обновите страницу и попробуйте еще раз</error-removing-category>
+	<category-removed>Категория успешно удалена</category-removed>
+	<title-category-add>Добавить категорию</title-category-add>
+	<title-category-edit>Редактировать категорию</title-category-edit>
+	<category-title-empty>Введите название категории</category-title-empty>
+	<category-static-path-empty>Введите URL категории</category-static-path-empty>
+	<open-item-list>Перейти к списку товаров категории</open-item-list>
+	<item-activate>Отобразить товар</item-activate>
+	<item-deactivate>Спрятать товар</item-deactivate>
+	<activating-item>Отображаем товар...</activating-item>
+	<deactivating-item>Скрываем товар...</deactivating-item>
+	<item-activated>Товар успешно отображен</item-activated>
+	<item-deactivated>Товар успешно спрятан</item-deactivated>
+	<error-activating-item>При отображении товара произошла ошибка</error-activating-item>
+	<error-deactivating-item>При сокрытии товара произошла ошибка</error-deactivating-item>
+	<item-set-featured>Отметить товар как 'лучший'</item-set-featured>
+	<item-unset-featured>Убрать отметку 'лучший'</item-unset-featured>
+	<setting-featured-item>Отмечаем товар как 'лучший'...</setting-featured-item>
+	<unsetting-featured-item>Снимаем отметку 'лучший'...</unsetting-featured-item>
+	<item-is-set-featured>Товар успешно отмечен как 'лучший'</item-is-set-featured>
+	<item-is-unset-featured>Отметка 'лучший' успешно снята</item-is-unset-featured>
+	<error-setting-featured-item>При отметке товара как 'лучший' произошла ошибка</error-setting-featured-item>
+	<error-unsetting-featured-item>При снятии отметки 'лучший' произошла ошибка</error-unsetting-featured-item>
+	<title-item-add>Добавить товар</title-item-add>
+	<title-item-edit>Редактировать товар</title-item-edit>
+	<item-description>Описание</item-description>
+	<page-empty>Страница каталога не определена. Отсутствует параметр PageID!</page-empty>
+	<item-is-removed>Товар %ItemList% был удален</item-is-removed>
+	<items-are-removed>%ItemCount% товар(-ов) было удалено</items-are-removed>
+	<item-title-empty>Введите название товара</item-title-empty>
+	<category-empty>Выберите как минимум одну категорию, к которой будет относится товар</category-empty>
+	<item-static-path-empty>Введите URL товара</item-static-path-empty>
+	<file-is-removed>Файл %FileList% был удален</file-is-removed>
+	<files-are-removed>%FileCount% файла(-ов) было удалено</files-are-removed>
+	<item-id-undefined>Параметр ItemID не определен!</item-id-undefined>
+	<video-convert-error>Не удалось сконвертировать видео файл "%FileName%" с помощью ffmpeg+mencoder в формат FLV (flash video)</video-convert-error>
+	<unknown-media-format>Не удалось определить формат для файла с типом "%MimeType%"</unknown-media-format>
+	<media-save-failed>Не удалось загрузить ни один файл</media-save-failed>
+	<media-save-partial>Файлов сохранено: %Saved%. Не удалось сохранить %Failed% файл(-ов)</media-save-partial>
+	<media-save-complete>Файлов сохранено: %Saved%</media-save-complete>
+	<all-years>все время</all-years>
+	<year>год</year>
+</Root>

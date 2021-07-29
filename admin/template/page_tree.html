@@ -1,0 +1,57 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<h2 class="title pull-left"><TMPL_VAR NAME='LNG_PageTree'></h2>
+		</header>
+		<div class="content-body">
+			<div class="pull-left">
+				<a href="<TMPL_VAR NAME='ADMIN_PATH'>page_edit.php" class="page-add btn btn-primary btn-icon right15 bottom15"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_Page'></a>
+				<a href="<TMPL_VAR NAME='ADMIN_PATH'>link_edit.php" class="link-add btn btn-primary btn-icon right15 bottom15"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_Link'></a>
+			</div>
+			<div class="pull-right">
+				<TMPL_LOOP NAME='ModuleList'>
+					<a href="<TMPL_VAR NAME='ADMIN_PATH'>module_edit.php?Link=<TMPL_VAR NAME='Folder'>" Link="<TMPL_VAR NAME='Folder'>" class="module-add btn btn-primary btn-icon <TMPL_UNLESS NAME='__LAST__'>right15</TMPL_UNLESS> bottom15"><i class="fa fa-plus"></i><TMPL_VAR NAME='Title'></a>
+				</TMPL_LOOP>
+			</div>
+			<div class="clearfix"></div>
+			<hr />
+			<div id="tree">
+				<ul class="nav nav-tabs" id="tree-tabs"></ul>
+
+				<div class="tab-content" id="tree-containers"></div>
+			</div>
+		</div>
+	</section>
+</div>
+
+<div id="menu-edit" class="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="menu-edit-form" onsubmit="SaveMenu();return false;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title"><TMPL_VAR NAME='LNG_Menu'></h4>
+			</div>
+			<div class="alert alert-error" style="display:none;"></div>
+			<div class="modal-body"></div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-icon" data-dismiss="modal"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></button>
+					<button type="submit" class="btn btn-success btn-icon"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		var d = new Array();
+		<TMPL_LOOP NAME='PageList'>
+			d[d.length] = {'PageID': <TMPL_VAR NAME='PageID'>, 'ParentID': <TMPL_VAR NAME='ParentID'>, 'Title': '<TMPL_VAR NAME='Title' ESCAPE='js'>', 'ShortTitle': '<TMPL_VAR NAME='ShortTitle' ESCAPE='js'>', 'PageType': <TMPL_VAR NAME='Type'>, 'Active': '<TMPL_VAR NAME='Active' ESCAPE='js'>', 'Link': '<TMPL_VAR NAME='Link' ESCAPE='js'>', 'Level': <TMPL_VAR NAME='Level'>, 'Opened': <TMPL_VAR NAME='Opened'>, 'ColorA': '<TMPL_VAR NAME='ColorA' ESCAPE='js'>', 'ColorI': '<TMPL_VAR NAME='ColorI' ESCAPE='js'>', 'IconTitle': '<TMPL_VAR NAME='IconTitle' ESCAPE='js'>'};
+		</TMPL_LOOP>
+		DrawSiteMap(d, '<TMPL_VAR NAME='DATA_LANGCODE'>');
+	});
+	
+</script>

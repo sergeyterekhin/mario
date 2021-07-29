@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<module-title>Карта сайта</module-title>
+	<config-IncludeLinks>Включать ссылки в карту сайта</config-IncludeLinks>
+	<config-ViewAs>Вид карты сайта</config-ViewAs>
+	<config-details><![CDATA[
+		<h3>Описание параметров</h3>
+		<p>Включать ссылки в карту сайта: 1 = да, 0 = нет</p>
+		<p>Вид карты сайта: tree = в виде дерева, list = алфавитный список</p>
+	]]></config-details>
+</Root>

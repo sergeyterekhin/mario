@@ -1,0 +1,337 @@
+<div class="col-md-12">
+	<section class="box">
+		<div class="content-body">
+			<form action="<TMPL_VAR NAME='ADMIN_PATH'>module.php" method="get" id="goto-form">
+				<div class="col-md-6 no-padding form-group form-inline">
+					<a href="<TMPL_VAR NAME='MODULE_URL'>&<TMPL_VAR NAME='ParamsForURL'>&ItemID=" class="btn btn-success btn-icon right15"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_AddItem'></a>
+					<TMPL_IF NAME='CategoryList'>
+						<a href="#" onclick="$('#goto-form').submit();return false;" class="btn btn-icon"><i class="fa fa-arrow-right"></i><TMPL_VAR NAME='LNG_GoTo'></a>
+						<select name="ViewCategoryID" id="ViewCategoryID" onchange="this.form.submit();" class="form-control">
+							<option value=""><TMPL_VAR NAME='NoCategory'></option>
+							<TMPL_LOOP NAME='CategoryList'>
+								<option value="<TMPL_VAR NAME='CategoryID'>"<TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>>&nbsp;&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME='Title'></option>
+							</TMPL_LOOP>
+						</select>
+					<TMPL_ELSE>
+						<a href="<TMPL_VAR NAME='MODULE_URL'>&<TMPL_VAR NAME='ParamsForURL'>&CategoryID=" class="btn btn-success btn-icon"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_AddCategory'></a>					
+					</TMPL_IF>
+				</div>
+				<div class="col-md-6 no-padding form-group">
+					<ul class="pagination pagination pull-right">
+						<TMPL_VAR NAME='Paging' ESCAPE='none'>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+				<TMPL_VAR NAME='ParamsForForm2' ESCAPE='none'>
+				<input type="hidden" name="load" value="<TMPL_VAR NAME='MODULE_NAME'>" />
+			</form>
+			<form action="<TMPL_VAR NAME='MODULE_URL'>" method="post" id="item-list">
+				<TMPL_IF NAME='ErrorList'>
+					<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+				</TMPL_IF>
+				<TMPL_IF NAME='MessageList'>
+					<div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+				</TMPL_IF>
+				<TMPL_IF NAME='ItemList'>
+					<p><TMPL_VAR NAME='ListInfo'></p>
+					<table class="table" id="listing">
+						<thead>
+							<tr>
+								<th width="25"><input type="checkbox" class="icheck-minimal-green check-all" InputName="ListIDs[]" /></th>
+								<th width="25">&nbsp;</th>
+								<th><TMPL_VAR NAME='LNG_Title'></th>
+								<TMPL_IF NAME='CategoryList'>
+									<th><TMPL_VAR NAME='LNG_CategoryTitle'></th>
+								</TMPL_IF>
+								<th width="200"><TMPL_VAR NAME='LNG_Date'></th>
+								<th width="40">&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<TMPL_LOOP NAME='ItemList'>
+								<tr <TMPL_IF NAME='Active' VALUE='N'>class="inactive"</TMPL_IF> ItemID="<TMPL_VAR NAME='ItemID'>">
+									<td><input type="checkbox" class="icheck-minimal-green" name="ListIDs[]" value="<TMPL_VAR NAME='ItemID'>" /></td>
+									<td><i class="fa fa-power-off switch <TMPL_IF NAME='Active' VALUE='Y'>active<TMPL_ELSE>inactive</TMPL_IF>" ItemID="<TMPL_VAR NAME='ItemID'>"></i></td>
+									<td><a href="<TMPL_VAR NAME='MODULE_URL'>&<TMPL_VAR NAME='ParamsForURL'>&ItemID=<TMPL_VAR NAME='ItemID'>" title="<TMPL_VAR NAME='LNG_Edit'>"><TMPL_VAR NAME='Title'></a></td>
+									<TMPL_IF NAME='CategoryList'>
+										<td><a href="<TMPL_VAR NAME='MODULE_URL'>&PageID=<TMPL_VAR NAME='PageID'>&ViewCategoryID=<TMPL_VAR NAME='CategoryID'>"><TMPL_VAR NAME='CategoryTitle'></a></td>
+									</TMPL_IF>
+									<td><TMPL_VAR NAME='ItemDate' FORMAT='datetime'></td>
+									<td>
+										<a href="<TMPL_VAR NAME='MODULE_URL'>&<TMPL_VAR NAME='ParamsForURL'>&Do=Remove&ListIDs[]=<TMPL_VAR NAME='ItemID'>" title="<TMPL_VAR NAME='LNG_Remove'>" onclick="ConfirmRemove('<TMPL_VAR NAME='Title' ESCAPE='js'>', this); return false;"><i class="fa fa-close delete"></i></a>
+									</td>
+								</tr>
+							</TMPL_LOOP>
+						</tbody>
+					</table>
+				<TMPL_ELSE>
+					<div class="alert alert-success"><TMPL_VAR NAME='LNG_Empty'></div>
+				</TMPL_IF>
+			
+				<TMPL_IF NAME='ItemList'>
+					<div class="col-md-6 no-padding form-inline">
+						<a href="#" onclick="return MultipleRemove($('#item-list')[0], 'ListIDs[]');" class="btn btn-danger btn-icon right15"><i class="fa fa-remove"></i><TMPL_VAR NAME='LNG_RemoveMultiple'></a>
+						<TMPL_IF NAME='CategoryList'>
+							<a href="#" onclick="return MoveTo($('#item-list')[0], 'ListIDs[]');" class="btn btn-icon"><i class="fa fa-share"></i><TMPL_VAR NAME='LNG_MoveTo'></a>
+							<select name="ToCategoryID" id="ToCategoryID" class="form-control">
+								<option value=""><TMPL_VAR NAME='NoCategory'></option>
+								<TMPL_LOOP NAME='CategoryList'>
+									<option value="<TMPL_VAR NAME='CategoryID'>">&nbsp;&nbsp;&nbsp;&nbsp;<TMPL_VAR NAME='Title'></option>
+								</TMPL_LOOP>
+							</select>
+						</TMPL_IF>
+					</div>
+				</TMPL_IF>
+				<div class="clearfix"></div>
+				<input type="hidden" name="Do" value="" />
+				<TMPL_VAR NAME='ParamsForForm' ESCAPE='none'>
+			</form>			
+		</div>
+	</section>
+</div>
+
+<script type="text/javascript">
+function MultipleRemove(form, elmName)
+{
+	var checked = 0;
+	for (var i = 0; i < form.elements.length; i++)
+	{
+		if (form.elements[i].name == elmName && form.elements[i].type == "checkbox" && form.elements[i].checked)
+		{
+			checked++;
+		}
+	}
+
+	if (checked == 0)
+	{
+		alert('<TMPL_VAR NAME='LNG_NoSelection' ESCAPE='js'>');
+	}
+	else
+	{
+		ModalConfirm('<TMPL_VAR NAME='LNG_ConfirmRemoveMultiple' ESCAPE='js'>', function(){
+			form.elements['Do'].value = 'Remove';
+			form.submit();
+		});
+	}
+	return false;
+}
+function ConfirmRemove(title, a)
+{
+	var msg = '<TMPL_VAR NAME='LNG_ConfirmRemove' ESCAPE='js'>';
+	msg = msg.replace(/%Title%/g, title);
+	ModalConfirm(msg, function(){
+		window.location.href = $(a).attr('href');
+	})
+}
+function MoveTo(form, elmName)
+{
+	var checked = 0;
+	for (var i = 0; i < form.elements.length; i++)
+	{
+		if (form.elements[i].name == elmName && form.elements[i].type == "checkbox" && form.elements[i].checked)
+		{
+			checked++;
+		}
+	}
+
+	var msg = '<TMPL_VAR NAME='LNG_ConfirmMoveTo' ESCAPE='js'>';
+	msg = msg.replace(/%Title%/g, $.trim($('#ToCategoryID option:selected').text()));
+
+	if (checked == 0)
+	{
+		alert('<TMPL_VAR NAME='LNG_NoSelection' ESCAPE='js'>');
+	}
+	else
+	{
+		ModalConfirm(msg, function(){
+			form.elements['Do'].value = 'MoveTo';
+			form.submit();
+		});
+	}
+	return false;
+}
+
+$(document).ready(function(){
+
+	// Set titles for page/category switch buttons
+	$('.switch').each(function(){
+		if($(this).attr('ItemID')){
+			if ($(this).hasClass('active'))
+				$(this).attr('title', GetTranslation('item-deactivate'));
+			else
+				$(this).attr('title', GetTranslation('item-activate'));
+		}
+	});
+	$('.switch').click(function(e){
+		itemID = $(this).attr('ItemID');
+		if ($(this).hasClass('active')){
+			newTitle = GetTranslation('item-activate');
+			newClass = 'inactive';
+			active = 'N';
+			message = CreateMessage(GetTranslation('deactivating-item'), 'info');
+		}else{
+			newTitle = GetTranslation('item-deactivate');
+			newClass = 'active';
+			active = 'Y';
+			message = CreateMessage(GetTranslation('activating-item'), 'info');
+		}
+		$.ajax({
+			url: '<TMPL_VAR NAME='MODULE_PATH'>ajax.php',
+			method: 'POST',
+			dataType: 'JSON',
+			data:{
+				Action: 'SwitchItem',
+				Module: '<TMPL_VAR NAME='MODULE_NAME' ESCAPE='js'>',
+				ItemID: itemID,
+				Active: active
+			},
+			success:function(data){
+				if(typeof data.SessionExpired != 'undefined')
+	      		{
+	      			window.location.href = ADMIN_PATH+"index.php";
+	      			return;
+	      		}
+				$('.switch[ItemID='+itemID+']').removeClass('active').removeClass('inactive').addClass(newClass).attr('title', newTitle);
+				if(active == "Y")
+				{
+					$('.switch[ItemID='+itemID+']').closest('tr').removeClass('inactive');
+					UpdateMessage(message, GetTranslation('item-activated'), 'success');
+				}
+				else
+				{
+					$('.switch[ItemID='+itemID+']').closest('tr').addClass('inactive');
+					UpdateMessage(message, GetTranslation('item-deactivated'), 'success');
+				}
+			},
+			error:function(){
+				if(active == "Y")
+				{
+					UpdateMessage(message, GetTranslation('error-activating-item'), 'error');
+				}
+				else
+				{
+					UpdateMessage(message, GetTranslation('error-deactivating-item'), 'error');
+				}
+			}
+		});
+	});
+	<TMPL_IF NAME='ShowSortOrder'>
+		var fixHelper = function(e, ui) {
+			ui.children().each(function() {
+				$(this).width($(this).width());
+			});
+			return ui;
+		};	
+		$('#listing tbody').sortable({
+			helper: fixHelper,
+			start: function(e, ui) {
+		        $(this).attr('data-previndex', ui.item.index());
+		    },
+		    stop:function(event, ui){
+		    	if($(ui.item).attr('prevent-sortable')){
+		    		$(this).sortable('cancel');
+		    		$(ui.item).removeAttr('prevent-sortable')
+		    	}
+		    },
+			update: function(event, ui) {
+				if($(ui.item).attr('prevent-sortable')){
+					//
+				}else{
+					var newIndex = ui.item.index();
+			        var oldIndex = $(this).attr('data-previndex');
+			        var diff = newIndex - oldIndex; 
+			        $(this).removeAttr('data-previndex');
+			        message = CreateMessage(GetTranslation('saving-sort-item', 'info'));
+			        $.ajax({
+						url:"<TMPL_VAR NAME='MODULE_PATH'>ajax.php",
+						dataType:"JSON",
+						data:{
+							'Module': '<TMPL_VAR NAME='MODULE_NAME' ESCAPE='js'>',
+			    			'Action': 'SetItemSortOrder',
+			    			'CategoryID': '<TMPL_VAR NAME='CategoryID'>',
+			    			'ItemID': ui.item.attr('ItemID'),
+			    			'Diff': diff
+						},
+						success: function(data){
+							if(typeof data.SessionExpired != 'undefined')
+				      		{
+				      			window.location.href = ADMIN_PATH+"index.php";
+				      			return;
+				      		}
+							if(data)
+							{
+								UpdateMessage(message, GetTranslation('sort-item-saved'), 'success');
+							}
+							else
+							{
+								UpdateMessage(message, GetTranslation('error-saving-sort-item'), 'error');
+							}
+						},
+						error:function(){
+							UpdateMessage(message, GetTranslation('error-saving-sort-item'), 'error');
+						}
+					});
+				}
+			}
+		});	
+		$( ".pagination li a" ).droppable({
+			tolerance: 'pointer',
+			drop: function( event, ui ) {
+				pagingLink = $(this);
+				$(ui.draggable).attr('prevent-sortable', '1');
+				
+				currentPage = <TMPL_VAR NAME='CurrentPage'>;
+				targetPage = parseInt($(this).attr('href').match(/Page=([0-9]+)/)[1]);
+				currentIndex = 0;
+				
+				size = $('#listing tbody tr:not(.ui-sortable-placeholder)').size();
+				$('#listing tbody tr:not(.ui-sortable-placeholder)').each(function(index, element){
+					if($(this).attr('ItemID') == $(ui.draggable).attr('ItemID')){
+						currentIndex = index;
+					}
+				});
+				
+				if(currentPage == targetPage)
+				{
+					return;
+				}
+				else if(targetPage > currentPage)
+				{
+					diff = size - currentIndex + (<TMPL_VAR NAME='ItemsOnPage'> * (targetPage - currentPage - 1));	
+				}
+				else
+				{
+					diff = currentIndex + 1 + (<TMPL_VAR NAME='ItemsOnPage'> * (currentPage - targetPage - 1));
+					diff = diff * (-1);
+				}
+			
+				message = CreateMessage(GetTranslation('saving-sort-item', 'info'));
+				$.ajax({
+					url:"<TMPL_VAR NAME='MODULE_PATH'>ajax.php",
+					dataType:"JSON",
+					method: 'POST',
+					data:{
+						'Module': '<TMPL_VAR NAME='MODULE_NAME' ESCAPE='js'>',
+		    			'Action': 'SetItemSortOrder',
+		    			'CategoryID': '<TMPL_VAR NAME='CategoryID'>',
+		    			'ItemID': parseInt($(ui.draggable).attr('ItemID')),
+		    			'Diff': diff
+					},
+					success: function(data){
+						if(typeof data.SessionExpired != 'undefined')
+			      		{
+			      			window.location.href = ADMIN_PATH+"index.php";
+			      			return;
+			      		}
+						window.location.href = pagingLink.attr('href');
+					},
+					error:function(){
+						UpdateMessage(message, GetTranslation('error-saving-sort-item'), 'error');
+					}
+				});	
+			}
+	    });
+	</TMPL_IF>
+});
+</script>

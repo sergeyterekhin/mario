@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="pageTitle">
+        <tr>
+            <td>&nbsp;</td>
+            <th><h1>О доставке</h1></th>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <section class="content">
+<TMPL_VAR NAME="Content" ESCAPE='none'>
+    </section>
+    <aside class="sidebar">
+        <ul class="catalogue">
+            <TMPL_LOOP NAME="CATALOG_menu_CategoryList">
+                <li><a href="<TMPL_VAR NAME='CategoryURL'>"><TMPL_VAR NAME="Title"></a></li> 
+                    <!-- class="current" -->
+                </TMPL_LOOP>
+        </ul>
+    </aside>
+</div>
+</div>

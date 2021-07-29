@@ -1,0 +1,22 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<h2 class="title pull-left"><TMPL_VAR NAME='LNG_EditRobots'></h2>
+		</header>
+		<div class="content-body">
+			<TMPL_IF NAME='Message'>
+				<div class="alert alert-success"><TMPL_VAR NAME='Message'></div>
+			</TMPL_IF>
+			<TMPL_IF NAME='Error'>
+				<div class="alert alert-error"><TMPL_VAR NAME='Error'></div>
+			</TMPL_IF>
+			<form action="<TMPL_VAR NAME='ADMIN_PATH'>robots.php" method="POST">
+				<div class="form-group">
+					<textarea name="RobotsContent" rows="20" cols="80" class="form-control"><TMPL_VAR NAME='RobotsContent' ESCAPE='none'></textarea>
+				</div>
+				<button type="submit" class="btn btn-success btn-icon"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+				<input type="hidden" name="Save" value="1" />
+			</form>
+		</div>
+	</section>
+</div>

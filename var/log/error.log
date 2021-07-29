@@ -1,0 +1,640 @@
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.013540983200073
+PHP_SELF: /mario/index.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_NOTICE[8]: Undefined offset: 1 at /var/www/html/mario/include/language.php line 441
+
+Back trace:
+File: /var/www/html/mario/include/language.php Line: 272
+File: /var/www/html/mario/include/genlib.php Line: 56
+File: /var/www/html/mario/include/module.php Line: 24
+File: /var/www/html/mario/index.php Line: 17
+
+E_NOTICE[8]: Undefined offset: 1 at /var/www/html/mario/include/language.php line 441
+
+Back trace:
+File: /var/www/html/mario/include/language.php Line: 272
+File: /var/www/html/mario/include/genlib.php Line: 56
+File: /var/www/html/mario/include/module.php Line: 24
+File: /var/www/html/mario/index.php Line: 17
+
+E_NOTICE[8]: Undefined offset: 1 at /var/www/html/mario/include/language.php line 441
+
+Back trace:
+File: /var/www/html/mario/include/language.php Line: 272
+File: /var/www/html/mario/include/genlib.php Line: 56
+File: /var/www/html/mario/include/module.php Line: 24
+File: /var/www/html/mario/index.php Line: 17
+
+E_NOTICE[8]: Undefined offset: 1 at /var/www/html/mario/include/language.php line 441
+
+Back trace:
+File: /var/www/html/mario/include/language.php Line: 272
+File: /var/www/html/mario/include/genlib.php Line: 56
+File: /var/www/html/mario/include/module.php Line: 24
+File: /var/www/html/mario/index.php Line: 17
+
+E_NOTICE[8]: Undefined offset: 1 at /var/www/html/mario/include/language.php line 441
+
+Back trace:
+File: /var/www/html/mario/include/language.php Line: 272
+File: /var/www/html/mario/include/genlib.php Line: 56
+File: /var/www/html/mario/include/module.php Line: 24
+File: /var/www/html/mario/index.php Line: 17
+
+E_NOTICE[8]: Undefined offset: 1 at /var/www/html/mario/include/language.php line 441
+
+Back trace:
+File: /var/www/html/mario/include/language.php Line: 272
+File: /var/www/html/mario/include/genlib.php Line: 56
+File: /var/www/html/mario/include/module.php Line: 24
+File: /var/www/html/mario/index.php Line: 17
+
+E_NOTICE[8]: Undefined offset: 1 at /var/www/html/mario/include/language.php line 441
+
+Back trace:
+File: /var/www/html/mario/include/language.php Line: 272
+File: /var/www/html/mario/include/genlib.php Line: 56
+File: /var/www/html/mario/include/module.php Line: 24
+File: /var/www/html/mario/index.php Line: 17
+
+E_NOTICE[8]: Undefined offset: 1 at /var/www/html/mario/include/language.php line 441
+
+Back trace:
+File: /var/www/html/mario/include/language.php Line: 272
+File: /var/www/html/mario/include/genlib.php Line: 56
+File: /var/www/html/mario/include/page.php Line: 819
+File: /var/www/html/mario/index.php Line: 49
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/include/pagelist.php Line: 100
+File: /var/www/html/mario/module/catalog/public.php Line: 398
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_USER_WARNING[512]: (1055) Expression #19 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'fokcms.i2c.Item2CategoryID' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in query: SELECT i.ItemID, i.Title, i.SKU, i.Description, i.ItemImage, i.ItemImageConfig, i.FeaturedImage, i.FeaturedImageConfig, i.MetaTitle, i.MetaKeywords, i.MetaDescription, i.StaticPath, i.ItemDate, i.Created, i.Updated, i.Active, i.Price, CONCAT('/mario/menu', '/item/', i.StaticPath, '.html') AS ItemURL, i2c.Item2CategoryID, i2c.SortOrder, c.CategoryID, c.Title AS CategoryTitle, c.Description AS CategoryDescription FROM `catalog_item` AS i JOIN `catalog_item2category` AS i2c ON i2c.ItemID=i.ItemID JOIN `catalog_category` AS c ON c.CategoryID=i2c.CategoryID AND c.Path2Root='#' WHERE c.PageID=30 AND i.Active='Y' AND i.Featured='Y' AND i.FeaturedImage<>'' GROUP BY i.ItemID ORDER BY i2c.SortOrder ASC at /var/www/html/mario/include/object/objectlist.php line 83
+
+Back trace:
+File: /var/www/html/mario/include/error_handler/error_handler5.php Line: 171
+File: /var/www/html/mario/include/mysqli/statement.php Line: 161
+File: /var/www/html/mario/include/mysqli/statement.php Line: 52
+File: /var/www/html/mario/include/mysqli/statement.php Line: 76
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/module/catalog/include/item_list.php Line: 235
+File: /var/www/html/mario/module/catalog/public.php Line: 428
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: get_class() expects parameter 1 to be object, bool given at /var/www/html/mario/include/mysqli/statement.php line 77
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/module/catalog/include/item_list.php Line: 235
+File: /var/www/html/mario/module/catalog/public.php Line: 428
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/include/pagelist.php Line: 100
+File: /var/www/html/mario/module/infoblock/public.php Line: 467
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/module/infoblock/include/category_list.php Line: 46
+File: /var/www/html/mario/module/infoblock/public.php Line: 504
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/include/pagelist.php Line: 100
+File: /var/www/html/mario/module/form/public.php Line: 475
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/include/pagelist.php Line: 100
+File: /var/www/html/mario/module/gallery/public.php Line: 257
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+[8192]: Function get_magic_quotes_runtime() is deprecated at /var/www/html/mario/include/vlibtemplate/vlibtemplate.php line 1223
+
+Back trace:
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 1244
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 613
+File: /var/www/html/mario/include/localpage.php Line: 31
+File: /var/www/html/mario/index.php Line: 223
+
+[8192]: Function get_magic_quotes_runtime() is deprecated at /var/www/html/mario/include/vlibtemplate/vlibtemplate.php line 1223
+
+Back trace:
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 1244
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 613
+File: /var/www/html/mario/include/localpage.php Line: 32
+File: /var/www/html/mario/index.php Line: 223
+
+[8192]: Function get_magic_quotes_runtime() is deprecated at /var/www/html/mario/include/vlibtemplate/vlibtemplate.php line 1223
+
+Back trace:
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 1244
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 613
+File: /var/www/html/mario/include/localpage.php Line: 33
+File: /var/www/html/mario/index.php Line: 223
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.0012569427490234
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.0008699893951416
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.00085210800170898
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.00088405609130859
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.13263511657715
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.15188407897949
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.0032460689544678
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.003101110458374
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.167720079422
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.0064702033996582
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.00087881088256836
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.24375510215759
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.12687301635742
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.2667350769043
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:46:56 (+0000)
+EXECUTION TIME: 0.2715208530426
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:47:30 (+0000)
+EXECUTION TIME: 0.012476205825806
+PHP_SELF: /mario/index.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/index.php Line: 71
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/include/pagelist.php Line: 100
+File: /var/www/html/mario/module/catalog/public.php Line: 398
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_USER_WARNING[512]: (1055) Expression #19 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'fokcms.i2c.Item2CategoryID' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in query: SELECT i.ItemID, i.Title, i.SKU, i.Description, i.ItemImage, i.ItemImageConfig, i.FeaturedImage, i.FeaturedImageConfig, i.MetaTitle, i.MetaKeywords, i.MetaDescription, i.StaticPath, i.ItemDate, i.Created, i.Updated, i.Active, i.Price, CONCAT('/mario/menu', '/item/', i.StaticPath, '.html') AS ItemURL, i2c.Item2CategoryID, i2c.SortOrder, c.CategoryID, c.Title AS CategoryTitle, c.Description AS CategoryDescription FROM `catalog_item` AS i JOIN `catalog_item2category` AS i2c ON i2c.ItemID=i.ItemID JOIN `catalog_category` AS c ON c.CategoryID=i2c.CategoryID AND c.Path2Root='#' WHERE c.PageID=30 AND i.Active='Y' AND i.Featured='Y' AND i.FeaturedImage<>'' GROUP BY i.ItemID ORDER BY i2c.SortOrder ASC at /var/www/html/mario/include/object/objectlist.php line 83
+
+Back trace:
+File: /var/www/html/mario/include/error_handler/error_handler5.php Line: 171
+File: /var/www/html/mario/include/mysqli/statement.php Line: 161
+File: /var/www/html/mario/include/mysqli/statement.php Line: 52
+File: /var/www/html/mario/include/mysqli/statement.php Line: 76
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/module/catalog/include/item_list.php Line: 235
+File: /var/www/html/mario/module/catalog/public.php Line: 428
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: get_class() expects parameter 1 to be object, bool given at /var/www/html/mario/include/mysqli/statement.php line 77
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/module/catalog/include/item_list.php Line: 235
+File: /var/www/html/mario/module/catalog/public.php Line: 428
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/include/pagelist.php Line: 100
+File: /var/www/html/mario/module/infoblock/public.php Line: 467
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/module/infoblock/include/category_list.php Line: 46
+File: /var/www/html/mario/module/infoblock/public.php Line: 504
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/include/pagelist.php Line: 100
+File: /var/www/html/mario/module/form/public.php Line: 475
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/object/objectlist.php line 159
+
+Back trace:
+File: /var/www/html/mario/include/object/objectlist.php Line: 83
+File: /var/www/html/mario/include/localobjectlist.php Line: 21
+File: /var/www/html/mario/include/pagelist.php Line: 100
+File: /var/www/html/mario/module/gallery/public.php Line: 257
+File: /var/www/html/mario/include/module.php Line: 117
+File: /var/www/html/mario/index.php Line: 184
+
+E_USER_WARNING[512]: (3065) Expression #1 of ORDER BY clause is not in SELECT list, references column 'fokcms.i.ItemDate' which is not in SELECT list; this is incompatible with DISTINCT in query: SELECT DISTINCT YEAR(i.ItemDate) AS Value, YEAR(i.ItemDate) AS Title, IF(YEAR(i.ItemDate)=0, 1, 0) AS Selected FROM `catalog_item` AS i JOIN `catalog_item2category` AS i2c ON i2c.ItemID=i.ItemID WHERE i2c.CategoryID=7 ORDER BY i.ItemDate DESC at /var/www/html/mario/module/catalog/include/item_list.php line 310
+
+Back trace:
+File: /var/www/html/mario/include/error_handler/error_handler5.php Line: 171
+File: /var/www/html/mario/include/mysqli/statement.php Line: 161
+File: /var/www/html/mario/include/mysqli/statement.php Line: 52
+File: /var/www/html/mario/include/mysqli/statement.php Line: 76
+File: /var/www/html/mario/module/catalog/include/item_list.php Line: 310
+File: /var/www/html/mario/module/catalog/public.php Line: 140
+File: /var/www/html/mario/module/catalog/public.php Line: 27
+File: /var/www/html/mario/include/modulehandler.php Line: 38
+File: /var/www/html/mario/include/module.php Line: 81
+File: /var/www/html/mario/index.php Line: 208
+
+E_WARNING[2]: get_class() expects parameter 1 to be object, bool given at /var/www/html/mario/include/mysqli/statement.php line 77
+
+Back trace:
+File: /var/www/html/mario/module/catalog/include/item_list.php Line: 310
+File: /var/www/html/mario/module/catalog/public.php Line: 140
+File: /var/www/html/mario/module/catalog/public.php Line: 27
+File: /var/www/html/mario/include/modulehandler.php Line: 38
+File: /var/www/html/mario/include/module.php Line: 81
+File: /var/www/html/mario/index.php Line: 208
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/module/catalog/include/item_list.php line 312
+
+Back trace:
+File: /var/www/html/mario/module/catalog/public.php Line: 140
+File: /var/www/html/mario/module/catalog/public.php Line: 27
+File: /var/www/html/mario/include/modulehandler.php Line: 38
+File: /var/www/html/mario/include/module.php Line: 81
+File: /var/www/html/mario/index.php Line: 208
+
+E_NOTICE[8]: Trying to access array offset on value of type bool at /var/www/html/mario/module/catalog/include/item_list.php line 314
+
+Back trace:
+File: /var/www/html/mario/module/catalog/public.php Line: 140
+File: /var/www/html/mario/module/catalog/public.php Line: 27
+File: /var/www/html/mario/include/modulehandler.php Line: 38
+File: /var/www/html/mario/include/module.php Line: 81
+File: /var/www/html/mario/index.php Line: 208
+
+E_NOTICE[8]: Trying to access array offset on value of type null at /var/www/html/mario/module/catalog/include/item_list.php line 314
+
+Back trace:
+File: /var/www/html/mario/module/catalog/public.php Line: 140
+File: /var/www/html/mario/module/catalog/public.php Line: 27
+File: /var/www/html/mario/include/modulehandler.php Line: 38
+File: /var/www/html/mario/include/module.php Line: 81
+File: /var/www/html/mario/index.php Line: 208
+
+[8192]: Function get_magic_quotes_runtime() is deprecated at /var/www/html/mario/include/vlibtemplate/vlibtemplate.php line 1223
+
+Back trace:
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 1244
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 613
+File: /var/www/html/mario/include/localpage.php Line: 31
+File: /var/www/html/mario/module/catalog/public.php Line: 229
+File: /var/www/html/mario/module/catalog/public.php Line: 27
+File: /var/www/html/mario/include/modulehandler.php Line: 38
+File: /var/www/html/mario/include/module.php Line: 81
+File: /var/www/html/mario/index.php Line: 208
+
+[8192]: Function get_magic_quotes_runtime() is deprecated at /var/www/html/mario/include/vlibtemplate/vlibtemplate.php line 1223
+
+Back trace:
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 1244
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 613
+File: /var/www/html/mario/include/localpage.php Line: 32
+File: /var/www/html/mario/module/catalog/public.php Line: 229
+File: /var/www/html/mario/module/catalog/public.php Line: 27
+File: /var/www/html/mario/include/modulehandler.php Line: 38
+File: /var/www/html/mario/include/module.php Line: 81
+File: /var/www/html/mario/index.php Line: 208
+
+[8192]: Function get_magic_quotes_runtime() is deprecated at /var/www/html/mario/include/vlibtemplate/vlibtemplate.php line 1223
+
+Back trace:
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 1244
+File: /var/www/html/mario/include/vlibtemplate/vlibtemplate.php Line: 613
+File: /var/www/html/mario/include/localpage.php Line: 33
+File: /var/www/html/mario/module/catalog/public.php Line: 229
+File: /var/www/html/mario/module/catalog/public.php Line: 27
+File: /var/www/html/mario/include/modulehandler.php Line: 38
+File: /var/www/html/mario/include/module.php Line: 81
+File: /var/www/html/mario/index.php Line: 208
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:47:30 (+0000)
+EXECUTION TIME: 0.00084614753723145
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:47:30 (+0000)
+EXECUTION TIME: 0.00075817108154297
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:47:30 (+0000)
+EXECUTION TIME: 0.00074195861816406
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:47:30 (+0000)
+EXECUTION TIME: 0.00071001052856445
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:47:30 (+0000)
+EXECUTION TIME: 0.0028691291809082
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:47:30 (+0000)
+EXECUTION TIME: 0.0019688606262207
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+----------------------------------------------------------------------
+
+
+
+
+----------------------------------------------------------------------
+STARTED AT: 2021-07-29 07:47:30 (+0000)
+EXECUTION TIME: 0.10975193977356
+PHP_SELF: /mario/image.php
+
+[8192]: Function get_magic_quotes_gpc() is deprecated at /var/www/html/mario/include/init.php line 60
+
+E_WARNING[2]: count(): Parameter must be an array or an object that implements Countable at /var/www/html/mario/include/filesys.php line 390
+
+----------------------------------------------------------------------
+
+
+
+

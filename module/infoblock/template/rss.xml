@@ -1,0 +1,19 @@
+<rss version="2.0">
+	<channel>
+		<title><TMPL_VAR NAME='Title'></title>
+		<link><TMPL_VAR NAME='BaseURL'></link>
+		<description><TMPL_VAR NAME='Description'></description>
+		<language><TMPL_VAR NAME='Language'></language>
+		<pubDate><TMPL_VAR NAME='LastModified' FORMAT='rfc2822'></pubDate>
+		<generator><TMPL_VAR NAME='Generator'></generator>
+		<webMaster><TMPL_VAR NAME='Webmaster'></webMaster>
+<TMPL_LOOP NAME='ItemList'>
+		<item>
+			<title><TMPL_VAR NAME='Title'></title>
+			<link><TMPL_VAR NAME='ItemURL'></link>
+			<description><TMPL_VAR NAME='Description'></description>
+			<pubDate><TMPL_VAR NAME='ItemDate' FORMAT='rfc2822'></pubDate>
+		</item>
+</TMPL_LOOP>
+	</channel>
+</rss>

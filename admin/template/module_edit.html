@@ -1,0 +1,221 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<TMPL_IF NAME='PageID'>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_EditModulePage'></h2>
+			<TMPL_ELSE>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_AddModulePage'></h2>
+			</TMPL_IF>
+		</header>
+		<div class="content-body">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tab-1" data-toggle='tab'><TMPL_VAR NAME='LNG_TabMain'></a></li>
+				<TMPL_IF NAME='Show3Tabs'>
+					<li><a href="#tab-2" data-toggle='tab'><TMPL_VAR NAME='LNG_TabAdditional'></a></li>
+				</TMPL_IF>
+				<li><a href="#tab-3" data-toggle='tab'><TMPL_VAR NAME='LNG_TabSEO'></a></li>
+			</ul>
+
+			<form action="module_edit.php" method="post" name="module-form" id="module-form" enctype="multipart/form-data">
+				<div class="tab-content">
+					<TMPL_IF NAME='ErrorList'>
+						<div class="col-md-12">
+							<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+						</div>
+					</TMPL_IF>
+					<div id="tab-1" class="tab-pane active">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="Title" class="required"><TMPL_VAR NAME='LNG_Title'></label><br />
+								<input class="form-control" type="text" name="Title" id="Title" value="<TMPL_VAR NAME='Title'>" />
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="Active"><TMPL_VAR NAME='LNG_Active'></label><br />
+									<input type="checkbox" name="Active" id="Active" value="Y" class="iswitch iswitch-md iswitch-primary" <TMPL_IF NAME='Active' VALUE='Y'>checked<TMPL_ELSEIF NAME='PageID' VALUE='0'>checked</TMPL_IF> />
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<TMPL_IF NAME='TemplateSets'>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="Template" class="required"><TMPL_VAR NAME='LNG_Template'></label><br />
+										<select name="Template" id="Template" class="form-control">
+											<option value="">...</option>
+											<TMPL_LOOP NAME='TemplateSets'>
+												<option value="<TMPL_VAR NAME='SetName'>"<TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='SetTitle'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</div>
+							</TMPL_IF>
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-md-12">
+							<div class="form-group form-inline">
+								<label for="ParentID" class="required"><TMPL_VAR NAME='LNG_Parent'></label><br />
+								<select name="ParentID" id="ParentID" class="form-control">
+									<option value="0">...</option>
+									<TMPL_LOOP NAME='PageList'>
+										<option value="<TMPL_VAR NAME='PageID'>" <TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF> Level="<TMPL_VAR NAME='Level'>" StaticPath="<TMPL_VAR NAME='StaticPath'>"><TMPL_VAR NAME='Title' ESCAPE='none'></option>
+									</TMPL_LOOP>
+								</select>
+							</div>
+							<div class="form-group form-inline">
+								<label for="StaticPath" class="required"><TMPL_VAR NAME='LNG_StaticPath'></label><br />
+								<TMPL_VAR NAME='URL_PREFIX'><span id="ParentURL"><TMPL_VAR NAME='ParentURL'></span><input type="text" class="form-control" name="StaticPath" id="StaticPath" value="<TMPL_VAR NAME='StaticPath'>" /><TMPL_VAR NAME='URLClose'>
+							</div>
+							<div class="form-group">
+								<textarea class="" rows="20" name="Content" id="Content"><TMPL_VAR NAME='Content'></textarea>
+							</div>
+						</div>
+						<TMPL_IF NAME='Integrator'>
+							<div class="col-md-6">
+								<section class="box">
+									<header class="panel_header">
+										<h2 class="title pull-left"><TMPL_VAR NAME='LNG_ConfigData'></h2>
+									</header>
+									<div class="content-body">
+										<TMPL_LOOP NAME='Config'>
+											<div class="form-group">
+												<label for="<TMPL_VAR NAME='Key'>"><TMPL_VAR NAME='Title'></label><br />
+												<input class="form-control" type="text" name="Config[<TMPL_VAR NAME='Key'>]" id="<TMPL_VAR NAME='Key'>" value="<TMPL_VAR NAME='Value'>" />
+											</div>
+										</TMPL_LOOP>	
+									</div>
+								</section>
+							</div>
+							<div class="col-md-6">
+								<section class="box">
+									<header class="panel_header">
+										<h2 class="title pull-left"><TMPL_VAR NAME='LNG_ConfigDetails'></h2>
+									</header>
+									<div class="content-body">
+										<div><TMPL_VAR NAME='ConfigDetails' ESCAPE='none'></div>
+									</div>
+								</section>
+							</div>												
+						</TMPL_IF>
+					</div>
+					<TMPL_IF NAME='Show3Tabs'>
+						<div id="tab-2" class="tab-pane">
+							<TMPL_IF NAME='DescriptionList'>
+								<div class="col-md-6">
+									<section class="box">
+										<header class="panel_header">
+											<h2 class="title pull-left"><TMPL_VAR NAME='LNG_Descriptions'></h2>
+										</header>
+										<div class="content-body">
+											<TMPL_LOOP NAME='DescriptionList'>
+												<div class="form-group">
+													<label for="<TMPL_VAR NAME='DescriptionList.Name'>"><TMPL_VAR NAME='DescriptionList.Title'></label><br />
+													<textarea class="form-control" name="<TMPL_VAR NAME='DescriptionList.Name'>" id="<TMPL_VAR NAME='DescriptionList.Name'>" rows="8" cols="80"><TMPL_VAR NAME='DescriptionList.Value'></textarea>
+												</div>
+											</TMPL_LOOP>
+										</div>
+									</section>
+								</div>
+							</TMPL_IF>
+							<TMPL_IF NAME='MenuImages'>
+								<div class="col-md-6">
+									<section class="box">
+										<header class="panel_header">
+											<h2 class="title pull-left"><TMPL_VAR NAME='LNG_Images'> (<TMPL_VAR NAME='UploadMaxFileSize'>)</h2>
+										</header>
+										<div class="content-body">
+											<TMPL_LOOP NAME='MenuImages'>
+												<div class="form-group" id="<TMPL_VAR NAME='Name'>-box">
+													<label for="<TMPL_VAR NAME='Name'>"><TMPL_VAR NAME='Title'></label><br />
+												</div>
+												<script type="text/javascript">
+													$(document).ready(function(){
+														params = new Array();
+														<TMPL_LOOP NAME='MenuImageParamList'>
+															params.push({
+																"Name" : "<TMPL_VAR NAME='Name'>",
+																"Width" : "<TMPL_VAR NAME='Width'>",
+																"Height" : "<TMPL_VAR NAME='Height'>",
+																"Resize" : "<TMPL_VAR NAME='Resize'>",
+																"X1" : "<TMPL_VAR NAME='X1'>",
+																"X2" : "<TMPL_VAR NAME='X2'>",
+																"Y1" : "<TMPL_VAR NAME='Y1'>",
+																"Y2" : "<TMPL_VAR NAME='Y2'>"
+															});
+														</TMPL_LOOP>
+														CreateImageInput('<TMPL_VAR NAME='Name'>', '<TMPL_VAR NAME='Path'>', '<TMPL_VAR NAME='FullPath'>', '<TMPL_VAR NAME='Value'>', '<TMPL_VAR NAME='PageID'>', 'RemoveMenuImage', '<TMPL_VAR NAME='ADMIN_PATH'>ajax.php', '', params);
+													});
+												</script>
+											</TMPL_LOOP>
+										</div>
+									</section>
+								</div>
+							</TMPL_IF>
+						</div>
+					</TMPL_IF>
+					<div id="tab-3" class="tab-pane">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="TitleH1"><TMPL_VAR NAME='L_TitleH1'></label><br />
+								<input class="form-control" type="text" name="TitleH1" id="TitleH1" value="<TMPL_VAR NAME='TitleH1'>" />
+							</div>
+							<div class="form-group">
+								<label for="MetaTitle"><TMPL_VAR NAME='L_MetaTitle'></label><br />
+								<input class="form-control" type="text" name="MetaTitle" id="MetaTitle" value="<TMPL_VAR NAME='MetaTitle'>" />
+							</div>
+							<div class="form-group">
+								<label for="MetaKeywords"><TMPL_VAR NAME='L_MetaKeywords'></label><br />
+								<textarea class="form-control" name="MetaKeywords" id="MetaKeywords" rows="5" cols="80"><TMPL_VAR NAME='MetaKeywords'></textarea>
+							</div>
+							<div class="form-group">
+								<label for="MetaDescription"><TMPL_VAR NAME='L_MetaDescription'></label><br />
+								<textarea class="form-control" name="MetaDescription" id="MetaDescription" rows="5" cols="80"><TMPL_VAR NAME='MetaDescription'></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>						
+				<div class="top15">
+					<button type="submit" class="btn btn-success btn-icon right15"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+					<a class="btn btn-icon" href="<TMPL_VAR NAME='ADMIN_PATH'>page_tree.php"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></a>
+				</div>
+				<input type="hidden" name="PageID" id="PageID" value="<TMPL_VAR NAME='PageID'>" />
+				<input type="hidden" name="Link" value="<TMPL_VAR NAME='Link'>" />
+				<input type="hidden" name="Target" value="" />
+				<input type="hidden" name="Type" value="2" />
+				<TMPL_UNLESS NAME='TemplateSets'>
+					<input type="hidden" name="Template" value="<TMPL_VAR NAME='Template'>" />
+				</TMPL_UNLESS>
+				<input type="hidden" name="Save" value="Save" />
+				<input type="hidden" name="BackURL" value="<TMPL_VAR NAME='BackURL'>" />	
+			</form>
+		</div>
+	</section>
+</div>
+
+<script type="text/javascript">
+	var menuList = new Object();
+	<TMPL_LOOP NAME='MenuList'>
+		menuList[<TMPL_VAR NAME='PageID'>] = [<TMPL_LOOP NAME='ImageList'>{'key': '<TMPL_VAR NAME='Key'>', 'val': '<TMPL_VAR NAME='Value'>'}<TMPL_UNLESS NAME='__LAST__'>,</TMPL_UNLESS></TMPL_LOOP>];
+	</TMPL_LOOP>
+	menuImagesCount = <TMPL_VAR NAME='MenuImagesCount'>;
+	
+	$(document).ready(function(){
+		$('#ParentID').change(function(){
+			ToggleMenuImages();
+		});
+		ToggleMenuImages();
+		createCKEditor('Content');
+		$('#Title').focus();
+		
+		<TMPL_UNLESS NAME='PageID'>
+			$('.content-body').liTranslit({
+				elName: '#Title',
+				elAlias: '#StaticPath',
+				table: 'page'
+			});
+		</TMPL_UNLESS>
+	});
+	
+</script>

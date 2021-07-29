@@ -1,0 +1,185 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<TMPL_IF NAME='UserID'>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_EditUser'></h2>
+			<TMPL_ELSE>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_AddUser'></h2>
+			</TMPL_IF>
+		</header>
+		<div class="content-body">
+			<form action="<TMPL_VAR NAME='ADMIN_PATH'>user.php" method="post" class="nform" enctype="multipart/form-data">
+				<TMPL_IF NAME='ErrorList'>
+					<div class="col-md-12">
+						<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</div>
+				</TMPL_IF>
+				<TMPL_IF NAME='MessageList'>
+					<div class="col-md-12">
+						<div class="alert alert-success"><TMPL_LOOP NAME='MessageList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+					</div>
+				</TMPL_IF>
+				<div class="col-md-6">
+					<section class="box">
+						<header class="panel_header">
+							<h2 class="title pull-left"><TMPL_VAR NAME='LNG_FieldsetPersonal'></h2>
+						</header>
+						<div class="content-body">
+							<div class="form-group" id="UserImage-box">
+								<label for="UserImage"><TMPL_VAR NAME='LNG_UserImage'></label><br />
+							</div>
+							<script type="text/javascript">
+								$(document).ready(function(){
+									params = new Array();
+									<TMPL_LOOP NAME='UserImageParamList'>
+										params.push({
+											"Name" : "<TMPL_VAR NAME='SourceName'>",
+											"Width" : "<TMPL_VAR NAME='Width'>",
+											"Height" : "<TMPL_VAR NAME='Height'>",
+											"Resize" : "<TMPL_VAR NAME='Resize'>",
+											"X1" : "<TMPL_VAR NAME='X1'>",
+											"X2" : "<TMPL_VAR NAME='X2'>",
+											"Y1" : "<TMPL_VAR NAME='Y1'>",
+											"Y2" : "<TMPL_VAR NAME='Y2'>"
+										});
+									</TMPL_LOOP>
+									CreateImageInput('UserImage', '<TMPL_VAR NAME='UserImageAdminPath'>', '<TMPL_VAR NAME='UserImageFullPath'>', '<TMPL_VAR NAME='UserImage'>', '<TMPL_VAR NAME='UserID'>', 'RemoveUserImage', '<TMPL_VAR NAME='MODULE_PATH'>ajax.php', 0, params);
+								});	
+							</script>
+							<div class="form-group">
+								<label for="Name" class="required"><TMPL_VAR NAME='LNG_Name'></label><br />
+								<input class="form-control" type="text" name="Name" id="Name" value="<TMPL_VAR NAME='Name'>" autocomplete="off" />
+							</div>
+							<div class="form-group">
+								<label for="Phone"><TMPL_VAR NAME='LNG_Phone'></label><br />
+								<input class="form-control" type="text" name="Phone" id="Phone" value="<TMPL_VAR NAME='Phone'>" autocomplete="off" />
+							</div>
+						</div>
+					</section>
+					<section class="box">
+						<header class="panel_header">
+							<h2 class="title pull-left"><TMPL_VAR NAME='LNG_FieldsetInfo'></h2>
+						</header>
+						<div class="content-body">
+							<div class="form-group">
+								<label><TMPL_VAR NAME='LNG_Created'></label><br />
+								<TMPL_IF NAME='Created'><TMPL_VAR NAME='Created' FORMAT='datetime'><TMPL_ELSE><TMPL_VAR NAME='LNG_Unknown'></TMPL_IF>
+							</div>
+							<div class="form-group">
+								<label><TMPL_VAR NAME='LNG_LastLogin'></label><br />
+								<TMPL_IF NAME='LastLogin'><TMPL_VAR NAME='LastLogin' FORMAT='datetime'><TMPL_ELSE><TMPL_VAR NAME='LNG_Unknown'></TMPL_IF>
+							</div>
+							<div class="form-group">
+								<label><TMPL_VAR NAME='LNG_LastIP'></label><br />
+								<TMPL_IF NAME='LastIP'><TMPL_VAR NAME='LastIP'><TMPL_ELSE><TMPL_VAR NAME='LNG_Unknown'></TMPL_IF>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="col-md-6">
+					<section class="box">
+						<header class="panel_header">
+							<h2 class="title pull-left"><TMPL_VAR NAME='LNG_FieldsetAuthorization'></h2>
+						</header>
+						<div class="content-body">
+							<div class="form-group">
+								<label for="Email" class="required"><TMPL_VAR NAME='LNG_Email'></label><br />
+								<input class="form-control" type="text" name="Email" id="Email" value="<TMPL_VAR NAME='Email'>" autocomplete="off" />
+							</div>
+							<TMPL_IF NAME='MyProfile'>
+								<div class="form-group">
+									<label for="OldPassword"><TMPL_VAR NAME='LNG_OldPassword'></label> [<a href="#" onclick="return false;" title="<TMPL_VAR NAME='LNG_ChangePasswordExplanation'>">?</a>]<br />
+									<input class="form-control" type="password" name="OldPassword" id="OldPassword" autocomplete="off" />
+								</div>
+							</TMPL_IF>
+							<div class="form-group">
+								<label for="Password1"<TMPL_UNLESS NAME='UserID'> class="required"</TMPL_UNLESS>><TMPL_VAR NAME='LNG_NewPassword'></label><br />
+								<input class="form-control" type="password" name="Password1" id="Password1" autocomplete="off" />
+							</div>
+							<div class="form-group">
+								<label for="Password2"<TMPL_UNLESS NAME='UserID'> class="required"</TMPL_UNLESS>><TMPL_VAR NAME='LNG_RepeatPassword'></label><br />
+								<input class="form-control" type="password" name="Password2" id="Password2" autocomplete="off" />
+							</div>
+							<div class="form-group">
+								<label<TMPL_UNLESS NAME='MyProfile'> for="Role"</TMPL_UNLESS> class="required"><TMPL_VAR NAME='LNG_Role'></label><br />
+								<TMPL_IF NAME='MyProfile'>
+									<TMPL_VAR NAME='RoleTitle'>
+								<TMPL_ELSE>
+									<select name="Role" id="Role" class="form-control" onchange="SetWebsiteList(this.value);">
+										<option value=""><TMPL_VAR NAME='LNG_ChooseRole'></option>
+										<TMPL_LOOP NAME='RoleList'>
+											<option value="<TMPL_VAR NAME='RoleList.Value'>"<TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='RoleList.Title'></option>
+										</TMPL_LOOP>
+									</select>
+								</TMPL_IF>
+							</div>
+							<TMPL_IF NAME='AvailableWebsiteList'>
+								<div id="AvailableWebsiteList"<TMPL_IF NAME='HideWebsiteList'> style="display: none;"</TMPL_IF> class="form-group">
+									<label<TMPL_UNLESS NAME='MyProfile'> for="WebsiteID"</TMPL_UNLESS> class="required"><TMPL_VAR NAME='LNG_AvailableWebsite'></label><br />
+									<TMPL_IF NAME='MyProfile'>
+										<TMPL_VAR NAME='LNG_AllWebsites'>
+									<TMPL_ELSE>
+										<select name="WebsiteID" id="WebsiteID" class="form-control">
+											<option value=""><TMPL_IF NAME='AllWebsites'><TMPL_VAR NAME='LNG_AllWebsites'><TMPL_ELSE><TMPL_VAR NAME='LNG_ChooseWebsite'></TMPL_IF></option>
+											<TMPL_LOOP NAME='AvailableWebsiteList'>
+												<option value="<TMPL_VAR NAME='AvailableWebsiteList.WebsiteID'>"<TMPL_IF NAME='AvailableWebsiteList.Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='AvailableWebsiteList.Name'></option>
+											</TMPL_LOOP>
+										</select>
+									</TMPL_IF>
+								</div>
+							</TMPL_IF>
+							<TMPL_IF NAME='MyProfile'>
+								<TMPL_IF NAME='InterfaceLanguageList'>
+									<div class="form-group">
+										<label for="InterfaceLanguage" class="required"><TMPL_VAR NAME='LNG_InterfaceLanguage'></label><br />
+										<select name="InterfaceLanguage" id="InterfaceLanguage" class="form-control">
+											<TMPL_LOOP NAME='InterfaceLanguageList'>
+												<option value="<TMPL_VAR NAME='Folder'>"<TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF>><TMPL_VAR NAME='NativeName'></option>
+											</TMPL_LOOP>
+										</select>
+									</div>
+								</TMPL_IF>
+							</TMPL_IF>
+						</div>
+					</section>
+				</div>
+				
+				<div class="clearfix"></div>
+				
+				<div>
+					<button type="submit" class="btn btn-success btn-icon left15 right15"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+					<a class="btn btn-icon" href="<TMPL_VAR NAME='ADMIN_PATH'>user.php<TMPL_VAR NAME='ParamsForURL1' ESCAPE='none'>"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></a>
+				</div>
+				<TMPL_VAR NAME='ParamsForForm' ESCAPE='none'>
+				<input type="hidden" name="UserID" value="<TMPL_VAR NAME='UserID'>" />
+				<input type="hidden" name="Do" value="Save" />
+			</form>
+		</div>
+	</section>
+</div>
+
+<script type="text/javascript">
+	
+	function SetWebsiteList(role)
+	{
+		var roles = new Array();
+		<TMPL_VAR NAME='Roles' ESCAPE='none'>
+	
+		if ($.inArray(role, roles) != -1)
+			$("#AvailableWebsiteList").show();
+		else
+			$("#AvailableWebsiteList").hide();
+	
+		switch (role)
+		{
+			case "administrator":
+				$("#WebsiteID")[0].options[0].text = "<TMPL_VAR NAME='LNG_AllWebsites'>";
+				break;
+			case "moderator":
+			case "user":
+				$("#WebsiteID")[0].options[0].text = "<TMPL_VAR NAME='LNG_ChooseWebsite'>";
+				break;
+		}
+	}
+	
+</script>

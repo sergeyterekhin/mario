@@ -1,0 +1,38 @@
+<div class="container">
+    <table class="pageTitle">
+        <tr>
+            <td>&nbsp;</td>
+            <th><h1>Меню</h1></th>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    
+    <section class="product">
+        <div class="pic">
+            <div class="decor"></div>
+            <img src="<TMPL_VAR NAME='ItemImageMainPath'>" alt="<TMPL_VAR NAME='MetaTitle'>" width="413" height="416">
+        </div>
+        <div class="info">
+            <h2><TMPL_VAR NAME='MetaTitle'></h2>
+            <div class="price">
+                <a href="#" class="cartBtn"><TMPL_VAR NAME='LNG_buy'></a>
+                <TMPL_VAR NAME='Price'>
+            </div>
+            <p><TMPL_VAR NAME='Description'></p>
+            <div class="weight"><TMPL_VAR NAME='TitleH1'></div>
+<TMPL_VAR NAME='Content' ESCAPE='none'>
+        </div>
+    </section>
+    <aside class="sidebar">
+        <ul class="catalogue">
+            <TMPL_LOOP NAME="CatalogCategoryList">
+                <TMPL_IF NAME='Current' OP='==' VALUE='0'>                <li><a href="<TMPL_VAR NAME='CategoryURL'>"><TMPL_VAR NAME="Title"></a></li> 
+
+<TMPL_ELSE> <li  class="current"><a href="<TMPL_VAR NAME='CategoryURL'>"><TMPL_VAR NAME="Title"></a></li>     </TMPL_IF>
+                
+            <!-- class="current" -->
+            </TMPL_LOOP>
+        </ul>
+    </aside>
+</div>
+</div>

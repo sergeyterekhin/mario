@@ -1,0 +1,49 @@
+<div class="container">
+    <table class="pageTitle">
+        <tr>
+            <td>&nbsp;</td>
+            <th><h1><TMPL_VAR NAME='LNG_headerinfo'></h1></th>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <TMPL_LOOP NAME="ItemList">
+    <article class="newsArticle">
+        <div class="pic"><img src="<TMPL_VAR NAME='ItemImageMainPath'>" alt="" width="200" height="200"></div>
+            <a href="<TMPL_VAR NAME='ItemURL'>"><div class="caption"><TMPL_VAR NAME="Title"></div></a>
+        <time datetime="2013-08-07"><TMPL_VAR NAME="ItemDate"></time>
+        <p><TMPL_VAR NAME="Description" ESCAPE='none'></p>
+        <div class="hidden">
+            <TMPL_VAR NAME="Content" ESCAPE='none'>    
+        </div>
+        <a href="" class="moreLink"><span><TMPL_VAR NAME='LNG_More'></span></a>
+    </article>
+</TMPL_LOOP>
+<ul class="paging">
+ <TMPL_LOOP NAME='Paging'>
+    <TMPL_IF NAME='__FIRST__'>
+        <TMPL_IF NAME='Selected'>
+            <li class="prev"> <TMPL_VAR NAME='LNG_back'> </li>
+                <TMPL_ELSE>
+            <li class="prev"><a href='<TMPL_VAR NAME="URL">' > <TMPL_VAR NAME='LNG_back'> </a></li>
+        </TMPL_IF>
+    </TMPL_IF>
+    <TMPL_UNLESS NAME='__FIRST__'>
+        <TMPL_UNLESS NAME='__LAST__'>
+            <TMPL_IF NAME='Selected'>  <li class='current'><TMPL_VAR NAME="Page"> </a></li> 
+            <TMPL_ELSE>  <li><a href='<TMPL_VAR NAME="URL">'> <TMPL_VAR NAME="Page"> </a></li>
+            </TMPL_IF>
+           
+        </TMPL_UNLESS>
+    </TMPL_UNLESS>
+    <TMPL_IF NAME='__LAST__'>
+        <TMPL_IF NAME='Selected'>
+            <li class="prev"> <TMPL_VAR NAME='LNG_next'> </li>
+                <TMPL_ELSE>
+            <li class="prev"><a href='<TMPL_VAR NAME="URL">' > <TMPL_VAR NAME='LNG_next'> </a></li>
+        </TMPL_IF>
+    </TMPL_IF>
+ </TMPL_LOOP>
+ 
+</ul>
+</div>
+</div>

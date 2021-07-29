@@ -1,0 +1,34 @@
+<ul class="special">
+    <li><a href="#"><img src="<TMPL_VAR NAME='PATH2MAIN'>/i/special-1.jpg" alt="" width="328" height="275"></a></li>
+    <li><a href="#"><img src="<TMPL_VAR NAME='PATH2MAIN'>/i/special-2.jpg" alt="" width="328" height="275"></a></li>
+    <li><a href="#"><img src="<TMPL_VAR NAME='PATH2MAIN'>/i/special-3.jpg" alt="" width="328" height="275"></a></li>
+    
+</ul>
+<ul class="categories">
+<TMPL_LOOP NAME="CATALOG_menu_CategoryList">
+    <li>
+        <div class="decor-1">&nbsp;</div>
+        <a href="<TMPL_VAR NAME='CategoryURL'>">
+            <img src="<TMPL_VAR NAME='CategoryImageMainPath'>" alt="<TMPL_VAR NAME='Title'>" width="243" height="247">
+            <div class="caption"><TMPL_VAR NAME='Title'></div>
+        </a>
+    </li>
+</TMPL_LOOP>
+</ul>
+<div class="news">
+    <table class="title">
+        <tr>
+            <td>&nbsp;</td>
+            <th><TMPL_VAR NAME="LNG_headernews"></th>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <TMPL_LOOP NAME='INFOBLOCK_news_ItemList'>
+    <article>
+        <a href="#"><img src="<TMPL_VAR NAME='ItemImageThumbPath'>" alt="" width="100" height="100"></a>
+        <time datetime="2013-08-07"><TMPL_VAR NAME='ItemDate' FORMAT='date'></time>
+        <a href="#"><TMPL_VAR NAME='Description' ESCAPE='nl2br'></a>
+    </article>
+</TMPL_LOOP>
+</div>
+</div>

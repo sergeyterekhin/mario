@@ -1,0 +1,61 @@
+<div class="container">
+    <table class="pageTitle">
+        <tr>
+            <td>&nbsp;</td>
+            <th><h1><TMPL_VAR NAME='PageTitleH1'></h1></th>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <div class="productsContent">
+        <ul class="products">
+            <TMPL_LOOP NAME="ItemList">
+            <li>
+                <div class="pic"><a href="<TMPL_VAR NAME='ItemURL'>"><img src="<TMPL_VAR NAME='ItemImageMainPath'>" alt="" width="211" height="215"></a></div>
+                <div class="caption"><a href="<TMPL_VAR NAME='ItemURL'>"></a><TMPL_VAR NAME="MetaTitle"></a></div>
+                <div class="productContent"><TMPL_VAR NAME="Description"></div>
+                <div class="price"><TMPL_VAR NAME="Price"></div>
+                <a href="#" class="cartBtn">В корзину</a>
+            </li>
+        </TMPL_LOOP>
+        </ul>
+        </div>
+    <aside class="sidebar">
+        <ul class="catalogue">
+            <TMPL_LOOP NAME="CatalogCategoryList">
+                <TMPL_IF NAME='Current' OP='==' VALUE='0'>                <li><a href="<TMPL_VAR NAME='CategoryURL'>"><TMPL_VAR NAME="Title"></a></li> 
+
+<TMPL_ELSE> <li  class="current"><a href="<TMPL_VAR NAME='CategoryURL'>"><TMPL_VAR NAME="Title"></a></li>     </TMPL_IF>
+                
+            <!-- class="current" -->
+            </TMPL_LOOP>
+        </ul>
+    </aside>
+</div>
+<ul class="paging">
+    <TMPL_LOOP NAME='Paging'>
+       <TMPL_IF NAME='__FIRST__'>
+           <TMPL_IF NAME='Selected'>
+               <li class="prev"> <TMPL_VAR NAME='LNG_back'> </li>
+                   <TMPL_ELSE>
+               <li class="prev"><a href='<TMPL_VAR NAME="URL">' > <TMPL_VAR NAME='LNG_back'> </a></li>
+           </TMPL_IF>
+       </TMPL_IF>
+       <TMPL_UNLESS NAME='__FIRST__'>
+           <TMPL_UNLESS NAME='__LAST__'>
+               <TMPL_IF NAME='Selected'>  <li class='current'><TMPL_VAR NAME="Page"> </a></li> 
+               <TMPL_ELSE>  <li><a href='<TMPL_VAR NAME="URL">'> <TMPL_VAR NAME="Page"> </a></li>
+               </TMPL_IF>
+              
+           </TMPL_UNLESS>
+       </TMPL_UNLESS>
+       <TMPL_IF NAME='__LAST__'>
+           <TMPL_IF NAME='Selected'>
+               <li class="prev"> <TMPL_VAR NAME='LNG_next'> </li>
+                   <TMPL_ELSE>
+               <li class="prev"><a href='<TMPL_VAR NAME="URL">' > <TMPL_VAR NAME='LNG_next'> </a></li>
+           </TMPL_IF>
+       </TMPL_IF>
+    </TMPL_LOOP>
+    
+   </ul>
+</div>

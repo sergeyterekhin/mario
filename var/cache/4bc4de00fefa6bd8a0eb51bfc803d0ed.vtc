@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="ru" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="ru" class="no-js"><!--<![endif]-->
+	<head>
+		<title><?php if ($this->_vars['LNG_namepizza'] !== null) { print(htmlspecialchars($this->_vars['LNG_namepizza'], ENT_QUOTES)); } ?></title>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+		<link href="<?php if ($this->_vars['PATH2MAIN'] !== null) { print(htmlspecialchars($this->_vars['PATH2MAIN'], ENT_QUOTES)); } ?>css/fonts.css" rel="stylesheet">
+			<link href="<?php if ($this->_vars['PATH2MAIN'] !== null) { print(htmlspecialchars($this->_vars['PATH2MAIN'], ENT_QUOTES)); } ?>css/main.css" rel="stylesheet">
+		<script src="<?php if ($this->_vars['PATH2MAIN'] !== null) { print(htmlspecialchars($this->_vars['PATH2MAIN'], ENT_QUOTES)); } ?>/js/jquery-1.8.3.min.js"></script>
+		<script src="<?php if ($this->_vars['PATH2MAIN'] !== null) { print(htmlspecialchars($this->_vars['PATH2MAIN'], ENT_QUOTES)); } ?>/js/modernizr-2.6.2.min.js"></script>
+		<script src="<?php if ($this->_vars['PATH2MAIN'] !== null) { print(htmlspecialchars($this->_vars['PATH2MAIN'], ENT_QUOTES)); } ?>/js/main.js"></script>
+		<!--[if lt IE 9]><script scr="js/html5.js"></script><![endif]-->
+
+		
+	</head>
+	<body>
+		<div class="leftBg"></div>
+		<div class="wrapper">
+			<header class="header">
+				<div class="logo"><?php if ($this->_vars['LNG_namepizza'] !== null) { print(htmlspecialchars($this->_vars['LNG_namepizza'], ENT_QUOTES)); } ?></div>
+				<div class="contacts">
+					<div class="caption"><?php if ($this->_vars['LNG_headerh1'] !== null) { print(htmlspecialchars($this->_vars['LNG_headerh1'], ENT_QUOTES)); } ?></div>
+					<div class="workhours"><?php if ($this->_vars['LNG_worktime'] !== null) { print(htmlspecialchars($this->_vars['LNG_worktime'], ENT_QUOTES)); } ?></div>
+					<div class="tel"><?php if ($this->_vars['LNG_phonenumber'] !== null) { print(htmlspecialchars($this->_vars['LNG_phonenumber'], ENT_QUOTES)); } ?></div>
+					<div class="url"><?php if ($this->_vars['LNG_sitehead'] !== null) { print(htmlspecialchars($this->_vars['LNG_sitehead'], ENT_QUOTES)); } ?></div>
+				</div>
+				<?php $row_count_0=count($this->_arrVars['MENU_other']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+				<a href="<?php if ($this->_arrVars['MENU_other'][$_0]['PageURL'] !== null) { print(htmlspecialchars($this->_arrVars['MENU_other'][$_0]['PageURL'], ENT_QUOTES)); } elseif ($this->_vars['PageURL'] !== null) { print(htmlspecialchars($this->_vars['PageURL'], ENT_QUOTES)); } ?>" class="whereIs">
+					<div class="caption"><?php if ($this->_arrVars['MENU_other'][$_0]['LNG_maphead'] !== null) { print(htmlspecialchars($this->_arrVars['MENU_other'][$_0]['LNG_maphead'], ENT_QUOTES)); } elseif ($this->_vars['LNG_maphead'] !== null) { print(htmlspecialchars($this->_vars['LNG_maphead'], ENT_QUOTES)); } ?></div>
+					<?php } ?>
+						<?php if ($this->_vars['LNG_descriptionmap'] !== null) { print(htmlspecialchars($this->_vars['LNG_descriptionmap'], ENT_QUOTES)); } ?>
+				</a>
+				<div class="social">
+					<div class="caption"><?php if ($this->_vars['LNG_social'] !== null) { print(htmlspecialchars($this->_vars['LNG_social'], ENT_QUOTES)); } ?></div>
+					<?php $row_count_0=count($this->_arrVars['MENU_social']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?><a href="<?php if ($this->_arrVars['MENU_social'][$_0]['PageURL'] !== null) { print(htmlspecialchars($this->_arrVars['MENU_social'][$_0]['PageURL'], ENT_QUOTES)); } elseif ($this->_vars['PageURL'] !== null) { print(htmlspecialchars($this->_vars['PageURL'], ENT_QUOTES)); } ?>"><img src="<?php if ($this->_arrVars['MENU_social'][$_0]['MenuImage1Path'] !== null) { print(htmlspecialchars($this->_arrVars['MENU_social'][$_0]['MenuImage1Path'], ENT_QUOTES)); } elseif ($this->_vars['MenuImage1Path'] !== null) { print(htmlspecialchars($this->_vars['MenuImage1Path'], ENT_QUOTES)); } ?>" alt="" width="25" height="25"></a><?php } ?>
+				</div>
+				<ul class="topNav">
+<?php $row_count_0=count($this->_arrVars['MENU_top']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+<li><a href="<?php if ($this->_arrVars['MENU_top'][$_0]['PageURL'] !== null) { print(htmlspecialchars($this->_arrVars['MENU_top'][$_0]['PageURL'], ENT_QUOTES)); } elseif ($this->_vars['PageURL'] !== null) { print(htmlspecialchars($this->_vars['PageURL'], ENT_QUOTES)); } ?>"> <?php if ($this->_arrVars['MENU_top'][$_0]['Title'] !== null) { print(htmlspecialchars($this->_arrVars['MENU_top'][$_0]['Title'], ENT_QUOTES)); } elseif ($this->_vars['Title'] !== null) { print(htmlspecialchars($this->_vars['Title'], ENT_QUOTES)); } ?></a></li>
+<?php } ?>
+				</ul>
+				<div class="cart">
+					<div class="caption"><?php if ($this->_vars['LNG_basket'] !== null) { print(htmlspecialchars($this->_vars['LNG_basket'], ENT_QUOTES)); } ?></div>
+					<p>99 блюд <span class="separator">|</span> 999 руб.</p>
+					<p><a href="#" class="btn"><?php if ($this->_vars['LNG_acceptbasket'] !== null) { print(htmlspecialchars($this->_vars['LNG_acceptbasket'], ENT_QUOTES)); } ?></a></p>
+				</div>
+			</header>

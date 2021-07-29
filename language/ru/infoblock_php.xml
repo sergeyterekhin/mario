@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<module-title>Инфоблок</module-title>
+	<module-admin-title>Инфоблоки</module-admin-title>
+	<config-AdminMenuIcon>Класс иконки в меню панели администратора</config-AdminMenuIcon>
+	<config-CategoryImage>Картинка категории</config-CategoryImage>
+	<config-CategoryImageKeepFileName>Сохранять имя файла картинки категории</config-CategoryImageKeepFileName>
+	<config-ItemsPerPage>Количество объектов на странице</config-ItemsPerPage>
+	<config-ItemsOrderBy>По какому полю сортировать объекты в списке</config-ItemsOrderBy>
+	<config-ItemImage>Картинка объекта</config-ItemImage>
+	<config-ItemImageKeepFileName>Сохранять имя файла картинки объекта</config-ItemImageKeepFileName>
+	<config-AnnouncementOrderBy>По какому полю сортировать объекты в анонсе</config-AnnouncementOrderBy>
+	<config-AnnouncementCount>Количество объектов в анонсе</config-AnnouncementCount>
+	<config-Generator>RSS Feed Generator</config-Generator>
+	<config-Webmaster>RSS Feed Webmaster</config-Webmaster>
+	<config-FieldList>Дополнительные поля</config-FieldList>
+	<config-details><![CDATA[
+		<h3>Описание параметров</h3>
+		<p>"Картинка категории" - конфигурация картинки категории</p>
+		<p>"Сохранять имя файла картинки категории" - 1 - сохранять оригинальное имя, 0 - генерация уникального имени</p>
+		<p>Если указать 0 для "Количество объектов на странице", то постраничного перехода не будет</p>
+		<p>
+			Следующие поля можно указывать для сортировки:
+			<ul>
+				<li>ItemDateAsc - по дате объекта в прямом пордядке</li>
+				<li>ItemDateDesc - по дате объекта в обратном пордядке</li>
+				<li>TitleAsc - по заголовку объекта в прямом порядке</li>
+				<li>TitleDesc - по заголовку объекта в обратном порядке</li>
+				<li>Position - Позицию объектов можно задавать в списке</li>
+				<li>Random - Случайным образом</li>
+			</ul>
+		</p>
+		<p>"Картинка объекта" - конфигурация картинки объекта</p>
+		<p>"Сохранять имя файла картинки объекта" - 1 - сохранять оригинальное имя, 0 - генерация уникального имени</p>
+		<p>Если указать 0 для "Количество объектов в анонсе", то анонсы не будут добавлены в _header.html/_footer.html</p>
+		<p>RSS Feed Generator - Название генератора RSS Feed</p>
+		<p>RSS Feed Webmaster - E-mail адрес вебмастера RSS Feed</p>
+		<p>Дополнительные поля - список дополнительных полей объекта, перечисленных через запятую. Например, "Email,Phone,Address".</p>
+		<h3>Как использовать в _header.html/_footer.html</h3>
+		<p>INFOBLOCK_&lt;StaticPath&gt;_URL - URL на страницу инфоблока</p>
+		<p>INFOBLOCK_&lt;StaticPath&gt;_RSSFeedURL - URL на RSS Feed инфоблока</p>
+		<p>INFOBLOCK_&lt;StaticPath&gt;_ItemList - Список анонсов инфоблока, если нет категорий</p>
+		<p>INFOBLOCK_&lt;StaticPath&gt;_ItemCount - Общее количество элементов, если нет категорий</p>
+		<p>INFOBLOCK_&lt;StaticPath&gt;_CategoryList - Список категорий инфоблока, внутри этого цикла есть ItemList - анонсы этой категории, и ItemCount - количество элементов в категории</p>
+		<p>INFOBLOCK_&lt;StaticPath&gt;_&lt;CategoryStaticPath&gt;_ItemList - Список анонсов выбранной категории инфоблока</p>
+		<p>INFOBLOCK_&lt;StaticPath&gt;_&lt;CategoryStaticPath&gt;_ItemCount - Количество элементов в категории</p>
+	]]></config-details>
+	<xml-infoblock_category_list.html>Список категорий</xml-infoblock_category_list.html>
+	<xml-infoblock_item_list.html>Список объектов</xml-infoblock_item_list.html>
+	<xml-infoblock_item_view.html>Страница объекта</xml-infoblock_item_view.html>
+	<category-activate>Отобразить категорию</category-activate>
+	<category-deactivate>Спрятать категорию</category-deactivate>
+	<activating-category>Отображаем категорию...</activating-category>
+	<deactivating-category>Скрываем категорию...</deactivating-category>
+	<category-activated>Категория успешно отображена</category-activated>
+	<category-deactivated>Категория успешно спрятана</category-deactivated>
+	<error-activating-category>При отображении категории произошла ошибка</error-activating-category>
+	<error-deactivating-category>При сокрытии категории произошла ошибка</error-deactivating-category>
+	<saving-sort-category>Сохраняем порядок отображения категорий...</saving-sort-category>
+	<error-saving-sort-category>При сохранении порядка отображения категорий произошла ошибка</error-saving-sort-category>
+	<sort-category-saved>Порядок отображения категорий успешно сохранен</sort-category-saved>
+	<activating-item>Отображаем объект...</activating-item>
+	<deactivating-item>Скрываем объект...</deactivating-item>
+	<item-activated>Объект успешно отображен</item-activated>
+	<item-deactivated>Объект успешно спрятан</item-deactivated>
+	<error-activating-item>При отображении объекта произошла ошибка</error-activating-item>
+	<error-deactivating-item>При сокрытии объекта произошла ошибка</error-deactivating-item>
+	<saving-sort-item>Сохраняем порядок отображения объектов...</saving-sort-item>
+	<error-saving-sort-item>При сохранении порядка отображения объектов произошла ошибка</error-saving-sort-item>
+	<sort-item-saved>Порядок отображения объектов успешно сохранен</sort-item-saved>
+	<category-is-removed>Категория %CategoryList% удалена</category-is-removed>
+	<categories-are-removed>Категории %CategoryList% удалены</categories-are-removed>
+	<title-category-add>Добавить категорию</title-category-add>
+	<title-category-edit>Редактировать категорию</title-category-edit>
+	<category-title-empty>Пожалуйста, заполните заголовок</category-title-empty>
+	<category-static-path-empty>Пожалуйста, введите URL категории</category-static-path-empty>
+	<item-activate>Отобразить объект</item-activate>
+	<item-deactivate>Спрятать объект</item-deactivate>
+	<items-are-removed>%ItemCount% объект(-ов) удалено</items-are-removed>
+	<item-is-removed>Объект "%Title%" удален</item-is-removed>
+	<items-are-moved>%ItemCount% объект(-ов) перемещены в "%Category%"</items-are-moved>
+	<item-is-moved>Объект "%Title%" перемещен в "%Category%"</item-is-moved>
+	<title-item-add>Добавить</title-item-add>
+	<title-item-edit>Редактировать</title-item-edit>
+	<item-date-empty>Заполните дату</item-date-empty>
+	<item-title-empty>Заполните заголовок</item-title-empty>
+	<item-static-path-empty>Заполните поле URL</item-static-path-empty>
+	<item-static-path-incorrect>URL не может состоять только из цифр</item-static-path-incorrect>
+	<item-image1>Картинка 1</item-image1>
+	<item-image2>Картинка 2</item-image2>
+	<item-image3>Картинка 3</item-image3>
+</Root>

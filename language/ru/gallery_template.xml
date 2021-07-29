@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<admin>
+		<category_edit.html>
+			<AddCategory>Добавить категорию</AddCategory>
+			<EditCategory>Редактировать категорию</EditCategory>
+			<Title>Заголовок</Title>
+			<Description>Описание</Description>
+			<Active>Активна</Active>
+			<CategoryImage>Картинка</CategoryImage>
+			<StaticPath>URL категории</StaticPath>
+		</category_edit.html>
+		<category_list.html>
+			<ConfirmRemovePage>Вы действительно хотите удалить галерею '%Title%'?</ConfirmRemovePage>
+			<ConfirmRemoveCategory>Вы действительно хотите удалить категорию '%Title%'?</ConfirmRemoveCategory>
+			<ConfirmRemoveMultiple>Вы действительно хотите удалить выбранные категории?</ConfirmRemoveMultiple>
+			<AddGalleryPage>Добавить галерею</AddGalleryPage>
+			<Title>Заголовок</Title>
+			<OpenItemList>Перейти к списку</OpenItemList>
+			<AddCategory>Добавить категорию</AddCategory>
+			<RemoveMultiple>Удалить выбранные</RemoveMultiple>
+			<NoSelection>Вы не выбрали ни одной категории</NoSelection>
+		</category_list.html>
+		<media_list.html>
+			<Add>Добавить объект</Add>
+			<AddCategory>Добавить категорию</AddCategory>
+			<Upload>Загрузить</Upload>
+			<GoTo>Перейти к:</GoTo>
+			<NoFiles>Нет загруженных файлов</NoFiles>
+			<File>Файл</File>
+			<AddRow>Добавить строку</AddRow>
+			<EditMedia>Редактировать объект</EditMedia>
+			<ConfirmRemove>Вы действительно хотите удалить объект '%Title%'?</ConfirmRemove>
+		</media_list.html>
+	</admin>
+</Root>

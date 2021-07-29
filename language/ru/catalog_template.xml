@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<admin>
+		<category_edit.html>
+			<AddCategory>Добавить категорию</AddCategory>
+			<EditCategory>Редактировать категорию</EditCategory>
+			<Title>Название категории</Title>
+			<Description>Описание</Description>
+			<Active>Активна</Active>
+			<CategoryImage>Картинка</CategoryImage>
+			<Parent>Родитель</Parent>
+			<StaticPath>URL категории</StaticPath>
+		</category_edit.html>
+		<category_tree.html>
+			<AddCategory>Добавить категорию</AddCategory>
+		</category_tree.html>
+		<item_edit.html>
+			<AddItem>Добавить товар</AddItem>
+			<EditItem>Редактировать товар</EditItem>
+			<TabGallery>Галерея</TabGallery>
+			<Title>Название</Title>
+			<SKU>Артикул</SKU>
+			<Price>Цена</Price>
+			<ItemDate>Дата производства</ItemDate>
+			<Active>Активный</Active>
+			<Featured>Лучший продукт</Featured>
+			<Category>Категория</Category>
+			<StaticPath>URL товара</StaticPath>
+			<SEO>SEO</SEO>
+			<Images>Картинки</Images>
+			<ItemImage>Картинка товара</ItemImage>
+			<FeaturedImage>Картинка лучшего товара</FeaturedImage>
+			<NoFiles>Нет файлов</NoFiles>
+			<UploadFormTitle>Загрузить файлы</UploadFormTitle>
+			<File>Файл</File>
+			<AddRow>Добавить строку</AddRow>
+			<EditMedia>Редактировать объект</EditMedia>
+			<ConfirmRemove>Вы действительно хотите удалить объект '%Title%'?</ConfirmRemove>
+		</item_edit.html>
+		<item_list.html>
+			<NoSelection>Вы не выбрали ни одного товара</NoSelection>
+			<ConfirmRemoveMultiple>Вы действительно хотите удалить выбранные товары?</ConfirmRemoveMultiple>
+			<ConfirmRemove>Вы действительно хотите удалить товар '%Title%'?</ConfirmRemove>
+			<AddItem>Добавить товар</AddItem>
+			<Title>Название</Title>
+			<SortOrder>Позиция</SortOrder>
+			<ChangeSortOrder>Кликните чтобы изменить позицию товара</ChangeSortOrder>
+			<EditMeta>Редактировать meta информацию о товаре</EditMeta>
+			<EditMedia>Фото/видео галерея товара</EditMedia>
+			<Empty>Список пуст</Empty>
+			<RemoveMultiple>Удалить выбранные</RemoveMultiple>
+		</item_list.html>
+	</admin>
+</Root>

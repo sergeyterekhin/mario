@@ -1,0 +1,21 @@
+
+<div class="container">
+    <table class="pageTitle">
+        <tr>
+            <td>&nbsp;</td>
+            <th><h1><TMPL_VAR NAME='LNG_header2'></h1></th>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <p><TMPL_VAR NAME='LNG_desc'></p>
+    <div class="orderSearch">
+        <TMPL_VAR NAME='LNG_idzakaz'>
+        <input type="text" id="addressdelivery">
+        <button class="searchBtn" onclick="searchmap()"><TMPL_VAR NAME='LNG_search'></button>
+    </div>
+    <div id="map"></div>
+</div>
+</div>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp; apikey=76438e5f-609c-4a3e-8028-9a162f4cb1d2" type="text/javascript"></script>
+<script src="<TMPL_VAR NAME='PATH2MAIN'>/js/mapbasic.js" type="text/javascript"></script>
+    <script src="<TMPL_VAR NAME='PATH2MAIN'>/js/animated_line.js" type="text/javascript"></script>

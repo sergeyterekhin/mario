@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<module-title>Форма</module-title>
+	<config-Email>E-mail адрес</config-Email>
+	<config-Subject>Тема письма</config-Subject>
+	<config-UseCaptcha>Использовать captcha</config-UseCaptcha>
+	<config-details><![CDATA[
+		<h3>Описание параметров</h3>
+		<p>E-mail адрес - адрес на который будут высылаться данные формы</p>
+		<p>Тема пиьма - заголовок с которым будет приходить E-mail</p>
+		<p>Использовать captcha - 1 = проверять captcha код при посылке формы, 0 = не проверять</p>
+		<h3>Как использовать в _header.html/_footer.html</h3>
+		<p><b>FORM_&lt;StaticPath&gt;_URL</b> - URL на страницу формы</p>
+	]]></config-details>
+	<file-not-uploaded>Файл не был загружен</file-not-uploaded>
+	<userauth-title>Форма авторизации</userauth-title>
+	<forgot-password-title>Восстановление пароля</forgot-password-title>
+	<forgot-password-content><![CDATA[<p>Пожалуйста введите E-mail адрес, с которым вы регистрировались. После подтверждения на этот адрес будет выслан новый пароль для доступа.</p>]]> </forgot-password-content>
+	<register-title>Регистрация</register-title>
+	<register-content><![CDATA[<p>Пожалуйста заполните форму.</p>]]></register-content>
+	<profile-title>Личные данные</profile-title>
+	<profile-content><![CDATA[<p>После внесения изменений, нажмите кнопку "Обновить данные".</p>]]></profile-content>
+</Root>

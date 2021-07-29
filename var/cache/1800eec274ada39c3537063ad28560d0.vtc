@@ -1,0 +1,61 @@
+<div class="container">
+    <table class="pageTitle">
+        <tr>
+            <td>&nbsp;</td>
+            <th><h1><?php if ($this->_vars['PageTitleH1'] !== null) { print(htmlspecialchars($this->_vars['PageTitleH1'], ENT_QUOTES)); } ?></h1></th>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <div class="productsContent">
+        <ul class="products">
+            <?php $row_count_0=count($this->_arrVars['ItemList']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+            <li>
+                <div class="pic"><a href="<?php if ($this->_arrVars['ItemList'][$_0]['ItemURL'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['ItemURL'], ENT_QUOTES)); } elseif ($this->_vars['ItemURL'] !== null) { print(htmlspecialchars($this->_vars['ItemURL'], ENT_QUOTES)); } ?>"><img src="<?php if ($this->_arrVars['ItemList'][$_0]['ItemImageMainPath'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['ItemImageMainPath'], ENT_QUOTES)); } elseif ($this->_vars['ItemImageMainPath'] !== null) { print(htmlspecialchars($this->_vars['ItemImageMainPath'], ENT_QUOTES)); } ?>" alt="" width="211" height="215"></a></div>
+                <div class="caption"><a href="<?php if ($this->_arrVars['ItemList'][$_0]['ItemURL'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['ItemURL'], ENT_QUOTES)); } elseif ($this->_vars['ItemURL'] !== null) { print(htmlspecialchars($this->_vars['ItemURL'], ENT_QUOTES)); } ?>"></a><?php if ($this->_arrVars['ItemList'][$_0]['MetaTitle'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['MetaTitle'], ENT_QUOTES)); } elseif ($this->_vars['MetaTitle'] !== null) { print(htmlspecialchars($this->_vars['MetaTitle'], ENT_QUOTES)); } ?></a></div>
+                <div class="productContent"><?php if ($this->_arrVars['ItemList'][$_0]['Description'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['Description'], ENT_QUOTES)); } elseif ($this->_vars['Description'] !== null) { print(htmlspecialchars($this->_vars['Description'], ENT_QUOTES)); } ?></div>
+                <div class="price"><?php if ($this->_arrVars['ItemList'][$_0]['Price'] !== null) { print(htmlspecialchars($this->_arrVars['ItemList'][$_0]['Price'], ENT_QUOTES)); } elseif ($this->_vars['Price'] !== null) { print(htmlspecialchars($this->_vars['Price'], ENT_QUOTES)); } ?></div>
+                <a href="#" class="cartBtn">В корзину</a>
+            </li>
+        <?php } ?>
+        </ul>
+        </div>
+    <aside class="sidebar">
+        <ul class="catalogue">
+            <?php $row_count_0=count($this->_arrVars['CatalogCategoryList']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+                <?php if ((($this->_arrVars['CatalogCategoryList'][$_0]['Current'] !== null) ? $this->_arrVars['CatalogCategoryList'][$_0]['Current'] : $this->_vars['Current'])==0) { ?>                <li><a href="<?php if ($this->_arrVars['CatalogCategoryList'][$_0]['CategoryURL'] !== null) { print(htmlspecialchars($this->_arrVars['CatalogCategoryList'][$_0]['CategoryURL'], ENT_QUOTES)); } elseif ($this->_vars['CategoryURL'] !== null) { print(htmlspecialchars($this->_vars['CategoryURL'], ENT_QUOTES)); } ?>"><?php if ($this->_arrVars['CatalogCategoryList'][$_0]['Title'] !== null) { print(htmlspecialchars($this->_arrVars['CatalogCategoryList'][$_0]['Title'], ENT_QUOTES)); } elseif ($this->_vars['Title'] !== null) { print(htmlspecialchars($this->_vars['Title'], ENT_QUOTES)); } ?></a></li> 
+
+<?php } else { ?> <li  class="current"><a href="<?php if ($this->_arrVars['CatalogCategoryList'][$_0]['CategoryURL'] !== null) { print(htmlspecialchars($this->_arrVars['CatalogCategoryList'][$_0]['CategoryURL'], ENT_QUOTES)); } elseif ($this->_vars['CategoryURL'] !== null) { print(htmlspecialchars($this->_vars['CategoryURL'], ENT_QUOTES)); } ?>"><?php if ($this->_arrVars['CatalogCategoryList'][$_0]['Title'] !== null) { print(htmlspecialchars($this->_arrVars['CatalogCategoryList'][$_0]['Title'], ENT_QUOTES)); } elseif ($this->_vars['Title'] !== null) { print(htmlspecialchars($this->_vars['Title'], ENT_QUOTES)); } ?></a></li>     <?php } ?>
+                
+            <!-- class="current" -->
+            <?php } ?>
+        </ul>
+    </aside>
+</div>
+<ul class="paging">
+    <?php $row_count_0=count($this->_arrVars['Paging']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+       <?php if ((($this->_arrVars['Paging'][$_0]['__FIRST__'] !== null) ? $this->_arrVars['Paging'][$_0]['__FIRST__'] : $this->_vars['__FIRST__'])) { ?>
+           <?php if ((($this->_arrVars['Paging'][$_0]['Selected'] !== null) ? $this->_arrVars['Paging'][$_0]['Selected'] : $this->_vars['Selected'])) { ?>
+               <li class="prev"> <?php if ($this->_arrVars['Paging'][$_0]['LNG_back'] !== null) { print(htmlspecialchars($this->_arrVars['Paging'][$_0]['LNG_back'], ENT_QUOTES)); } elseif ($this->_vars['LNG_back'] !== null) { print(htmlspecialchars($this->_vars['LNG_back'], ENT_QUOTES)); } ?> </li>
+                   <?php } else { ?>
+               <li class="prev"><a href='<?php if ($this->_arrVars['Paging'][$_0]['URL'] !== null) { print(htmlspecialchars($this->_arrVars['Paging'][$_0]['URL'], ENT_QUOTES)); } elseif ($this->_vars['URL'] !== null) { print(htmlspecialchars($this->_vars['URL'], ENT_QUOTES)); } ?>' > <?php if ($this->_arrVars['Paging'][$_0]['LNG_back'] !== null) { print(htmlspecialchars($this->_arrVars['Paging'][$_0]['LNG_back'], ENT_QUOTES)); } elseif ($this->_vars['LNG_back'] !== null) { print(htmlspecialchars($this->_vars['LNG_back'], ENT_QUOTES)); } ?> </a></li>
+           <?php } ?>
+       <?php } ?>
+       <?php if (!(($this->_arrVars['Paging'][$_0]['__FIRST__'] !== null) ? $this->_arrVars['Paging'][$_0]['__FIRST__'] : $this->_vars['__FIRST__'])) { ?>
+           <?php if (!(($this->_arrVars['Paging'][$_0]['__LAST__'] !== null) ? $this->_arrVars['Paging'][$_0]['__LAST__'] : $this->_vars['__LAST__'])) { ?>
+               <?php if ((($this->_arrVars['Paging'][$_0]['Selected'] !== null) ? $this->_arrVars['Paging'][$_0]['Selected'] : $this->_vars['Selected'])) { ?>  <li class='current'><?php if ($this->_arrVars['Paging'][$_0]['Page'] !== null) { print(htmlspecialchars($this->_arrVars['Paging'][$_0]['Page'], ENT_QUOTES)); } elseif ($this->_vars['Page'] !== null) { print(htmlspecialchars($this->_vars['Page'], ENT_QUOTES)); } ?> </a></li> 
+               <?php } else { ?>  <li><a href='<?php if ($this->_arrVars['Paging'][$_0]['URL'] !== null) { print(htmlspecialchars($this->_arrVars['Paging'][$_0]['URL'], ENT_QUOTES)); } elseif ($this->_vars['URL'] !== null) { print(htmlspecialchars($this->_vars['URL'], ENT_QUOTES)); } ?>'> <?php if ($this->_arrVars['Paging'][$_0]['Page'] !== null) { print(htmlspecialchars($this->_arrVars['Paging'][$_0]['Page'], ENT_QUOTES)); } elseif ($this->_vars['Page'] !== null) { print(htmlspecialchars($this->_vars['Page'], ENT_QUOTES)); } ?> </a></li>
+               <?php } ?>
+              
+           <?php } ?>
+       <?php } ?>
+       <?php if ((($this->_arrVars['Paging'][$_0]['__LAST__'] !== null) ? $this->_arrVars['Paging'][$_0]['__LAST__'] : $this->_vars['__LAST__'])) { ?>
+           <?php if ((($this->_arrVars['Paging'][$_0]['Selected'] !== null) ? $this->_arrVars['Paging'][$_0]['Selected'] : $this->_vars['Selected'])) { ?>
+               <li class="prev"> <?php if ($this->_arrVars['Paging'][$_0]['LNG_next'] !== null) { print(htmlspecialchars($this->_arrVars['Paging'][$_0]['LNG_next'], ENT_QUOTES)); } elseif ($this->_vars['LNG_next'] !== null) { print(htmlspecialchars($this->_vars['LNG_next'], ENT_QUOTES)); } ?> </li>
+                   <?php } else { ?>
+               <li class="prev"><a href='<?php if ($this->_arrVars['Paging'][$_0]['URL'] !== null) { print(htmlspecialchars($this->_arrVars['Paging'][$_0]['URL'], ENT_QUOTES)); } elseif ($this->_vars['URL'] !== null) { print(htmlspecialchars($this->_vars['URL'], ENT_QUOTES)); } ?>' > <?php if ($this->_arrVars['Paging'][$_0]['LNG_next'] !== null) { print(htmlspecialchars($this->_arrVars['Paging'][$_0]['LNG_next'], ENT_QUOTES)); } elseif ($this->_vars['LNG_next'] !== null) { print(htmlspecialchars($this->_vars['LNG_next'], ENT_QUOTES)); } ?> </a></li>
+           <?php } ?>
+       <?php } ?>
+    <?php } ?>
+    
+   </ul>
+</div>

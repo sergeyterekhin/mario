@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<confirm-action>Подтвердите действие</confirm-action>
+	<yes>Да</yes>
+	<no>Нет</no>
+	<delete-menu-confirm>Вы действительно хотите удалить меню '%Title%'?</delete-menu-confirm>
+	<delete-page-confirm>Вы действительно хотите удалить страницу '%Title%'?</delete-page-confirm>
+	<has-subpages>У этой страницы есть подстраницы!</has-subpages>
+	<delete-link-confirm>Вы действительно хотите удалить ссылку '%Title%'?</delete-link-confirm>
+	<loading-menu>загружаем меню...</loading-menu>
+	<error-loading-menu>Сбой загрузки информации о меню</error-loading-menu>
+	<saving-menu>Сохраняем меню...</saving-menu>
+	<removing-menu>Удаляем меню...</removing-menu>
+	<menu-removed>Меню успешно удалено</menu-removed>
+	<error-removing-menu>При удалении меню произошла ошибка</error-removing-menu>
+	<menu-saved>Меню успешно сохранено</menu-saved>
+	<error-saving-menu>При сохранении меню произошла ошибка</error-saving-menu>
+	<removing-page>Удаляем страницу</removing-page>
+	<page-removed>Страница успешно удалена</page-removed>
+	<error-removing-page>При удалении страницы произошла ошибка</error-removing-page>
+	<loading-seo>Загружаем SEO информацию страницы...</loading-seo>
+	<error-loading-seo>Сбой загрузки SEO информации страницы</error-loading-seo>
+	<saving-seo>Сохраняем SEO информацию страницы...</saving-seo>
+	<seo-saved>SEO информация страницы успешно сохранена</seo-saved>
+	<error-saving-seo>При сохранении SEO информации страницы произошла ошибка</error-saving-seo>
+	<saving-sort>Сохраняем порядок отображения страниц...</saving-sort>
+	<error-saving-sort>Список страниц был изменен. Обновление сортировки невозможно. Пожалуйста обновите страницу [F5]</error-saving-sort>
+	<sort-saved>Порядок отображения страниц успешно сохранен</sort-saved>
+	<page-activate>Отобразить страницу</page-activate>
+	<page-deactivate>Спрятать страницу</page-deactivate>
+	<activating-page>Отображаем страницу...</activating-page>
+	<deactivating-page>Скрываем страницу...</deactivating-page>
+	<page-activated>Страница успешно отображена</page-activated>
+	<page-deactivated>Страница успешно спрятана</page-deactivated>
+	<error-activating-page>При отображении страницы произошла ошибка</error-activating-page>
+	<error-deactivating-page>При сокрытии страницы произошла ошибка</error-deactivating-page>
+	<page-preview>Предпросмотр страницы</page-preview>
+	<page-seo>Редактировать SEO информацию страницы</page-seo>
+	<page-delete>Удалить страницу '%Title%'</page-delete>
+	<page-edit>Редактировать страницу '%Title%'</page-edit>
+	<page-hide>Скрыть</page-hide>
+	<page-show>Раскрыть</page-show>
+	<page>Страница</page>
+	<link-delete>Удалить ссылку '%Title%'</link-delete>
+	<link-edit>Редактировать ссылку '%Title%'</link-edit>
+	<link>Ссылка</link>
+	<menu-edit>Редактировать</menu-edit>
+	<menu-delete>Удалить</menu-delete>
+	<menu-title>Заголовок</menu-title>
+	<menu-description>Описание</menu-description>
+	<menu-static-path>MENU_</menu-static-path>
+	<admin-menu-site-structure>Структура сайта</admin-menu-site-structure>
+	<admin-menu-template-variables>Переменные для шаблонов</admin-menu-template-variables>
+	<admin-menu-user-list>Пользователи</admin-menu-user-list>
+	<admin-menu-my-profile>Мой профиль</admin-menu-my-profile>
+	<admin-menu-logout>Выйти</admin-menu-logout>
+	<menu-image-no>Не используется</menu-image-no>
+	<menu-image-first-level>Для первого уровня</menu-image-first-level>
+	<menu-image-all-levels>Для всех уровней</menu-image-all-levels>
+	<title-h1>Заголовок h1</title-h1>
+	<meta-title>Meta Title</meta-title>
+	<meta-keywords>Meta Keywords</meta-keywords>
+	<meta-description>Meta Description</meta-description>
+	<attribute-title><![CDATA[Аттрибут title тэга <a>]]></attribute-title>
+	<list-info1>%Page% из %Total%</list-info1>
+	<list-info2>По запросу '%Request%' найдено %Total%</list-info2>
+	<remove-image-confirm>Пожалуйста подтвердите удаление картинки</remove-image-confirm>
+	<removing-image>Удаляем картинку...</removing-image>
+	<error-removing-image>Произошла ошибка при попытке удаления картинки</error-removing-image>
+	<image-removed>Картинка успешно удалена</image-removed>
+	<save>Сохранить</save>
+	<cancel>Отменить</cancel>
+	<msg-no-url>Введите URL ссылки</msg-no-url>
+	<msg-no-page-selected>Выберите страницу из списка</msg-no-page-selected>
+	<msg-no-email>Введите адрес эл.почты</msg-no-email>
+	<title-site-structure>Структура сайта</title-site-structure>
+	<title-page-edit>Редактирование содержимого страницы</title-page-edit>
+	<title-module-edit>Редактирование страницы модуля</title-module-edit>
+	<title-link-edit>Редактирование информации о ссылке</title-link-edit>
+	<title-user-list>Пользователи</title-user-list>
+	<title-user-add>Добавление пользователя</title-user-add>
+	<title-user-edit>Редактирование пользователя</title-user-edit>
+	<title-developer>Панель разработчика</title-developer>
+	<page-description>Всплывающая подсказка при наведении мышью на ссылку</page-description>
+	<page-is-removed>Страница %Title% удалена</page-is-removed>
+	<title-empty>Введите заголовок</title-empty>
+	<template-is-not-defined>Выберите шаблон вывода содержания страницы из списка</template-is-not-defined>
+	<templateset-is-not-defined>Выберите набор шаблонов вывода содержания модуля из списка</templateset-is-not-defined>
+	<static-path-empty>Введите URL страницы</static-path-empty>
+	<static-path-is-not-unique>Введенный URL не уникален. Выберите другой URL</static-path-is-not-unique>
+	<static-path-incorrect>Введенный URL неверен! Пожалуйста используйте только латинские буквы, цифры, тире (-), точки (.) и знак подчеркивания (_)</static-path-incorrect>
+	<static-path-empty-menu>Введите имя переменной MENU_</static-path-empty-menu>
+	<static-path-is-not-unique-menu>Введенное имя переменной MENU_ не уникально. Выберите другое имя</static-path-is-not-unique-menu>
+	<static-path-incorrect-menu>Введенное имя переменной MENU_ неверно! Пожалуйста используйте только латинские буквы, цифры, тире (-), точки (.) и знак подчеркивания (_)</static-path-incorrect-menu>
+	<parent-is-not-defined>Укажите родительскую страницу/меню</parent-is-not-defined>
+	<parent-language-different>Язык родительской страницы не соответсвует языку текущей страницы. Сохранение данных не возможно.</parent-language-different>
+	<password-is-changed-and-sent>Ваш пароль был успешно изменен и отправлен на ваш эл. адрес</password-is-changed-and-sent>
+	<logged-out>Вы вышли из системы</logged-out>
+	<wrong-login-password>Неправильное сочетание логина и пароля</wrong-login-password>
+	<new-password>Новый пароль</new-password>
+	<open-calendar>Нажмите сюда, чтобы открыть календарь</open-calendar>
+	<your-session-expired>Время сессии истекло</your-session-expired>
+	<unknown-module>Модуль '%Module%' не найден</unknown-module>
+	<page-type-is-undefined>Неверно определен тип страницы</page-type-is-undefined>
+	<email-is-not-unique>Введенный вами адрес эл. почты уже занят одним из пользователей. Введите другой адрес</email-is-not-unique>
+	<incorrect-email-format>Введите адрес эл. почты в формате name@yoursite.ru</incorrect-email-format>
+	<incorrect-email-address>Введенный вами адрес эл. почты не зарегистрирован</incorrect-email-address>
+	<wrong-old-password>Старый пароль введен неверно</wrong-old-password>
+	<password-empty>Новый пароль не может быть пустым</password-empty>
+	<password-not-equal>Пароли не совпадают</password-not-equal>
+	<name-required>Поле 'Имя' является обязательным</name-required>
+	<role-undefined>Вы не выбрали роль пользователя</role-undefined>
+	<website-undefined>Вы не выбрали вебсайт к которому будет относиться пользователь</website-undefined>
+	<user-edit-access-denied>Доступ к редактированию чужих данных запрещен</user-edit-access-denied>
+	<user-is-updated>Информация о пользователе обновлена</user-is-updated>
+	<public-user-is-registered>Вы успешно зарегистрированы</public-user-is-registered>
+	<public-user-is-updated>Ваша информация была обновлена</public-user-is-updated>
+	<user-is-removed>Пользователь %UserList% был удален</user-is-removed>
+	<users-are-removed>Пользователи %UserList% были удалены. Всего удалено %UserCount% пользовател(-ей,-я)</users-are-removed>
+	<home-page>Главная</home-page>
+	<sql-error>Ошибка в SQL запросе. Детальная информация об ошибке в log файле</sql-error>
+	<upload-max-file-size>макс. размер 1-го файла: %UploadMaxFileSize%</upload-max-file-size>
+	<no-templates>Вы должны создать файл с именем page.html в папке %Folder%</no-templates>
+	<template-general>Основной</template-general>
+	<menu-image1>Иконка 1</menu-image1>
+	<menu-image2>Иконка 2</menu-image2>
+	<menu-image3>Иконка 3</menu-image3>
+	<menu-image4>Иконка 4</menu-image4>
+	<menu-image5>Иконка 5</menu-image5>
+	<filesys-file-is-not-uploaded>Файл не загружен</filesys-file-is-not-uploaded>
+	<filesys-file-doesnt-exist>Исходный файл не существует</filesys-file-doesnt-exist>
+	<filesys-getimagesize-error>Невозможно получить размеры картинки для файла %File%</filesys-getimagesize-error>
+	<filesys-unsupported-image-mime-type>Картинки с типом '%MimeType%' не поддерживаются</filesys-unsupported-image-mime-type>
+	<filesys-unsupported-image-function>Для завершения процесса изменения размеров картинки, требуется функция %Function%. Но данная функция не поддерживается вашим хостинг провайдером</filesys-unsupported-image-function>
+	<filesys-file-upload-error>Произошла ошибка при загрузке файла на сервер. Номер ошибки %ErrorNumber%</filesys-file-upload-error>
+	<filesys-incorrect-file-name>Имя файла %FileName% неверное. Пожалуйста переименуйте и попробуйте загрузить снова</filesys-incorrect-file-name>
+	<filesys-unsupported-file-mime-type>Файлы с типом '%MimeType%' не поддерживаются</filesys-unsupported-file-mime-type>
+	<filesys-file-exists>Файл с именем %FileName% уже существует в папке %FolderName%</filesys-file-exists>
+	<filesys-copy-error>Ошибка копирования файла из %From% в %To%</filesys-copy-error>
+	<phpmailer-provide-address>Вы должны указать как минимум один E-mail адрес получателя</phpmailer-provide-address>
+	<phpmailer-mailer-not-supported>%Mailer% не поддерживается</phpmailer-mailer-not-supported>
+	<phpmailer-execute>Невозможно выполнить: %Sendmail%</phpmailer-execute>
+	<phpmailer-instantiate>Функция mail() не определена</phpmailer-instantiate>
+	<phpmailer-authenticate>SMTP Ошибка: Ошибка авторизации</phpmailer-authenticate>
+	<phpmailer-from-failed>Невозможно использовать следующие From адреса: %Address%</phpmailer-from-failed>
+	<phpmailer-recipients-failed>SMTP Ошибка: Невозможно отправить E-mail следующим получателям: %Address%</phpmailer-recipients-failed>
+	<phpmailer-data-not-accepted>SMTP Ошибка: Данные не приняты сервером</phpmailer-data-not-accepted>
+	<phpmailer-connect-host>SMTP Ошибка: Невозможно соединиться с SMTP хостом %Host%</phpmailer-connect-host>
+	<phpmailer-file-access>Ошибка доступа к файлу: %File%</phpmailer-file-access>
+	<phpmailer-file-open>Невозможно открыть файл: %File%</phpmailer-file-open>
+	<phpmailer-encoding>Неизвестная кодировка: %Encoding%</phpmailer-encoding>
+	<error-sending-email>Ваше сообщение не было отправлено из-за внутренней ошибки сервера</error-sending-email>
+	<incorrect-captcha>Вы ввели неверный код подтверждения</incorrect-captcha>
+	<date-Sun>вс</date-Sun>
+	<date-Mon>пн</date-Mon>
+	<date-Tue>вт</date-Tue>
+	<date-Wed>ср</date-Wed>
+	<date-Thu>чт</date-Thu>
+	<date-Fri>пт</date-Fri>
+	<date-Sat>сб</date-Sat>
+	<date-Sunday>воскресенье</date-Sunday>
+	<date-Monday>понедельник</date-Monday>
+	<date-Tuesday>вторник</date-Tuesday>
+	<date-Wednesday>среда</date-Wednesday>
+	<date-Thursday>четверг</date-Thursday>
+	<date-Friday>пятница</date-Friday>
+	<date-Saturday>суббота</date-Saturday>
+	<date-Jan>янв</date-Jan>
+	<date-Feb>фев</date-Feb>
+	<date-Mar>мар</date-Mar>
+	<date-Apr>апр</date-Apr>
+	<date-May>мая</date-May>
+	<date-Jun>июн</date-Jun>
+	<date-Jul>июл</date-Jul>
+	<date-Aug>авг</date-Aug>
+	<date-Sep>сен</date-Sep>
+	<date-Oct>окт</date-Oct>
+	<date-Nov>ноя</date-Nov>
+	<date-Dec>дек</date-Dec>
+	<date-January>января</date-January>
+	<date-February>февраля</date-February>
+	<date-March>марта</date-March>
+	<date-April>апреля</date-April>
+	<date-June>июня</date-June>
+	<date-July>июля</date-July>
+	<date-August>августа</date-August>
+	<date-September>сентября</date-September>
+	<date-October>октября</date-October>
+	<date-November>ноября</date-November>
+	<date-December>декабря</date-December>
+	<role-integrator>Разработчик</role-integrator>
+	<role-administrator>Администратор</role-administrator>
+	<role-moderator>Модератор</role-moderator>
+	<role-user>Пользователь</role-user>
+	<add-image>Добавить</add-image>
+	<change-image>Изменить</change-image>
+	<configure-image>Настроить</configure-image>
+	<remove-image>Удалить</remove-image>
+	<set-sort-order-error>Произошла ошибка при попытке обновления позиции</set-sort-order-error>
+	<xml-section-general>Основные</xml-section-general>
+	<php-messages>Сообщения</php-messages>
+	<xml-_header.html>Шапка</xml-_header.html>
+	<xml-_footer.html>Подвал</xml-_footer.html>
+	<xml-_404.html>Шаблон "Страница не найдена"</xml-_404.html>
+	<xml-page.html>Тело страницы</xml-page.html>	
+	<tag-name>Имя</tag-name>
+	<variable-value>Значение</variable-value>
+	<incorrect-parameter>Неверный параметр передан классу VariableList()</incorrect-parameter>
+	<loading-edit-variable>загружаем информацию о переменной...</loading-edit-variable>
+	<saving-variable>Сохраняем значение переменной...</saving-variable>
+	<variable-saved>Значение переменной успешно сохранено</variable-saved>
+	<error-saving-variable>При сохранении значения переменной произоша ошибка</error-saving-variable>
+	<lightbox-image>Картинка</lightbox-image>
+	<lightbox-of>из</lightbox-of>
+
+	<robots-saved>Файл robots.txt успешно изменен.</robots-saved>
+	<robots-error>Ошибка при сохранении файла robots.txt. Проверьте, установлены ли права на запись.</robots-error>
+	<admin-menu-robots>Robots.txt</admin-menu-robots>
+	<admin-menu-template-robots>Изменение файла Robots.txt</admin-menu-template-robots>
+	
+	<sitemap-saved>Файл sitemap.xml успешно изменен.</sitemap-saved>
+	<sitemap-error>Ошибка при сохранении файла sitemap.xml. Проверьте, установлены ли права на запись.</sitemap-error>
+	<admin-menu-sitemap>Карта сайта</admin-menu-sitemap>
+	<admin-menu-template-sitemap>Изменение файла sitemap.xml</admin-menu-template-sitemap>
+	
+	<download-file-does-not-exist>Файл "%Path%" не найден</download-file-does-not-exist>
+	<parent-directory-access-denied>Обращение к родительской директории запрещено</parent-directory-access-denied>
+	<set-file-permissions-message>Права %Permissions% для файла "%Path%" установлены</set-file-permissions-message>
+	<set-file-permissions-error>При установке прав %Permissions% для файла "%Path%" произошла ошибка</set-file-permissions-error>
+	<file-or-directory-exists>Файл/папка "%Path%" существует</file-or-directory-exists>
+	<file-or-directory-does-not-exist>Файла/папки "%Path%" не существует</file-or-directory-does-not-exist>
+	<cms-cache-cleared>Кеш очищен</cms-cache-cleared>
+</Root>

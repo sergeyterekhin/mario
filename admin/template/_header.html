@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class=" ">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=<TMPL_VAR NAME='CHARSET'>" />
+		<title><TMPL_VAR NAME='Title'></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	
+		<link rel="shortcut icon" href="<TMPL_VAR NAME='PATH2MAIN'>images/favicon.png" type="image/x-icon" />	<!-- Favicon -->
+		<link rel="apple-touch-icon-precomposed" href="<TMPL_VAR NAME='PATH2MAIN'>images/apple-touch-icon-57-precomposed.png">	<!-- For iPhone -->
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<TMPL_VAR NAME='PATH2MAIN'>images/apple-touch-icon-114-precomposed.png">	<!-- For iPhone 4 Retina display -->
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<TMPL_VAR NAME='PATH2MAIN'>images/apple-touch-icon-72-precomposed.png">	<!-- For iPad -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<TMPL_VAR NAME='PATH2MAIN'>images/apple-touch-icon-144-precomposed.png">	<!-- For iPad Retina display -->
+
+		<!-- CORE CSS FRAMEWORK - START -->
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>plugins/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>fonts/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>css/animate.min.css" rel="stylesheet" type="text/css"/>
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css"/>
+		<!-- CORE CSS FRAMEWORK - END -->
+
+		<!-- OTHER CSS INCLUDED ON THIS PAGE - START --> 
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>plugins/icheck/skins/minimal/_all.css" rel="stylesheet" type="text/css" />
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>plugins/ios-switch/css/switch.css" rel="stylesheet" type="text/css" />
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>plugins/messenger/css/messenger.css" rel="stylesheet" type="text/css" />
+        <link href="<TMPL_VAR NAME='PATH2MAIN'>plugins/messenger/css/messenger-theme-flat.css" rel="stylesheet" type="text/css"/>
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>plugins/image-cropper/css/cropper.css" rel="stylesheet" type="text/css"/>
+		<TMPL_LOOP NAME='StyleSheets'>
+			<link rel="stylesheet" type="text/css" href="<TMPL_VAR NAME='StyleSheetFile'>" />
+		</TMPL_LOOP>
+
+		<!-- CORE CSS TEMPLATE - START -->
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="<TMPL_VAR NAME='PATH2MAIN'>css/responsive.css" rel="stylesheet" type="text/css"/>
+		<!-- CORE CSS TEMPLATE - END -->
+
+		<!-- CORE JS FRAMEWORK - START --> 
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>js/jquery-1.11.2.min.js" type="text/javascript"></script> 
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>js/jquery.easing.min.js" type="text/javascript"></script> 
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> 
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>plugins/pace/pace.min.js" type="text/javascript"></script>  
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>plugins/perfect-scrollbar/perfect-scrollbar.min.js" type="text/javascript"></script> 
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>plugins/viewport/viewportchecker.js" type="text/javascript"></script>  
+		<!-- CORE JS FRAMEWORK - END --> 
+
+		<!-- CORE TEMPLATE JS - START --> 
+		<script src="<TMPL_VAR NAME='PATH2MAIN'>js/scripts.js" type="text/javascript"></script> 
+		<!-- END CORE TEMPLATE JS - END --> 
+		
+		<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
+		<script type="text/javascript" src="<TMPL_VAR NAME='PATH2MAIN'>js/admin.js.php?Module=<TMPL_VAR NAME='MODULE_NAME'>"></script>
+		<script type="text/javascript" src="<TMPL_VAR NAME='PATH2MAIN'>plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script type="text/javascript" src="<TMPL_VAR NAME='PATH2MAIN'>plugins/icheck/icheck.min.js"></script>
+		<script type="text/javascript" src="<TMPL_VAR NAME='PATH2MAIN'>plugins/messenger/js/messenger.min.js"></script>
+		<script type="text/javascript" src="<TMPL_VAR NAME='PATH2MAIN'>plugins/messenger/js/messenger-theme-flat.js"></script>
+		<script type="text/javascript" src="<TMPL_VAR NAME='PATH2MAIN'>plugins/image-cropper/js/cropper.js"></script>
+		<TMPL_LOOP NAME='JavaScripts'>
+		<script type="text/javascript" src="<TMPL_VAR NAME='JavaScriptFile'>"></script>
+		</TMPL_LOOP>
+		<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
+		
+	</head>
+	<!-- END HEAD -->
+
+	<!-- BEGIN BODY -->
+	<body class=" "><!-- START TOPBAR -->
+		<div class='page-topbar '>
+			<div class='logo-area'>
+
+			</div>
+			<div class='quick-area'>
+				<div class='pull-left'>
+					<ul class="info-menu left-links list-inline list-unstyled">
+						<li class="">
+							<a href="#" data-toggle="sidebar" class="sidebar_toggle">
+								<i class="fa fa-bars"></i>
+							</a>
+						</li>
+					</ul>
+				</div>		
+				<div class='pull-right'>
+					<ul class="info-menu right-links list-inline list-unstyled">
+						<li class="profile">
+							<a href="#" data-toggle="dropdown" class="toggle">
+								<TMPL_IF NAME='USER_UserImage'>
+									<img src="<TMPL_VAR NAME='USER_UserImageThumbPath'>" alt="user-image" class="img-circle img-inline">
+								</TMPL_IF>
+								<span><TMPL_VAR NAME='USER_Name'> <i class="fa fa-angle-down"></i></span>
+							</a>
+							<ul class="dropdown-menu profile animated fadeIn">
+								<li>
+									<a href="<TMPL_VAR NAME='ADMIN_PATH'>user.php?UserID=<TMPL_VAR NAME='USER_UserID'>">
+										<i class="fa fa-user"></i>
+										<TMPL_VAR NAME='LNG_MyProfile'>
+									</a>
+								</li>
+								<li>
+									<a href="<TMPL_VAR NAME='ADMIN_PATH'>index.php?Logout=Y">
+										<i class="fa fa-lock"></i>
+										<TMPL_VAR NAME='LNG_Logout'>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+                            <TMPL_IF NAME='DataLanguageList'>
+								<select class="form-control" id="select-data-language">
+									<TMPL_LOOP NAME='DataLanguageList'>
+										<option value="<TMPL_VAR NAME='Folder'>" <TMPL_IF NAME='Selected'>selected="selected"</TMPL_IF>><TMPL_VAR NAME='NativeName'></option>
+									</TMPL_LOOP>
+								</select>
+							</TMPL_IF>
+                        </li>
+					</ul>			
+				</div>		
+			</div>
+
+		</div>
+		<!-- END TOPBAR -->
+		
+		<!-- START CONTAINER -->
+		<div class="page-container row-fluid">
+
+			<!-- SIDEBAR - START -->
+			<div class="page-sidebar ">
+
+				<!-- MAIN MENU - START -->
+				<div class="page-sidebar-wrapper" id="main-menu-wrapper"> 
+
+					<!-- USER INFO - START -->
+					<div class="profile-info row">
+
+						<TMPL_IF NAME='USER_UserImage'>
+							<div class="profile-image col-md-4 col-sm-4 col-xs-4">
+								<a href="<TMPL_VAR NAME='ADMIN_PATH'>user.php?UserID=<TMPL_VAR NAME='USER_UserID'>">
+									<img src="<TMPL_VAR NAME='USER_UserImageThumbPath'>" class="img-responsive img-circle">
+								</a>
+							</div>
+						</TMPL_IF>
+
+						<div class="profile-details col-md-8 col-sm-8 col-xs-8">
+							<h3><a href="<TMPL_VAR NAME='ADMIN_PATH'>user.php?UserID=<TMPL_VAR NAME='USER_UserID'>"><TMPL_VAR NAME='USER_Name'></a></h3>
+							<p class="profile-title"><TMPL_VAR NAME='USER_RoleTitle'></p>
+						</div>
+
+					</div>
+					<!-- USER INFO - END -->
+
+					<ul class='wraplist'>	
+						<TMPL_LOOP NAME='AdminMenu'>
+							<li <TMPL_IF NAME='Selected'>class="open"</TMPL_IF>>
+								<a href="<TMPL_IF NAME='Submenu'>#<TMPL_ELSE><TMPL_VAR NAME='Link'></TMPL_IF>">
+									<i class="<TMPL_VAR NAME='AdminMenuIcon'>"></i>
+									<span class="title"><TMPL_VAR NAME='Title'></span>
+									<TMPL_IF NAME='Submenu'>
+										<span class="arrow"></span>
+									</TMPL_IF>
+								</a>
+								<TMPL_IF NAME='Submenu'>
+									<ul class="sub-menu">
+										<TMPL_LOOP NAME='Submenu'>
+											<li <TMPL_IF NAME='Selected'>class="open"</TMPL_IF>>
+												<a href="<TMPL_VAR NAME='Link'>"><TMPL_VAR NAME='Title'></a>
+											</li>
+										</TMPL_LOOP>
+									</ul>
+								</TMPL_IF>
+							</li>
+						</TMPL_LOOP>
+					</ul>
+
+				</div>
+				<!-- MAIN MENU - END -->
+
+			</div>
+			<!--  SIDEBAR - END -->
+			
+			<!-- START CONTENT -->
+			<section id="main-content" class=" ">
+				<section class="wrapper" style='margin-top:60px;display:inline-block;width:100%;'>

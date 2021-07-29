@@ -1,0 +1,277 @@
+<div class="col-md-12">
+	<section class="box">
+		<header class="panel_header">
+			<TMPL_IF NAME='PageID'>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_EditLink'></h2>
+			<TMPL_ELSE>
+				<h2 class="title pull-left"><TMPL_VAR NAME='LNG_AddLink'></h2>
+			</TMPL_IF>
+		</header>
+		<div class="content-body">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tab-1" data-toggle='tab'><TMPL_VAR NAME='LNG_TabMain'></a></li>
+				<TMPL_IF NAME='Show2Tabs'>
+					<li><a href="#tab-2" data-toggle='tab'><TMPL_VAR NAME='LNG_TabAdditional'></a></li>
+				</TMPL_IF>
+			</ul>
+
+			<form action="link_edit.php" method="post" name="page-form" id="page-form" enctype="multipart/form-data">
+				<div class="tab-content">
+					<TMPL_IF NAME='ErrorList'>
+						<div class="col-md-12">
+							<div class="alert alert-error"><TMPL_LOOP NAME='ErrorList'><TMPL_VAR NAME='Message'><TMPL_UNLESS NAME='__LAST__'><br /></TMPL_UNLESS></TMPL_LOOP></div>
+						</div>
+					</TMPL_IF>
+					<div id="tab-1" class="tab-pane active">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="Title" class="required"><TMPL_VAR NAME='LNG_Title'></label><br />
+								<input class="form-control" type="text" name="Title" id="Title" value="<TMPL_VAR NAME='Title'>" />
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="Active"><TMPL_VAR NAME='LNG_Active'></label><br />
+									<input type="checkbox" name="Active" id="Active" value="Y" class="iswitch iswitch-md iswitch-primary" <TMPL_IF NAME='Active' VALUE='Y'>checked<TMPL_ELSEIF NAME='PageID' VALUE='0'>checked</TMPL_IF> />
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+						<div class="col-md-6">
+							<div class="form-group form-inline">
+								<label for="ParentID" class="required"><TMPL_VAR NAME='LNG_Parent'></label><br />
+								<select name="ParentID" id="ParentID" class="form-control">
+									<option value="0">...</option>
+									<TMPL_LOOP NAME='ParentPageList'>
+										<option value="<TMPL_VAR NAME='PageID'>" <TMPL_IF NAME='Selected'> selected="selected"</TMPL_IF> Level="<TMPL_VAR NAME='Level'>" StaticPath="<TMPL_VAR NAME='StaticPath'>"><TMPL_VAR NAME='Title' ESCAPE='none'></option>
+									</TMPL_LOOP>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="LinkType" class="required"><TMPL_VAR NAME='LNG_LinkType'></label><br />
+								<select name="LinkType" id="LinkType" onchange="ChangeLinkType(this);" class="form-control"><option value="url" ><TMPL_VAR NAME='LNG_URL'></option><option value="email" ><TMPL_VAR NAME='LNG_Email'></option><option value="internal"><TMPL_VAR NAME='LNG_InternalPage'></option></select>
+							</div>
+							<div id="divLinkTypeURL"<TMPL_UNLESS NAME='LinkType' VALUE='url'> style="display:none;"</TMPL_UNLESS> class="form-group">
+								<table cellspacing="0" cellpadding="0" width="100%" border="0">
+									<tr>
+										<td width="25%">
+											<label for="cmbLinkProtocol"><TMPL_VAR NAME='LNG_Protocol'></label><br />
+											<select id="cmbLinkProtocol" class="form-control">
+												<option value="http://">http://</option>
+												<option value="https://">https://</option>
+												<option value="ftp://">ftp://</option>
+												<option value="news://">news://</option>
+												<option value=""><TMPL_VAR NAME='LNG_Other'></option>
+											</select>
+										</td>
+										<td>&nbsp;</td>
+										<td width="75%">
+											<label for="txtUrl" class="required"><TMPL_VAR NAME='LNG_URL'></label><br />
+											<input type="text" id="txtUrl" class="form-control" onkeyup="OnUrlChange();" onchange="OnUrlChange();" />
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div id="divLinkTypeEmail"<TMPL_UNLESS NAME='LinkType' VALUE='email'> style="display:none;"</TMPL_UNLESS>>
+								<div class="form-group">
+									<label for="txtEmailAddress" class="required"><TMPL_VAR NAME='LNG_EmailAddress'></label><br />
+									<input type="text" id="txtEmailAddress" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label for="txtEmailSubject"><TMPL_VAR NAME='LNG_EmailSubject'></label><br />
+									<input type="text" id="txtEmailSubject" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label for="txtEmailBody"><TMPL_VAR NAME='LNG_EmailBody'></label><br />
+									<textarea id="txtEmailBody" class="form-control" rows="4" cols="40"></textarea>
+								</div>
+							</div>
+							<div id="divLinkTypeInternalPage"<TMPL_UNLESS NAME='LinkType' VALUE='internal'> style="display:none;"</TMPL_UNLESS> class="form-group">
+								<label for="cmbLinkInternalPage" class="required"><TMPL_VAR NAME='LNG_ChooseInternalPage'></label><br />
+								<select id="cmbLinkInternalPage" class="form-control">
+									<option>...</option>
+									<TMPL_LOOP NAME='PageList'>
+										<TMPL_IF NAME='PageURL'>
+											<option value="<TMPL_VAR NAME='PageURL'>" <TMPL_IF NAME='Disabled'>disabled</TMPL_IF>><TMPL_VAR NAME='Title' ESCAPE='none'></option>
+										<TMPL_ELSE>
+											<optgroup label="<TMPL_VAR NAME='Title'>">
+										</TMPL_IF>
+									</TMPL_LOOP>
+								</select>
+							</div>
+							<div id="divLinkTarget"<TMPL_IF NAME='LinkType' VALUE='email'> style="display:none;"</TMPL_IF>>
+								<div class="form-group">
+									<label for="cmbTarget"><TMPL_VAR NAME='LNG_Target'></label><br />
+									<select id="cmbTarget" onchange="SetTarget(this.value);" class="form-control">
+										<option value="" selected="selected"><TMPL_VAR NAME='LNG_NotSet'></option>
+										<option value="frame"><TMPL_VAR NAME='LNG_TargetFrame'></option>
+										<option value="popup"><TMPL_VAR NAME='LNG_TargetPopup'></option>
+										<option value="_blank"><TMPL_VAR NAME='LNG_TargetBlank'></option>
+										<option value="_top"><TMPL_VAR NAME='LNG_TargetTop'></option>
+										<option value="_self"><TMPL_VAR NAME='LNG_TargetSelf'></option>
+										<option value="_parent"><TMPL_VAR NAME='LNG_TargetParent'></option>
+									</select>
+								</div>
+								<div id="tdTargetFrame" style="display:none" class="form-group">
+									<label for="txtTargetFrame"><TMPL_VAR NAME='LNG_TargetFrameName'></label><br />
+									<input type="text" id="txtTargetFrame" class="form-control" onkeyup="OnTargetNameChange();" onchange="OnTargetNameChange();" />
+								</div>
+								<div id="tdPopupName" style="display:none" class="form-group">
+									<label for="txtPopupName"><TMPL_VAR NAME='LNG_PopupWindowName'></label><br />
+									<input type="text" id="txtPopupName" class="form-control" />
+								</div>
+								<div class="clear"></div>
+								<div id="tablePopupFeatures" style="display:none;" class="form-group">
+									<label><TMPL_VAR NAME='LNG_PopupWindowFeatures'></label><br />
+									<table cellspacing="0" cellpadding="0" border="0" width="50%">
+										<tr>
+											<td valign="top" nowrap="nowrap" width="50%">
+												<input id="chkPopupResizable" name="chkFeature" value="resizable" type="checkbox" class="icheck-minimal-green" /><label for="chkPopupResizable"><TMPL_VAR NAME='LNG_PopResize'></label><br />
+												<input id="chkPopupLocationBar" name="chkFeature" value="location" type="checkbox" class="icheck-minimal-green" /><label for="chkPopupLocationBar"><TMPL_VAR NAME='LNG_PopLocation'></label><br />
+												<input id="chkPopupManuBar" name="chkFeature" value="menubar" type="checkbox" class="icheck-minimal-green" /><label for="chkPopupManuBar"><TMPL_VAR NAME='LNG_PopMenu'></label><br />
+												<input id="chkPopupScrollBars" name="chkFeature" value="scrollbars" type="checkbox" class="icheck-minimal-green" /><label for="chkPopupScrollBars"><TMPL_VAR NAME='LNG_PopScroll'></label>
+											</td>
+											<td></td>
+											<td valign="top" nowrap="nowrap" width="50%">
+												<input id="chkPopupStatusBar" name="chkFeature" value="status" type="checkbox" class="icheck-minimal-green" /><label for="chkPopupStatusBar"><TMPL_VAR NAME='LNG_PopStatus'></label><br />
+												<input id="chkPopupToolbar" name="chkFeature" value="toolbar" type="checkbox" class="icheck-minimal-green" /><label for="chkPopupToolbar"><TMPL_VAR NAME='LNG_PopToolbar'></label><br />
+												<input id="chkPopupFullScreen" name="chkFeature" value="fullscreen" type="checkbox" class="icheck-minimal-green" /><label for="chkPopupFullScreen"><TMPL_VAR NAME='LNG_PopFullScrn'></label><br />
+												<input id="chkPopupDependent" name="chkFeature" value="dependent" type="checkbox" class="icheck-minimal-green" /><label for="chkPopupDependent"><TMPL_VAR NAME='LNG_PopDependent'></label>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top" nowrap="nowrap" width="50%">&nbsp;</td>
+											<td></td>
+											<td valign="top" nowrap="nowrap" width="50%"></td>
+										</tr>
+	
+										<tr>
+											<td>
+												<table cellspacing="0" cellpadding="0" border="0">
+													<tr>
+														<td nowrap="nowrap"><span><TMPL_VAR NAME='LNG_PopWidth'></span></td>
+														<td><input id="txtPopupWidth" type="text" maxlength="4" size="4" class="form-control" /></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap"><span><TMPL_VAR NAME='LNG_PopHeight'></span></td>
+														<td><input id="txtPopupHeight" type="text" maxlength="4" size="4" class="form-control" /></td>
+													</tr>
+												</table>
+											</td>
+											<td>&nbsp;&nbsp;</td>
+											<td>
+												<table cellspacing="0" cellpadding="0" border="0">
+													<tr>
+														<td nowrap="nowrap"><span><TMPL_VAR NAME='LNG_PopLeft'></span></td>
+														<td><input id="txtPopupLeft" type="text" maxlength="4" size="4" class="form-control" /></td>
+													</tr>
+													<tr>
+														<td nowrap="nowrap"><span><TMPL_VAR NAME='LNG_PopTop'></span></td>
+														<td><input id="txtPopupTop" type="text" maxlength="4" size="4" class="form-control" /></td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<TMPL_IF NAME='Show2Tabs'>
+						<div id="tab-2" class="tab-pane">
+							<TMPL_IF NAME='DescriptionList'>
+								<div class="col-md-6">
+									<section class="box">
+										<header class="panel_header">
+											<h2 class="title pull-left"><TMPL_VAR NAME='LNG_Descriptions'></h2>
+										</header>
+										<div class="content-body">
+											<TMPL_LOOP NAME='DescriptionList'>
+												<div class="form-group">
+													<label for="<TMPL_VAR NAME='DescriptionList.Name'>"><TMPL_VAR NAME='DescriptionList.Title'></label><br />
+													<textarea class="form-control" name="<TMPL_VAR NAME='DescriptionList.Name'>" id="<TMPL_VAR NAME='DescriptionList.Name'>" rows="8" cols="80"><TMPL_VAR NAME='DescriptionList.Value'></textarea>
+												</div>
+											</TMPL_LOOP>
+										</div>
+									</section>
+								</div>
+							</TMPL_IF>
+							<TMPL_IF NAME='MenuImages'>
+								<div class="col-md-6">
+									<section class="box">
+										<header class="panel_header">
+											<h2 class="title pull-left"><TMPL_VAR NAME='LNG_Images'> (<TMPL_VAR NAME='UploadMaxFileSize'>)</h2>
+										</header>
+										<div class="content-body">
+											<TMPL_LOOP NAME='MenuImages'>
+												<div class="form-group" id="<TMPL_VAR NAME='Name'>-box">
+													<label for="<TMPL_VAR NAME='Name'>"><TMPL_VAR NAME='Title'></label><br />
+												</div>
+												<script type="text/javascript">
+													$(document).ready(function(){
+														params = new Array();
+														<TMPL_LOOP NAME='MenuImageParamList'>
+															params.push({
+																"Name" : "<TMPL_VAR NAME='Name'>",
+																"Width" : "<TMPL_VAR NAME='Width'>",
+																"Height" : "<TMPL_VAR NAME='Height'>",
+																"Resize" : "<TMPL_VAR NAME='Resize'>",
+																"X1" : "<TMPL_VAR NAME='X1'>",
+																"X2" : "<TMPL_VAR NAME='X2'>",
+																"Y1" : "<TMPL_VAR NAME='Y1'>",
+																"Y2" : "<TMPL_VAR NAME='Y2'>"
+															});
+														</TMPL_LOOP>
+														CreateImageInput('<TMPL_VAR NAME='Name'>', '<TMPL_VAR NAME='Path'>', '<TMPL_VAR NAME='FullPath'>', '<TMPL_VAR NAME='Value'>', '<TMPL_VAR NAME='PageID'>', 'RemoveMenuImage', '<TMPL_VAR NAME='ADMIN_PATH'>ajax.php', '', params);
+													});
+												</script>
+											</TMPL_LOOP>
+										</div>
+									</section>
+								</div>
+							</TMPL_IF>
+						</div>
+					</TMPL_IF>
+					<div class="clearfix"></div>
+				</div>						
+				<div class="top15">
+					<button type="submit" class="btn btn-success btn-icon right15" onclick="return GenerateLinkHRef(this.form);"><i class="fa fa-save"></i><TMPL_VAR NAME='LNG_Save'></button>
+					<a class="btn btn-icon" href="<TMPL_VAR NAME='ADMIN_PATH'>page_tree.php"><i class="fa fa-ban"></i><TMPL_VAR NAME='LNG_Cancel'></a>
+				</div>
+				<input type="hidden" name="PageID" id="PageID" value="<TMPL_VAR NAME='PageID'>" />
+				<input type="hidden" name="Link" value="<TMPL_VAR NAME='Link'>" />
+				<input type="hidden" name="Target" value="<TMPL_VAR NAME='Target'>" />
+				<input type="hidden" name="Type" value="3" />
+				<input type="hidden" name="Save" value="Save" />	
+			</form>
+		</div>
+	</section>
+</div>
+
+<script type="text/javascript">
+
+	var menuList = new Object();
+	<TMPL_LOOP NAME='MenuList'>
+		menuList[<TMPL_VAR NAME='PageID'>] = [<TMPL_LOOP NAME='ImageList'>{'key': '<TMPL_VAR NAME='Key'>', 'val': '<TMPL_VAR NAME='Value'>'}<TMPL_UNLESS NAME='__LAST__'>,</TMPL_UNLESS></TMPL_LOOP>];//{<TMPL_LOOP NAME='ImageList'>'id<TMPL_VAR NAME='Key'>': '<TMPL_VAR NAME='Value'>'<TMPL_UNLESS NAME='__LAST__'>,</TMPL_UNLESS></TMPL_LOOP>};
+	</TMPL_LOOP>
+	
+	pageList = new Array();
+	<TMPL_LOOP NAME='PageList'>
+		pageList[pageList.length] = {PageURL: "<TMPL_VAR NAME='PageURL' ESCAPE='js'>", Title: "<TMPL_VAR NAME='Title' ESCAPE='js'>", Type: "<TMPL_VAR NAME='Type'>"};
+	</TMPL_LOOP>
+	
+	$(document).ready(function(){
+		$('#ParentID').change(function(){
+			ToggleMenuImages();
+		});
+		
+		ToggleMenuImages();
+		$('#Title').focus();
+		
+		var sType = FillLinkDivFromHRef("<TMPL_VAR NAME='Link' ESCAPE='js'>", "<TMPL_VAR NAME='Target' ESCAPE='js'>", pageList);
+		ShowLinkTypeDiv(sType);
+		$('#LinkType').val(sType);
+	});
+	
+</script>

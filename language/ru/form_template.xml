@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<public>
+		<form-userauth_forgot.html>
+			<EmailRequired>Пожалуйста введите E-mail</EmailRequired>
+			<Email>E-mail</Email>
+			<Captcha>Проверка на спам</Captcha>
+			<CaptchaDescription>Введите в текстовое поле код, отображенный на картинке</CaptchaDescription>
+			<UpdateCaptcha>Обновить картинку</UpdateCaptcha>
+			<SendPassword>Выслать пароль</SendPassword>
+		</form-userauth_forgot.html>
+		<form-userauth_login.html>
+			<EmailRequired>Пожалуйста введите E-mail</EmailRequired>
+			<PasswordRequired>Пожалуйста введите пароль</PasswordRequired>
+			<Email>E-mail</Email>
+			<RememberMe>Запомнить меня</RememberMe>
+			<Password>Пароль</Password>
+			<ForgotPassword>Забыли пароль?</ForgotPassword>
+			<Register>Еще на зарегистрированы? Тогда вам сюда.</Register>
+			<Login>Войти</Login>
+		</form-userauth_login.html>
+		<form-userauth_register.html>
+			<Email>Эл. почта/Логин</Email>
+			<NewPassword>Новый пароль</NewPassword>
+			<ChangePasswordExplanation>Если не хотите изменять пароль, оставьте это поле пустым</ChangePasswordExplanation>
+			<Password>Пароль</Password>
+			<RepeatPassword>Повторите пароль</RepeatPassword>
+			<FirstName>Имя</FirstName>
+			<MiddleName>Отчество</MiddleName>
+			<LastName>Фамилия</LastName>
+			<Country>Страна</Country>
+			<Region>Регион</Region>
+			<City>Город</City>
+			<PostalCode>Почтовый индекс</PostalCode>
+			<AddressLine1>Улица</AddressLine1>
+			<AddressLine2>Номер дома и квартиры</AddressLine2>
+			<Phone>Телефон</Phone>
+			<Captcha>Проверка на спам</Captcha>
+			<CaptchaDescription>Введите в текстовое поле код, отображенный на картинке</CaptchaDescription>
+			<UpdateCaptcha>Обновить картинку</UpdateCaptcha>
+			<Update>Обновить данные</Update>
+			<Register>Зарегистрироваться</Register>
+			<Reset>Сбросить</Reset>
+		</form-userauth_register.html>
+	</public>
+</Root>

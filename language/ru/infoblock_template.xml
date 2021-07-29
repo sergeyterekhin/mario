@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+	<admin>
+		<category_edit.html>
+			<AddCategory>Добавить категорию</AddCategory>
+			<EditCategory>Редактировать категорию</EditCategory>
+			<Title>Заголовок</Title>
+			<Description>Описание</Description>
+			<Active>Активна</Active>
+			<CategoryImage>Картинка</CategoryImage>
+			<StaticPath>URL категории</StaticPath>
+		</category_edit.html>
+		<category_list.html>
+			<ConfirmRemovePage>Вы действительно хотите удалить инфоблок '%Title%'?</ConfirmRemovePage>
+			<ConfirmRemoveCategory>Вы действительно хотите удалить категорию '%Title%'?</ConfirmRemoveCategory>
+			<ConfirmRemoveMultiple>Вы действительно хотите удалить выбранные категории?</ConfirmRemoveMultiple>
+			<AddInfoblockPage>Добавить инфоблок</AddInfoblockPage>
+			<Title>Заголовок</Title>
+			<OpenItemList>Перейти к списку</OpenItemList>
+			<AddCategory>Добавить категорию</AddCategory>
+			<RemoveMultiple>Удалить выбранные</RemoveMultiple>
+			<NoSelection>Вы не выбрали ни одной категории</NoSelection>
+		</category_list.html>
+		<item_edit.html>
+			<AddItem>Добавить объект</AddItem>
+			<EditItem>Редактировать объект</EditItem>
+			<Title>Заголовок</Title>
+			<Description>Описание</Description>
+			<Active>Активен</Active>
+			<Date>Дата</Date>
+			<Category>Категория</Category>
+			<ItemImage>Картинка</ItemImage>
+			<StaticPath>URL объекта</StaticPath>
+		</item_edit.html>
+		<item_list.html>
+			<NoSelection>Вы не выбрали ни одного объекта</NoSelection>
+			<ConfirmRemoveMultiple>Вы действительно хотите удалить выбранные объекты?</ConfirmRemoveMultiple>
+			<ConfirmRemove>Вы действительно хотите удалить объект '%Title%'?</ConfirmRemove>
+			<ConfirmMoveTo>Вы действительно хотите перенести выбранные объекты в категорию '%Title%'?</ConfirmMoveTo>
+			<AddItem>Добавить объект</AddItem>
+			<AddCategory>Добавить категорию</AddCategory>
+			<GoTo>Перейти к:</GoTo>
+			<Title>Заголовок</Title>
+			<CategoryTitle>Категория</CategoryTitle>
+			<SortOrder>Позиция</SortOrder>
+			<Date>Дата</Date>
+			<Empty>Список пуст</Empty>
+			<RemoveMultiple>Удалить выбранные</RemoveMultiple>
+			<MoveTo>Перенести выбранные в:</MoveTo>
+		</item_list.html>
+	</admin>
+</Root>

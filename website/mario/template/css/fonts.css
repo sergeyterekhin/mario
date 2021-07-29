@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'metablackcapslfcregular';
+    src: url('../fonts/metablackcapslfc-webfont.eot');
+    src: url('../fonts/metablackcapslfc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/metablackcapslfc-webfont.woff') format('woff'),
+         url('../fonts/metablackcapslfc-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'metamediumcitalic';
+    src: url('../fonts/metamediumc-italic-webfont.eot');
+    src: url('../fonts/metamediumc-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/metamediumc-italic-webfont.woff') format('woff'),
+         url('../fonts/metamediumc-italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'metamediumlfcregular';
+    src: url('../fonts/metamediumlfc-webfont.eot');
+    src: url('../fonts/metamediumlfc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/metamediumlfc-webfont.woff') format('woff'),
+         url('../fonts/metamediumlfc-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'metaboldlfcregular';
+    src: url('../fonts/metaboldlfc-webfont.eot');
+    src: url('../fonts/metaboldlfc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/metaboldlfc-webfont.woff') format('woff'),
+         url('../fonts/metaboldlfc-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

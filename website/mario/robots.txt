@@ -1,0 +1,11 @@
+User-agent: Yandex
+Disallow: /admin/
+Disallow: /include/
+Disallow: /*?
+Host: fokgroup.com
+
+User-agent: *
+Disallow: /admin/
+Disallow: /include/
+Disallow: /*?
+

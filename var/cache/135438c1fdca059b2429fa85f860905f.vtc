@@ -1,0 +1,20 @@
+<footer class="footer">
+    <div class="footerLeft"></div>
+    <div class="footerIn">
+        <div class="copy"> 
+            <?php if ($this->_vars['LNG_leftdescription'] !== null) { print(htmlspecialchars($this->_vars['LNG_leftdescription'], ENT_QUOTES)); } ?>
+        </div>
+        <div class="fContacts">
+            <?php if ($this->_vars['LNG_rightdescription'] !== null) { print(htmlspecialchars($this->_vars['LNG_rightdescription'], ENT_QUOTES)); } ?>
+        </div>
+        <div class="projects">
+            <div class="caption"><?php if ($this->_vars['LNG_midldescription'] !== null) { print(htmlspecialchars($this->_vars['LNG_midldescription'], ENT_QUOTES)); } ?></div>
+            <?php $row_count_0=count($this->_arrVars['MENU_project']); for ($_0=0 ; $_0<$row_count_0; $_0++) {?>
+                <a href="<?php if ($this->_arrVars['MENU_project'][$_0]['PageURL'] !== null) { print(htmlspecialchars($this->_arrVars['MENU_project'][$_0]['PageURL'], ENT_QUOTES)); } elseif ($this->_vars['PageURL'] !== null) { print(htmlspecialchars($this->_vars['PageURL'], ENT_QUOTES)); } ?>"><img src="<?php if ($this->_arrVars['MENU_project'][$_0]['MenuImage2Path'] !== null) { print(htmlspecialchars($this->_arrVars['MENU_project'][$_0]['MenuImage2Path'], ENT_QUOTES)); } elseif ($this->_vars['MenuImage2Path'] !== null) { print(htmlspecialchars($this->_vars['MenuImage2Path'], ENT_QUOTES)); } ?>" alt=""></a>
+                <?php } ?>
+        </div>
+    </div>
+</footer>
+<a href="#" class="reviewsLink"></a>
+</body>
+</html>

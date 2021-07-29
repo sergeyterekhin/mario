@@ -1,0 +1,25 @@
+<div class="col-md-12">
+	<section class="box">
+		<div class="content-body">
+			<div class="col-md-12 no-padding form-group">
+				<a href="<TMPL_VAR NAME='MODULE_URL'>&PageID=<TMPL_VAR NAME='PageID'>&CategoryID=" class="btn btn-success btn-icon right15"><i class="fa fa-plus"></i><TMPL_VAR NAME='LNG_AddCategory'></a>
+			</div>
+			<div class="clearfix"></div>
+			<input type="hidden" id="category-tree-hash" value="<TMPL_VAR NAME='CategoryTreeHash'>" />
+			<div id="category-tree"></div>
+			<div class="clearfix"></div>				
+		</div>
+	</section>
+</div>
+
+<script type="text/javascript">
+	var pageID = '<TMPL_VAR NAME='PageID'>';
+	var moduleURL = "<TMPL_VAR NAME='MODULE_URL'>&PageID=<TMPL_VAR NAME='PageID'>";
+	$(document).ready(function(){
+		$('#category-tree').append("<ul id='children-0' class='category-node uk-nestable' CategoryID='0' data-uk-nestable></ul>");
+		<TMPL_LOOP NAME='CategoryList'>
+			AddCategoryNode(<TMPL_VAR NAME='CategoryID'>, <TMPL_VAR NAME='ParentID' ESCAPE='js'>, "<TMPL_VAR NAME='jsTitle' ESCAPE='js'>", "<TMPL_VAR NAME='Active' ESCAPE='js'>", "<TMPL_VAR NAME='ItemCount' ESCAPE='js'>");
+		</TMPL_LOOP>	
+	});
+	
+</script>
